@@ -1,0 +1,4 @@
+napięcie na zasilaczu (V),napięcie na rezystorze (V),zakres pomiarowy (V),natężenie prądu (mA),zakres pomiarowy (mA),Rezystor
+6,2.85,3,55.3,200,R1
+6,4,10,38.5,200,R2
+6,4,10,38.5,200,R3
