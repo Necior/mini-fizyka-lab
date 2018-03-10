@@ -104,12 +104,6 @@ Lp. &  $U$ (V) &  $Z(U)$ (V) &  $u_U$ (V) &  $I$ (mA) &  $Z(I)$ (mA) &  $u_I$ (m
 \caption{Wielokrotne pomiary prądu $I_{R_4}$ i napięcia $U_{R_4}$ na rezystorze $R_4$.}
 \end{table}
 
-\begin{table}
-\centering
-\includegraphics{fig_c.pdf}
-\caption{Wykres zależności między wartością napięcia na rezystorze $R_4$ a wartością natężenia prądu.}
-\end{table}
-
 Na podstawie pomiarów napięcia i natężenia -- oraz uwzględniając błędy pomiarowe -- możemy stwierdzić, że natężenie prądu rośnie wprost proporcjonalnie do napięcia.
 Stosunek napięcia do natężenia jest stały.
 Wyniki doświadczenia potwierdzają słuszność prawa Ohma.
@@ -150,7 +144,7 @@ W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wa
 	suma & {} & {} & {} & {} & {} & {} & {} & 947160.06 & 366674.07 \\
 \bottomrule
 \end{tabular}
-\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierukowego w zagadnieniu regresji liniowej.}
+\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierukowego w zagadnieniu regresji liniowej. Zachowaliśmy dodatkowe cyfry znaczące, aby uniknąć błędów numerycznych przy kolejnych obliczeniach.}
 \end{table}
 
 Otrzymujemy $a = \frac{366674.07}{947160.06} \approx 0.387$ oraz $u_a = \sqrt{\frac{1}{947160.06}} \approx 0.00101 \enskip \text{k}\Omega \approx 1.1 \enskip \Omega$.
@@ -234,6 +228,9 @@ Uzyskane pomiary trzech różncyh wielkości wyniosły kolejno: $36.60$ mm, $37.
 
 \subsection{Wyniki pomiarów śrubą mikrometryczną}
 
+W tym ćwiczeniu, za pomocą śruby mikrometrycznej, badana była grubość metalowej płytki.
+Wykonane 60 pomiarów przedstawiliśmy w tabeli oraz za pomocą histogramu.
+
 \begin{table}
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -268,7 +265,7 @@ Uzyskane pomiary trzech różncyh wielkości wyniosły kolejno: $36.60$ mm, $37.
 \caption{Histogram pomiarów grubości płytki za pomocą śruby mikrometrycznej.}
 \end{table}
 
-Oznaczmy powyższe pomiary jako $x_i$, $i = 1, \dots, 60$.
+Oznaczmy pomiary jako $x_i$, $i = 1, \dots, 60$.
 Średnia wartość wszystkich pomiarów wynosi: $x = \frac{1}{60} \sum_{i = 1}^{60} x_i = \frac{1}{60} \cdot 176.19 = 2.9365$.
 Odchylenie standardowe: $s_x = \sqrt{\frac{\sum_{i=1}^{60} (x_i - x)^2}{60 - 1}} \approx 0.0077733$.
 
@@ -280,6 +277,8 @@ Niepewność typu B: $u_x (\text{typ B}) = \Delta x_e = 0.005 \enskip \text{mm}$
 
 % sqrt(3)?
 Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.0051196 \approx 0.0052$.
+
+Ostatecznie, grubość płytki wynosi (zapis na 3 sposoby):
 
 \begin{itemize}
 \item $d = 2.9365$ mm, $u_x = 0.0052$ mm
