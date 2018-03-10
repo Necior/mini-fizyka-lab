@@ -269,21 +269,18 @@ Oznaczmy pomiary jako $x_i$, $i = 1, \dots, 60$.
 Średnia wartość wszystkich pomiarów wynosi: $x = \frac{1}{60} \sum_{i = 1}^{60} x_i = \frac{1}{60} \cdot 176.19 = 2.9365$.
 Odchylenie standardowe: $s_x = \sqrt{\frac{\sum_{i=1}^{60} (x_i - x)^2}{60 - 1}} \approx 0.0077733$.
 
-% sqrt(3)?
 Niepewność typu A: $u_x (\text{typ A}) = \frac{s_x}{\sqrt{60}} \approx 0.001004 \enskip \text{mm} \approx 0.0011 \enskip \text{mm}$.
 
-% sqrt(3)?
-Niepewność typu B: $u_x (\text{typ B}) = \Delta x_e = 0.005 \enskip \text{mm}$.
+Niepewność typu B: $u_x (\text{typ B}) = \sqrt{\frac{(\Delta x)^2}{3} + \frac{(\Delta x_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.006454972 \approx 0.0065 \enskip \text{mm}$.
 
-% sqrt(3)?
-Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.0051196 \approx 0.0052$.
+Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.00659242 \approx 0.0066$.
 
 Ostatecznie, grubość płytki wynosi (zapis na 3 sposoby):
 
 \begin{itemize}
-\item $d = 2.9365$ mm, $u_x = 0.0052$ mm
-\item $d = 2.9365 \, (52)$ mm
-\item $d = 2.9365 \, (0.0052)$ mm
+\item $d = 2.9365$ mm, $u_x = 0.0066$ mm
+\item $d = 2.9365 \, (66)$ mm
+\item $d = 2.9365 \, (0.0066)$ mm
 \end{itemize}
 
 \end{document}
