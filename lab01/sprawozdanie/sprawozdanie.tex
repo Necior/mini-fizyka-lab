@@ -283,4 +283,29 @@ Ostatecznie, grubość płytki wynosi (zapis na 3 sposoby):
 \item $d = 2.9365 \, (0.0066)$ mm
 \end{itemize}
 
+\subsection{Wyznaczanie objętości płytki}
+
+Zmierzone zostały trzy wymiary metalowej płytki.
+Oznaczmy objętość $V = x \cdot y \cdot z$, gdzie $x = 37.510 (0.012)$ mm, $y = 30.700 (0.012)$ mm, $z = 2.9365 (0.0066)$ mm.
+Zauważmy, że $x$ oraz $y$ są obarczone niepewnościami typu B, zaś $z$ niepewnością typu A oraz B.
+W celu wyznaczenia objętości $V$ wraz z niepewnością całkowitą, posłużymy się następującymi oznaczeniami oraz wzorami:
+
+$$V = x \cdot y \cdot z = 37.510 \cdot 30.700 \cdot 2.9365 \enskip \text{mm}^3 = 3381.5471305 \enskip \text{mm}^3 \approx 3382 \enskip \text{mm}^3$$
+
+\begin{align*}
+u_V &= \sqrt{(\frac{\partial V}{\partial x})^2 \cdot u_x^2 + (\frac{\partial V}{\partial y})^2 \cdot u_y^2 + (\frac{\partial V}{\partial z})^2 \cdot (u_z \text{(typ A)})^2 + (\frac{\partial V}{\partial z})^2 \cdot (u_z \text{(typ B)})^2} \\
+	&= \sqrt{(yz \cdot u_x)^2 + (xz \cdot u_y)^2 + (xy \cdot u_z \text{(typ A)})^2 + (xy \cdot u_z \text{(typ B)})^2} \\
+	&= \sqrt{(30.7 \cdot 2.9365 \cdot 0.012)^2 + (37.51 \cdot 2.9365 \cdot 0.012)^2 + (37.51 \cdot 30.7 \cdot 0.0011))^2 + (37.51 \cdot 30.7 \cdot 0.0065)^2} \enskip \text{mm}^3\\
+	&\approx 60.21 \enskip \text{mm}^3 \\
+	&\approx 61 \enskip \text{mm}^3
+\end{align*}
+
+Ostatecznie, objętość płytki wynosi (zapis na 3 sposoby):
+
+\begin{itemize}
+\item $V = 3382 \enskip \text{mm}^3$, $u_V = 61 \enskip \text{mm}^3$
+\item $V = 3382 \, (61) \enskip \text{mm}^3$
+\item $V = 3382 \, (61) \enskip \text{mm}^3$
+\end{itemize}
+
 \end{document}
