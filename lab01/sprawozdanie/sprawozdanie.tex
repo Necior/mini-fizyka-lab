@@ -22,6 +22,7 @@
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{booktabs}
+\usepackage{cancel}
 
 \usepackage{float}
 
@@ -231,13 +232,16 @@ Uzyskane pomiary trzech różncyh wielkości wyniosły kolejno: $36.60$ mm, $37.
 W tym ćwiczeniu, za pomocą śruby mikrometrycznej, badana była grubość metalowej płytki.
 Wykonane 60 pomiarów przedstawiliśmy w tabeli oraz za pomocą histogramu.
 
+\textit{Uwaga}: pomiar wynoszący $2.97$ uznajemy za \textit{błąd gruby}.
+W tabeli został ten fakt zaznaczony poprzez skreślenie, zaś w histogramie (oraz wszelkich obliczeniach) ten pomiar został pominięty.
+
 \begin{table}
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
 2.94 & 2.93 & 2.94 & 2.92 & 2.94 & 2.95 \\
 \hline
-2.93 & 2.93 & 2.97 & 2.94 & 2.93 & 2.93 \\
+2.93 & 2.93 & \cancel{2.97} & 2.94 & 2.93 & 2.93 \\
 \hline
 2.93 & 2.94 & 2.93 & 2.93 & 2.94 & 2.93 \\
 \hline
@@ -265,15 +269,15 @@ Wykonane 60 pomiarów przedstawiliśmy w tabeli oraz za pomocą histogramu.
 \caption{Histogram pomiarów grubości płytki za pomocą śruby mikrometrycznej.}
 \end{table}
 
-Oznaczmy pomiary jako $x_i$, $i = 1, \dots, 60$.
-Średnia wartość wszystkich pomiarów wynosi: $x = \frac{1}{60} \sum_{i = 1}^{60} x_i = \frac{1}{60} \cdot 176.19 = 2.9365$.
-Odchylenie standardowe: $s_x = \sqrt{\frac{\sum_{i=1}^{60} (x_i - x)^2}{60 - 1}} \approx 0.0077733$.
+Oznaczmy pomiary jako $x_i$, $i = 1, \dots, 59$.
+Średnia wartość wszystkich pomiarów wynosi: $x = \frac{1}{59} \sum_{i = 1}^{59} x_i = \frac{1}{59} \cdot 173.22 \approx 2.935932203389$.
+Odchylenie standardowe: $s_x = \sqrt{\frac{\sum_{i=1}^{59} (x_i - x)^2}{59 - 1}} \approx 0.0064643969$.
 
-Niepewność typu A: $u_x (\text{typ A}) = \frac{s_x}{\sqrt{60}} \approx 0.001004 \enskip \text{mm} \approx 0.0011 \enskip \text{mm}$.
+Niepewność typu A: $u_x (\text{typ A}) = \frac{s_x}{\sqrt{59}} \approx 0.00084159279 \enskip \text{mm} \approx 0.0009 \enskip \text{mm}$.
 
 Niepewność typu B: $u_x (\text{typ B}) = \sqrt{\frac{(\Delta x)^2}{3} + \frac{(\Delta x_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.006454972 \approx 0.0065 \enskip \text{mm}$.
 
-Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.00659242 \approx 0.0066$.
+Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.00656201188 \approx 0.0066$.
 
 Ostatecznie, grubość płytki wynosi (zapis na 3 sposoby):
 
@@ -295,17 +299,17 @@ $$V = x \cdot y \cdot z = 37.510 \cdot 30.700 \cdot 2.9365 \enskip \text{mm}^3 =
 \begin{align*}
 u_V &= \sqrt{(\frac{\partial V}{\partial x})^2 \cdot u_x^2 + (\frac{\partial V}{\partial y})^2 \cdot u_y^2 + (\frac{\partial V}{\partial z})^2 \cdot (u_z \text{(typ A)})^2 + (\frac{\partial V}{\partial z})^2 \cdot (u_z \text{(typ B)})^2} \\
 	&= \sqrt{(yz \cdot u_x)^2 + (xz \cdot u_y)^2 + (xy \cdot u_z \text{(typ A)})^2 + (xy \cdot u_z \text{(typ B)})^2} \\
-	&= \sqrt{(30.7 \cdot 2.9365 \cdot 0.012)^2 + (37.51 \cdot 2.9365 \cdot 0.012)^2 + (37.51 \cdot 30.7 \cdot 0.0011))^2 + (37.51 \cdot 30.7 \cdot 0.0065)^2} \enskip \text{mm}^3\\
-	&\approx 60.21 \enskip \text{mm}^3 \\
-	&\approx 61 \enskip \text{mm}^3
+	&= \sqrt{(30.7 \cdot 2.9365 \cdot 0.012)^2 + (37.51 \cdot 2.9365 \cdot 0.012)^2 + (37.51 \cdot 30.7 \cdot 0.0009))^2 + (37.51 \cdot 30.7 \cdot 0.0065)^2} \enskip \text{mm}^3\\
+	&\approx 59.9808311616034744 \enskip \text{mm}^3 \\
+	&\approx 60 \enskip \text{mm}^3
 \end{align*}
 
 Ostatecznie, objętość płytki wynosi (zapis na 3 sposoby):
 
 \begin{itemize}
-\item $V = 3382 \enskip \text{mm}^3$, $u_V = 61 \enskip \text{mm}^3$
-\item $V = 3382 \, (61) \enskip \text{mm}^3$
-\item $V = 3382 \, (61) \enskip \text{mm}^3$
+\item $V = 3382 \enskip \text{mm}^3$, $u_V = 60 \enskip \text{mm}^3$
+\item $V = 3382 \, (60) \enskip \text{mm}^3$
+\item $V = 3382 \, (60) \enskip \text{mm}^3$
 \end{itemize}
 
 \end{document}
