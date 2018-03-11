@@ -44,11 +44,7 @@
 \newcommand{\Small}{\scriptsize}
 
 \title{Sprawozdanie nr 1}
-\author{
-Bartosz Jasiński \\
-Adrian Sadłocha \\
-Andrzej Wódkiewicz
-}
+\date{}
 
 \begin{document}
 
@@ -79,9 +75,10 @@ Andrzej Wódkiewicz
 Celem ćwiczenia jest wyznaczenie rezystancji oporników $R_1$, $R_2$, $R_3$ oraz $R_4$.
 Obwód złożony jest z szeregowo podłączonego amperomierza cyfrowego, równolegle podłączonego woltomierza analogowego, rezystora oraz z zasilacza.
 
-\begin{table}
+\begin{table}[h]
+\centering
 \input{circuit.tex}
-\caption{Diagram przedstawiający podłączenie amperomierza oraz~woltomierza do~układu z~rezystorem.}
+\caption{Schemat układu pomiarowego}
 \end{table}
 
 \subsection{Wstęp teoretyczny}
@@ -111,14 +108,14 @@ Pierwsze ćwiczenie polegało na zbadaniu relacji między napięciem a natężen
 W tym celu dokonaliśmy 10 pomiarów napięcia na rezystorze $R_4$ oraz 10 pomiarów natężenia prądu płynącego w obwodzie.
 Uzyskane wyniki zostały przedstawione w tabeli (Rysunek \ref{wykres}) oraz na wykresie zależności napięcia na $R_4$ od natężenia prądu (Tablica \ref{pomiary_r4}).
 
-\newpage
-
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{fig_d.pdf}
 \caption{Wyliczona prosta regresji liniowej zestawiona wraz ze zmierzonymi wartościami napięcia oraz natężenia prądu.}
 \label{wykres}
 \end{figure}
+
+\newpage
 
 Dla użytego woltomierza, przy zakresie $Z(U)$, niepewność wyznaczenia napięcia wynosi:
 
@@ -168,9 +165,15 @@ Z niepewnością wynoszącą:
 
 $$u_a = \sqrt{\frac{1}{\sum_{i = 1}^{10}\frac{I_i^2}{u_{U_i}^2}}}$$
 
-W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wartościami obliczeń.
+W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wartościami obliczeń (Tablica \ref{wartosci_posrednie}). Zachowano w niej dodatkowe cyfry znaczące, aby uniknąć błędów numerycznych przy kolejnych obliczeniach.
 
-\begin{table}
+
+Otrzymujemy $a = \frac{313502.546}{805575.221} \approx 0.3892 \enskip \Omega \enskip $ oraz $\enskip u_a = \sqrt{\frac{1}{805575.221}} \approx 0.0011 \enskip \Omega$.
+
+Zatem opór $R_4 = 0.3892 \, (11) \enskip \Omega$.
+\vspace{2em}
+
+\begin{table}[h]
 \centering
 \begin{tabular}{lrrrrrrrrr}
 \toprule
@@ -190,15 +193,14 @@ W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wa
 	suma & {} & {} & {} & {} & {} & {} & {} & 805575.221 & 313502.546 \\
 \bottomrule
 \end{tabular}
-\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierunkowego w zagadnieniu regresji liniowej. Zachowaliśmy dodatkowe cyfry znaczące, aby uniknąć błędów numerycznych przy kolejnych obliczeniach.}
+\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierunkowego w zagadnieniu regresji liniowej}
+\label{wartosci_posrednie}
 \end{table}
-
-Otrzymujemy $a = \frac{313502.546}{805575.221} \approx 0.3892 \enskip \Omega \enskip $ oraz $\enskip u_a = \sqrt{\frac{1}{805575.221}} \approx 0.0011 \enskip \Omega$.
-
-Zatem opór $R_4 = 0.3892 \, (11) \enskip \Omega$.
 
 
 \subsection{Obliczenia wartości $R_1$, $R_2$, $R_3$}
+
+Wyniki pomiarów umieszczono w tablicy \ref{pomiary_r123}.
 
 Niepewności napięcia oraz natężenia prądu są liczone jak wyżej.
 
@@ -206,21 +208,8 @@ Niepewność rezystancji wyznaczonej za pomocą wzoru $R = \frac{U}{I}$ wynosi:
 
 $$u_R = \sqrt{(\frac{\partial R}{\partial U})^2 \cdot u_U^2 + (\frac{\partial R}{\partial I})^2 \cdot u_I^2} = \sqrt{\frac{1}{I^2} \cdot u_U + \frac{U^2}{I^2} \cdot u_I}$$
 
-\begin{table}[h]
-\centering
-\begin{tabular}{lrrrrrrl}
-\toprule
-Rezystor &  $U$ (V) &  $u_U$ (V) &  $I$ (mA) &  $u_I$ (mA) &  R ($\Omega$) &  $u_R$ ($\Omega$) \\
-\midrule
-$R_1$ &          2.85 &           0.018 &                  55.30 &              0.45 &             51.537 &             0.035 \\
-$R_2$ &          4.0 &           0.06 &                  38.50 &              0.33 &            103.90 &             0.06 \\
-$R_3$ &          4.0 &           0.06 &                  38.50 &              0.33 &            103.90 &             0.06 \\
-\bottomrule
-\end{tabular}
-\caption{Wyniki pojedynczych pomiarów na rezystorach $R_1$, $R_2$ oraz $R_3$}
-\end{table}
 
-\newpage
+
 Zatem wartości $R_1$, $R_2$, $R_3$ wynoszą (zapis na trzy sposoby):
 
 \begin{itemize}
@@ -243,6 +232,23 @@ $R_2 = 103.90 \, (0.06) \enskip \Omega$
 $R_3 = 103.90 \, (0.06) \enskip \Omega$
 \end{itemize}
 
+\begin{table}
+\centering
+\begin{tabular}{lrrrrrrl}
+\toprule
+Rezystor &  $U$ (V) &  $u_U$ (V) &  $I$ (mA) &  $u_I$ (mA) &  R ($\Omega$) &  $u_R$ ($\Omega$) \\
+\midrule
+$R_1$ &          2.85 &           0.018 &                  55.30 &              0.45 &             51.537 &             0.035 \\
+$R_2$ &          4.0 &           0.06 &                  38.50 &              0.33 &            103.90 &             0.06 \\
+$R_3$ &          4.0 &           0.06 &                  38.50 &              0.33 &            103.90 &             0.06 \\
+\bottomrule
+\end{tabular}
+\caption{Wyniki pojedynczych pomiarów na rezystorach $R_1$, $R_2$ oraz $R_3$}
+\label{pomiary_r123}
+\end{table}
+
+
+\newpage
 
 \section{Pomiary wielkości mechanicznych}
 
