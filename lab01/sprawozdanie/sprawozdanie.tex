@@ -23,12 +23,21 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{booktabs}
 \usepackage{cancel}
+\usepackage{tikz}
 
 \usepackage{float}
 
 \renewcommand\thesection{\arabic{section}.}
 \renewcommand\thesubsection{\arabic{section}.\arabic{subsection}.}
 \renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+% The following commands are not supported in PSTricks at present
+% We define them conditionally, so when they are implemented,
+% this pgf file will use them.
+\ifx\du\undefined
+  \newlength{\du}
+\fi
+\setlength{\du}{15\unitlength}
 
 \title{Sprawozdanie nr 1}
 \author{
@@ -48,6 +57,11 @@ Andrzej Wódkiewicz
 
 Celem ćwiczenia było wyznaczenie rezystancji oporników $R_1$, $R_2$, $R_3$ oraz $R_4$.
 Obwód był złożony z szeregowo podłączonego cyfrowego amperomierza, równolegle podłączonego analogowego woltomierza, rezystora oraz z zasilacza.
+
+\begin{table}
+\input{circuit.tex}
+\caption{Diagram przedstawiający podłączenie amperomierza oraz~woltomierza do~układu z~rezystorem.}
+\end{table}
 
 \subsection{Wstęp teoretyczny}
 
