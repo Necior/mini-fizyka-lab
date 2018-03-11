@@ -39,6 +39,10 @@
 \fi
 \setlength{\du}{15\unitlength}
 
+\newcommand{\Vsp}[1]{\vtop to #1 {}}
+\newcommand{\Hsp}[1]{\hbox to #1 {}}
+\newcommand{\Small}{\scriptsize}
+
 \title{Sprawozdanie nr 1}
 \author{
 Bartosz Jasiński \\
@@ -47,7 +51,24 @@ Andrzej Wódkiewicz
 }
 
 \begin{document}
-\maketitle
+
+\begin{center}
+\begin{tabular}{|p{5cm}|l|l|l|}
+    \hline
+    Wydział \Vsp{5mm} & \multicolumn{1}{|l}{Dzień} &  & Nr zespołu\\
+    & \multicolumn{1}{|l}{Data} &  & \\
+    \hline 
+    Nazwisko i Imię: & \Small Ocena z przygotowania  & \Small Ocena ze sprawozdania & \Small Ocena Końcowa \\
+    1. & & &\\
+    2. & & & \\
+    3. & & & \\
+    \hline
+    \multicolumn{2}{|l|}{Prowadzący \Vsp{1cm}} & \multicolumn{2}{|l|}{Podpis prowadzącego} \\
+    \hline
+\end{tabular}
+\end{center}
+
+{\let\newpage\relax\maketitle}  % stolen from: https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
