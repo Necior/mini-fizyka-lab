@@ -44,11 +44,7 @@
 \newcommand{\Small}{\scriptsize}
 
 \title{Sprawozdanie nr 1}
-\author{
-Bartosz Jasiński \\
-Adrian Sadłocha \\
-Andrzej Wódkiewicz
-}
+\date{}
 
 \begin{document}
 
@@ -76,12 +72,13 @@ Andrzej Wódkiewicz
 
 \subsection{Opis ćwiczenia}
 
-Celem ćwiczenia było wyznaczenie rezystancji oporników $R_1$, $R_2$, $R_3$ oraz $R_4$.
-Obwód był złożony z szeregowo podłączonego cyfrowego amperomierza, równolegle podłączonego analogowego woltomierza, rezystora oraz z zasilacza.
+Celem ćwiczenia jest wyznaczenie rezystancji oporników $R_1$, $R_2$, $R_3$ oraz $R_4$.
+Obwód złożony jest z szeregowo podłączonego amperomierza cyfrowego, równolegle podłączonego woltomierza analogowego, rezystora oraz z zasilacza.
 
-\begin{table}
+\begin{table}[h]
+\centering
 \input{circuit.tex}
-\caption{Diagram przedstawiający podłączenie amperomierza oraz~woltomierza do~układu z~rezystorem.}
+\caption{Schemat układu pomiarowego}
 \end{table}
 
 \subsection{Wstęp teoretyczny}
@@ -93,7 +90,7 @@ W obwodzie elektrycznym stosunek napięcia do natężenia prądu jest stały:
 
 $$\frac{U}{I} = \text{const}$$
 
-Powyższa zależność jest nazywama \textit{prawem Ohma}. Powyższą stałą nazywamy rezystancją (oporem) i zwyczajowo oznaczamy za pomocą litery $R$.
+Powyższa zależność jest nazywana \emph{prawem Ohma}. Współczynnik proporcjonalności nazywamy \emph{rezystancją} (oporem), mierzymy ją w omach ($\Omega$) i zwyczajowo oznaczamy za pomocą litery $R$.
 
 \subsubsection{Niepewności pomiarowe}
 
@@ -101,21 +98,24 @@ Niepewnością pomiarową nazywamy miarę dokładności wykonanego pomiaru.
 Wśród pomiarów bezpośrednich wyróżniamy dwa rodzaje metod wyliczania niepewności.
 
 \begin{itemize}
-\item Metody typu A -- jest to klasa metod, która oblicza niepewność za pomocą statystycznych technik analizy ciągu wyników pomiarów;
+\item Metody typu A -- jest to klasa metod, która oblicza niepewność za pomocą statystycznych technik analizy ciągu 	wyników pomiarów;
 \item Metody typu B -- klasa metod, które opierają się na innych metod niż metody typu A, np.~metody biorące pod uwagę własności przyrządów pomiarowych.
 \end{itemize}
 
 \subsection{Analiza wyników}
 
-Pierwsze ćwiczenie służyło zbadaniu relacji między napięciem a natężeniem prądu.
-W tym celu dokonaliśmy 10 pomiarów napięcia na rezystorze $R_4$ oraz 10 pomiarów natężenia prądu.
-Uzyskane wyniki zostały przedstawione w tabeli oraz na wykresie zależności napięcia na $R_4$ od natężenia prądu.
+Pierwsze ćwiczenie polegało na zbadaniu relacji między napięciem a natężeniem prądu.
+W tym celu dokonaliśmy 10 pomiarów napięcia na rezystorze $R_4$ oraz 10 pomiarów natężenia prądu płynącego w obwodzie.
+Uzyskane wyniki zostały przedstawione w tabeli (Rysunek \ref{wykres}) oraz na wykresie zależności napięcia na $R_4$ od natężenia prądu (Tablica \ref{pomiary_r4}).
 
-\begin{table}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{fig_d.pdf}
 \caption{Wyliczona prosta regresji liniowej zestawiona wraz ze zmierzonymi wartościami napięcia oraz natężenia prądu.}
-\end{table}
+\label{wykres}
+\end{figure}
+
+\newpage
 
 Dla użytego woltomierza, przy zakresie $Z(U)$, niepewność wyznaczenia napięcia wynosi:
 
@@ -127,23 +127,24 @@ $$u_I = \frac{1.2\% \text{rdg} + 1 \text{dgt}}{\sqrt{3}}$$
 
 \begin{table}
 \centering
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{rrrrrrr}
 \toprule
 Lp. &  $U$ (V) &  $Z(U)$ (V) &  $u_U$ (V) &  $I$ (mA) &  $Z(I)$ (mA) &  $u_I$ (mA) \\
 \midrule
-1 &          8.80  &                10 &                 0.06  &             22.80  &                 200 &                     0.22 \\
-2 &          8.00  &                10 &                 0.06  &             20.50  &                 200 &                     0.20 \\
-3 &          7.00  &                10 &                 0.06  &             17.93 &                  20 &                     0.13 \\
-4 &          6.20  &                10 &                 0.06  &             15.74 &                  20 &                     0.11 \\
-5 &          5.20  &                10 &                 0.06  &             13.51 &                  20 &                     0.10 \\
-6 &          4.40  &                10 &                 0.05  &             11.23 &                  20 &                     0.08 \\
-7 &          3.60  &                10 &                 0.06  &              9.06 &                  20 &                     0.07 \\
-8 &          2.600  &                 3 &                 0.018 &              6.760 &                  20 &                     0.053 \\
-9 &          1.800  &                 3 &                 0.018 &              4.500 &                  20 &                     0.037 \\
-10 &         0.86 &                 1 &                 0.01 &              2.290 &                  20 &                     0.022 \\
+1 &          8.800  &                10 &                 0.058  &             22.80  &                200 &                     0.22 \\
+2 &          8.000  &                10 &                 0.058  &             20.50  &                200 &                     0.20 \\
+3 &          7.000  &                10 &                 0.058  &             17.930 &                 20 &                     0.058 \\
+4 &          6.200  &                10 &                 0.058  &             15.740 &                 20 &                     0.051 \\
+5 &          5.200  &                10 &                 0.058  &             13.510 &                 20 &                     0.045 \\
+6 &          4.400  &                10 &                 0.058  &             11.230 &                 20 &                     0.038 \\
+7 &          3.600  &                10 &                 0.058  &              9.060 &                 20 &                     0.032 \\
+8 &          2.600  &                 3 &                 0.017  &              6.760 &                 20 &                     0.025 \\
+9 &          1.800  &                 3 &                 0.017  &              4.500 &                 20 &                     0.019 \\
+10 &         0.8600 &                 1 &                 0.0058 &              2.290 &                 20 &                     0.012 \\
 \bottomrule
 \end{tabular}
 \caption{Wielokrotne pomiary prądu $I_{R_4}$ i napięcia $U_{R_4}$ na rezystorze $R_4$.}
+\label{pomiary_r4}
 \end{table}
 
 Na podstawie pomiarów napięcia i natężenia -- oraz uwzględniając błędy pomiarowe -- możemy stwierdzić, że natężenie prądu rośnie wprost proporcjonalnie do napięcia.
@@ -164,42 +165,74 @@ Z niepewnością wynoszącą:
 
 $$u_a = \sqrt{\frac{1}{\sum_{i = 1}^{10}\frac{I_i^2}{u_{U_i}^2}}}$$
 
-W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wartościami obliczeń.
+W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wartościami obliczeń (Tablica \ref{wartosci_posrednie}). Zachowano w niej dodatkowe cyfry znaczące, aby uniknąć błędów numerycznych przy kolejnych obliczeniach.
 
-\begin{table}
+
+Otrzymujemy $a = \frac{313502.546}{805575.221} \approx 0.3892 \enskip \text{k} \Omega = 389.2 \enskip \Omega $ 
+
+oraz $\enskip u_a = \sqrt{\frac{1}{805575.221}} \approx 0.0011 \enskip \text{k}\Omega = 1.1 \enskip \Omega$.
+
+Zatem opór $R_4 = 389.2 \, (1.1) \enskip \Omega$.
+\vspace{2em}
+
+\begin{table}[h]
 \centering
 \begin{tabular}{lrrrrrrrrr}
 \toprule
-{} &     $U$ &       $u_U$ &      $I$ &       $u_I$ &       $IU$ &     $u_U^2$ &       $I^2$ &    $\frac{I^2}{u_U^2}$ & $\frac{IU}{u_U^2}$ \\
+{} &  $U$  &    $u_U$  &     $I$ &    $u_I$   &    $IU$  &    $u_U^2$ &   $I^2$ &    $\frac{I^2}{u_U^2}$ & $\frac{IU}{u_U^2}$ \\
 \midrule
-1 &  8.80 &  0.057735 &  22.80 &  0.215698 &  200.6400 &  0.003333 &  519.8400 &  155952.00 &  60192.00 \\
-2 &  8.00 &  0.057735 &  20.50 &  0.199763 &  164.0000 &  0.003333 &  420.2500 &  126075.00 &  49200.00 \\
-3 &  7.00 &  0.057735 &  17.93 &  0.129996 &  125.5100 &  0.003333 &  321.4849 &   96445.47 &  37653.00 \\
-4 &  6.20 &  0.057735 &  15.74 &  0.114823 &   97.5880 &  0.003333 &  247.7476 &   74324.28 &  29276.40 \\
-5 &  5.20 &  0.057735 &  13.51 &  0.099374 &   70.2520 &  0.003333 &  182.5201 &   54756.03 &  21075.60 \\
-6 &  4.40 &  0.057735 &  11.23 &  0.083577 &   49.4120 &  0.003333 &  126.1129 &   37833.87 &  14823.60 \\
-7 &  3.60 &  0.057735 &   9.06 &  0.068543 &   32.6160 &  0.003333 &   82.0836 &   24625.08 &   9784.80 \\
-8 &  2.60 &  0.017321 &   6.76 &  0.052608 &   17.5760 &  0.000300 &   45.6976 &  152325.33 &  58586.67 \\
-9 &  1.80 &  0.017321 &   4.50 &  0.036950 &    8.1000 &  0.000300 &   20.2500 &   67500.00 &  27000.00 \\
-10 &  0.86 &  0.005774 &   2.29 &  0.021639 &    1.9694 &  0.000033 &    5.2441 &  157323.00 &  59082.00 \\
+1  &  8.80 &  0.0577350 &  22.80 &  0.215698  & 200.64   &  0.00333 &  519.84    & 155953.560  & 60192.602 \\
+2  &  8.00 &  0.0577350 &  20.50 &  0.199763  & 164.00   &  0.00333 &  420.25    & 126076.261  & 49200.492 \\
+3  &  7.00 &  0.0577350 &  17.93 &  0.057533  & 125.51   &  0.00333 &  321.4849  &  96446.434  & 37653.377 \\
+4  &  6.20 &  0.0577350 &  15.74 &  0.051211  &  97.588  &  0.00333 &  247.7476  &  74325.023  & 29276.693 \\
+5  &  5.20 &  0.0577350 &  13.51 &  0.044774  &  70.252  &  0.00333 &  182.5201  &  54756.578  & 21075.811 \\
+6  &  4.40 &  0.0577350 &  11.23 &  0.038192  &  49.412  &  0.00333 &  126.1129  &  37834.248  & 14823.748 \\
+7  &  3.60 &  0.0577350 &   9.06 &  0.031928  &  32.616  &  0.00333 &   82.0836  &  24625.326  &  9784.898 \\
+8  &  2.60 &  0.0173205 &   6.76 &  0.025288  &  17.576  &  0.00030 &   45.6976  & 152325.333  & 58586.667 \\
+9  &  1.80 &  0.0173205 &   4.50 &  0.018764  &   8.1    &  0.00030 &   20.25    &  67500.000  & 27000.000 \\
+10 &  0.86 &  0.0057735 &   2.29 &  0.012384  &   1.9694 &  0.00003 &    5.2441  &  15732.457  &  5908.259 \\
 \midrule
-	suma & {} & {} & {} & {} & {} & {} & {} & 947160.06 & 366674.07 \\
+	suma & {} & {} & {} & {} & {} & {} & {} & 805575.221 & 313502.546 \\
 \bottomrule
 \end{tabular}
-\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierukowego w zagadnieniu regresji liniowej. Zachowaliśmy dodatkowe cyfry znaczące, aby uniknąć błędów numerycznych przy kolejnych obliczeniach.}
+\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierunkowego w zagadnieniu regresji liniowej}
+\label{wartosci_posrednie}
 \end{table}
 
-Otrzymujemy $a = \frac{366674.07}{947160.06} \approx 0.387 \enskip k\Omega$ oraz $u_a = \sqrt{\frac{1}{947160.06}} \approx 0.00101 \enskip \text{k}\Omega \approx 1.1 \enskip \Omega$.
-
-Zatem opór $R_4 = 387.1 \, (1.1) \enskip \Omega$.
 
 \subsection{Obliczenia wartości $R_1$, $R_2$, $R_3$}
+
+Wyniki pomiarów umieszczono w tablicy \ref{pomiary_r123}.
 
 Niepewności napięcia oraz natężenia prądu są liczone jak wyżej.
 
 Niepewność rezystancji wyznaczonej za pomocą wzoru $R = \frac{U}{I}$ wynosi:
 
 $$u_R = \sqrt{(\frac{\partial R}{\partial U})^2 \cdot u_U^2 + (\frac{\partial R}{\partial I})^2 \cdot u_I^2} = \sqrt{\frac{1}{I^2} \cdot u_U + \frac{U^2}{I^2} \cdot u_I}$$
+
+
+
+Zatem wartości $R_1$, $R_2$, $R_3$ wynoszą (zapis na trzy sposoby):
+
+\begin{itemize}
+\item $R_1 = 51.537 \enskip \Omega$, $u_{R_1} = 0.035 \enskip \Omega$
+
+$R_2 = 103.90 \enskip \Omega$, $u_{R_2} = 0.06 \enskip \Omega$
+
+$R_3 = 103.90 \enskip \Omega$, $u_{R_3} = 0.06 \enskip \Omega$
+
+\item $R_1 = 51.537 \, (35) \enskip \Omega$
+
+$R_2 = 103.90 \, (6) \enskip \Omega$
+
+$R_3 = 103.90 \, (6) \enskip \Omega$
+
+\item $R_1 = 51.537 \, (0.035) \enskip \Omega$
+
+$R_2 = 103.90 \, (0.06) \enskip \Omega$
+
+$R_3 = 103.90 \, (0.06) \enskip \Omega$
+\end{itemize}
 
 \begin{table}
 \centering
@@ -213,67 +246,59 @@ $R_3$ &          4.0 &           0.06 &                  38.50 &              0.
 \bottomrule
 \end{tabular}
 \caption{Wyniki pojedynczych pomiarów na rezystorach $R_1$, $R_2$ oraz $R_3$}
+\label{pomiary_r123}
 \end{table}
 
-Zatem wartości $R_1$, $R_2$, $R_3$ wynoszą (zapis na trzy sposoby):
 
-\begin{itemize}
-\item $R_1 = 51.537 \enskip \Omega$, $u_{R_1} = 0.035 \enskip \Omega$
-\item $R_2 = 103.90 \enskip \Omega$, $u_{R_2} = 0.06 \enskip \Omega$
-\item $R_3 = 103.90 \enskip \Omega$, $u_{R_3} = 0.06 \enskip \Omega$
-\end{itemize}
-
-\begin{itemize}
-\item $R_1 = 51.537 \, (35) \enskip \Omega$
-\item $R_2 = 103.90 \, (6) \enskip \Omega$
-\item $R_3 = 103.90 \, (6) \enskip \Omega$
-\end{itemize}
-
-\begin{itemize}
-\item $R_1 = 51.537 \, (0.035) \enskip \Omega$
-\item $R_2 = 103.90 \, (0.06) \enskip \Omega$
-\item $R_3 = 103.90 \, (0.06) \enskip \Omega$
-\end{itemize}
+\newpage
 
 \section{Pomiary wielkości mechanicznych}
 
-\subsection{Za pomocą suwmiarki}
+\subsection{Opis ćwiczenia}
+Celem ćwiczenia jest pomiar trzech wymiarów metalowej płytki oraz wyznaczenie jej objętości, wraz z niepewnościami.
 
-Przy użyciu suwmiarki mierzona była metalowa płytka.
-Dokonaliśmy dwukrotnego pomiaru długości ($l_1$, $l_2$) oraz jednokrotnego pomiaru szerokości ($l_3$).
+\subsection{Pomiary za pomocą suwmiarki}
 
-Rozdzielczość suwmiarki wynosi $\Delta x = 0.02$ mm, zatem niepewność typu B wynosi: $u_B(x) = \frac{\Delta x}{\sqrt{3}} \approx 0.01154700 \approx 0.012$ mm.
+Przy użyciu suwmiarki dokonano dwukrotnego pomiaru długości ($l_1$, $l_2$) oraz jednokrotnego pomiaru szerokości ($l_3$).
+
+Rozdzielczość suwmiarki wynosi $\Delta x = 0.02$ mm, zatem niepewność typu B wynosi: 
+
+$u_B(x) = \frac{\Delta x}{\sqrt{3}} \approx 0.01154700 \approx 0.012$ mm.
+
+Uzyskane pomiary w serii wyniosły kolejno: $36.600$ mm, $37.420$ mm, $30.700$ mm.
 
 Zatem wartości $l_1$, $l_2$, $l_3$ wynoszą (zapis na trzy sposoby):
-Uzyskane pomiary trzech różncyh wielkości wyniosły kolejno: $36.60$ mm, $37.42$ mm, $30.70$.
+
 
 \begin{itemize}
 \item $l_1 = 36.600 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
-\item $l_2 = 37.420 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
-\item $l_3 = 30.700 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
-\end{itemize}
 
-\begin{itemize}
+$l_2 = 37.420 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
+
+$l_3 = 30.700 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
+
 \item $l_1 = 36.600 \, (12) \enskip \text{mm}$
-\item $l_2 = 37.420 \, (12) \enskip \text{mm}$
-\item $l_3 = 30.700 \, (12) \enskip \text{mm}$
-\end{itemize}
 
-\begin{itemize}
+$l_2 = 37.420 \, (12) \enskip \text{mm}$ 
+
+$l_3 = 30.700 \, (12) \enskip \text{mm}$
+
 \item $l_1 = 36.600 \, (0.012) \enskip \text{mm}$
-\item $l_2 = 37.420 \, (0.012) \enskip \text{mm}$
-\item $l_3 = 30.700 \, (0.012) \enskip \text{mm}$
+
+$l_2 = 37.420 \, (0.012) \enskip \text{mm}$
+
+$l_3 = 30.700 \, (0.012) \enskip \text{mm}$
 \end{itemize}
 
-\subsection{Wyniki pomiarów śrubą mikrometryczną}
+\subsection{Pomiary za pomocą śruby mikrometrycznej}
 
 W tym ćwiczeniu, za pomocą śruby mikrometrycznej, badana była grubość metalowej płytki.
-Wykonane 60 pomiarów przedstawiliśmy w tabeli oraz za pomocą histogramu.
+Wykonane pomiary ($n=60$) przedstawione zostały w tablicy \ref{pomiary_sruba} oraz za pomocą histogramu (tablica \ref{histogram_sruba}).
 
 \textit{Uwaga}: pomiar wynoszący $2.97$ uznajemy za \textit{błąd gruby}.
-W tabeli został ten fakt zaznaczony poprzez skreślenie, zaś w histogramie (oraz wszelkich obliczeniach) ten pomiar został pominięty.
+W tabeli ten fakt został zaznaczony poprzez skreślenie, zaś w histogramie (oraz wszelkich obliczeniach) pomiar ten został pominięty.
 
-\begin{table}
+\begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline
@@ -299,30 +324,34 @@ W tabeli został ten fakt zaznaczony poprzez skreślenie, zaś w histogramie (or
 \hline
 \end{tabular}
 \caption{Wyniki wielokrotnych pomiarów grubości płytki za pomocą śruby mikrometrycznej.}
+\label{pomiary_sruba}
 \end{table}
 
-\begin{table}
+\begin{table}[h]
 \centering
 \includegraphics[scale=0.7]{hist.pdf}
 \caption{Histogram pomiarów grubości płytki za pomocą śruby mikrometrycznej.}
+\label{histogram_sruba}
 \end{table}
 
+
 Oznaczmy pomiary jako $x_i$, $i = 1, \dots, 59$.
+
 Średnia wartość wszystkich pomiarów wynosi: $x = \frac{1}{59} \sum_{i = 1}^{59} x_i = \frac{1}{59} \cdot 173.22 \approx 2.935932203389$.
+
 Odchylenie standardowe: $s_x = \sqrt{\frac{\sum_{i=1}^{59} (x_i - x)^2}{59 - 1}} \approx 0.0064643969$.
 
-Niepewność typu A: $u_x (\text{typ A}) = \frac{s_x}{\sqrt{59}} \approx 0.00084159279 \enskip \text{mm} \approx 0.0009 \enskip \text{mm}$.
+Niepewność typu A: $u_x (\text{typ A}) = \frac{s_x}{\sqrt{59}} \approx 0.00084159279 \enskip \text{mm} \approx 0.00084 \enskip \text{mm}$.
 
-Niepewność typu B: $u_x (\text{typ B}) = \sqrt{\frac{(\Delta x)^2}{3} + \frac{(\Delta x_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.006454972 \approx 0.0065 \enskip \text{mm}$.
+Niepewność typu B: $u_x (\text{typ B}) = \sqrt{\frac{(\Delta x)^2}{3} + \frac{(\Delta x_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.006454972 \approx 0.00645 \enskip \text{mm}$.
 
-Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.00656201188 \approx 0.0066 \enskip \text{mm}$.
+Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.006504467695 \approx 0.0065 \enskip \text{mm}$.
 
 Ostatecznie, grubość płytki wynosi (zapis na 3 sposoby):
-
 \begin{itemize}
-\item $d = 2.9365$ mm, $u_x = 0.0066$ mm
-\item $d = 2.9365 \, (66)$ mm
-\item $d = 2.9365 \, (0.0066)$ mm
+\item $d = 2.9365$ mm, $u_x = 0.0065$ mm
+\item $d = 2.9365 \, (65)$ mm
+\item $d = 2.9365 \, (0.0065)$ mm
 \end{itemize}
 
 \subsection{Wyznaczanie objętości płytki}
@@ -340,15 +369,15 @@ u_V &= \sqrt{(\frac{\partial V}{\partial x})^2 \cdot u_x^2 + (\frac{\partial V}{
 	&= \sqrt{(yz \cdot u_x)^2 + (xz \cdot u_y)^2 + (xy \cdot u_z \text{(typ A)})^2 + (xy \cdot u_z \text{(typ B)})^2} \\
 	&= \sqrt{(30.7 \cdot 2.9365 \cdot 0.012)^2 + (37.01 \cdot 2.9365 \cdot 0.012)^2 + (37.01 \cdot 30.7 \cdot 0.0009))^2 + (37.01 \cdot 30.7 \cdot 0.0065)^2} \enskip \text{mm}^3\\
 	&\approx 58.4370490542980344 \enskip \text{mm}^3 \\
-	&\approx 59 \enskip \text{mm}^3
+	&\approx 58 \enskip \text{mm}^3
 \end{align*}
 
 Ostatecznie, objętość płytki wynosi (zapis na 3 sposoby):
 
 \begin{itemize}
-\item $V = 3336 \enskip \text{mm}^3$, $u_V = 59 \enskip \text{mm}^3$
-\item $V = 3336 \, (59) \enskip \text{mm}^3$
-\item $V = 3336 \, (59) \enskip \text{mm}^3$
+\item $V = 3336 \enskip \text{mm}^3$, $u_V = 58 \enskip \text{mm}^3$
+\item $V = 3336 \, (58) \enskip \text{mm}^3$
+\item $V = 3336 \, (58) \enskip \text{mm}^3$
 \end{itemize}
 
 \end{document}
