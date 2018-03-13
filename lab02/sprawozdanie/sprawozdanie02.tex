@@ -1,0 +1,149 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages}
+\usepackage{indentfirst}
+
+% Adjust penalties
+\brokenpenalty=1000
+\clubpenalty=1000
+\widowpenalty=1000
+
+%% Sets page size and margins
+\usepackage[a4paper]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{tikz}
+
+\usepackage{float}
+
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}.}
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}. \arabic{subsubsection}.}
+
+% The following commands are not supported in PSTricks at present
+% We define them conditionally, so when they are implemented,
+% this pgf file will use them.
+\ifx\du\undefined
+  \newlength{\du}
+\fi
+\setlength{\du}{15\unitlength}
+
+\newcommand{\Vsp}[1]{\vtop to #1 {}}
+\newcommand{\Hsp}[1]{\hbox to #1 {}}
+\newcommand{\Small}{\scriptsize}
+
+\title{Sprawozdanie nr 2}
+\date{}
+
+
+\begin{document}
+
+\begin{center}
+\begin{tabular}{|p{5.5cm}|l|l|c|}
+    \hline
+	% Row 1.1  
+	    Wydział \Vsp{4mm} &
+	    \multicolumn{1}{|l}{Dzień} &
+	    poniedziałek $17^{15} - 19^{30}$ &
+	    Nr zespołu \\
+	% Row 1.2
+	    \mbox{\small{Matematyki i Nauk Informatycznych}} &
+	    \multicolumn{1}{|l}{Data}  &
+	    &
+	    \multicolumn{1}{c|}{\Large{18}} \\
+    
+    \hline
+	% Row 2.1 
+	    Nazwisko i Imię: &
+	    \Small Ocena z przygotowania &
+	    \Small Ocena ze sprawozdania &
+	    \Small Ocena Końcowa \\
+	% Rows 2.2-2.4
+	    1. Jasiński Bartosz & & &\\
+	    2. Sadłocha Adrian & & & \\
+	    3. Wódkiewicz Andrzej & & & \\
+
+    \hline
+    % Row 3.1
+	    \multicolumn{2}{|l|}{Prowadzący \Vsp{4mm}} &
+	    \multicolumn{2}{|l|}{Podpis prowadzącego} \\  
+    % Row 3.2
+    	\multicolumn{2}{|l|}{dr inż. Jarosław Judyk} &
+    	\multicolumn{2}{|l|}{} \\    	
+    \hline
+\end{tabular}
+\label{pieczatka}
+\end{center}
+
+{\let\newpage\relax\maketitle}  % stolen from: https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
+\setcounter{secnumdepth}{2}
+
+
+\section{Opis ćwiczenia}
+Ćwiczenie złożone było z dwóch części:
+\begin{enumerate}
+	\item{Badanie anharmoniczności drgań wahadła matematycznego}
+	\item{Wyznaczanie przyspieszenia ziemskiego za pomocą wahadła różnicowego}
+\end{enumerate}
+
+
+\subsection{Wstęp teoretyczny}
+
+\textbf{Wahadłem matematycznym płaskim} nazywamy punkt materialny, poruszający się ruchem okrężnym w jednorodnym polu grawitacyjnym. Praktyczną realizacją tego pojęcia jest obciążnik (najczęściej kulka) o małych rozmiarach, zamocowany do nierozciągliwej nici o bardzo małej, pomijalnej masie (Rysunek \ref{wahadlo_matematyczne}). 
+
+\begin{figure}[h]
+\caption{Wahadło matematyczne}
+
+\label{wahadlo_matematyczne}
+\end{figure}
+
+Siłę ciężkości $\vec{F}_g = m\vec{g}$ działającą na ciężarek możemy rozłożyć na składową radialną $F_g \cos \theta$ oraz styczną do toru ruchu wahadła $F_g \sin \theta$. Składowa styczna wpływa na powrót ciężarka do położenia równowagi, gdyż działa ona zawsze przeciwnie do jego wychylenia. Z drugiej zasady dynamiki Newtona mamy więc:
+
+\begin{align*}
+ ma &= -mg\sin\theta \\
+ \frac{d^2S}{dt^2} &= -g\sin\theta
+\end{align*}
+
+Ponieważ $S = l \cdot \theta$:
+
+\[ \frac{d^2\theta}{dt^2} = -\frac{g}{l}\sin\theta \]
+
+Nie istnieje analityczne rozwiązanie tego równania różniczkowego.
+Dla małych kątów, można uprościć powyższy wzór, zakładając, że \, $\sin\theta \approx \theta$ \, -- wtedy równanie różniczkowe daje się rozwiązać analitycznie. W rezultacie otrzymujemy, że \textbf{dla wahadła matematycznego poruszającego się w zakresie małych kątów} (przy założeniu $\theta(0) = \theta_{max}$): 
+\[ \theta(t) = \theta_{max}\cos\left(\sqrt{\frac{g}{l}}\right), \] 
+czyli ruch \textbf{jest harmoniczny}, a okres tego ruchu wynosi
+\[ T = 2\pi~\sqrt{\frac{l}{g}} \]
+
+
+W ogólności (bez założenia małych wychyleń), korzystając z rozwinięcia funkcji $sin$ w szereg, możemy finalnie otrzymać zależność okresu drgań wahadła $T$ od kąta maksymalnego wychylenia $\theta_{max}$:
+
+\[ T = 2\pi ~ \sqrt[]{\frac{l}{g}}~f(\theta_{max}) , \enskip \text{gdzie} 
+\enskip \enskip f(\theta_{max}) = \sum\limits_{i=0}^{\infty} \left[ \frac{(2n)!}{(2^nn!)^2}\right]^2\sin^{2n}\left(\frac{\theta_{max}}{2} \right) \]
+
+Ruch wahadła matematycznego jest więc w ogólności \textbf{anharmoniczny} -- okres jest zależny od amplitudy.
+
+
+
+
+\subsection{Układ pomiarowy}
+Do przeprowadzenia obu części ćwiczenia posłużono się układem pomiarowym, przedstawionym na rysunku \ref{uklad_pomiarowy}. Do ruchomego elementu połączonego z nieruchomym statywem przymocowana była długa, nierozciągliwa nitka, o znikomo małej masie, z zamocowanym na jej końcu metalowym obciążnikiem. Ruch elementu w pionie pozwalał modyfikować długość wahadła. Do statywu przytwierdzony był również kątomierz oraz linijka, służące do pomiaru kolejno: kąta maksymalnego wychylenia wahadła oraz zmiany długości wahadła różnicowego. Pod statywem znajdował się elektroniczny układ pomiarowy, złożony z fotokomórki oraz modułu sterowania, za pomocą którego mierzony był okres wahadła.
+
+
+\begin{figure}[b]
+\caption{Schemat układu pomiarowego}
+
+\label{uklad_pomiarowy}
+\end{figure}
+
+
+
+\end{document}
