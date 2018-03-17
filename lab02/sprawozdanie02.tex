@@ -139,14 +139,15 @@ czyli ruch \textbf{jest harmoniczny}, a okres tego ruchu wynosi
 W ogólności (bez założenia małych wychyleń), korzystając z rozwinięcia funkcji $sin$
 w szereg, możemy finalnie otrzymać zależność okresu drgań wahadła $T$ od kąta
 maksymalnego wychylenia $\theta_{max}$:
-
-\[ 
-	T = 2\pi ~ \sqrt[]{\frac{l}{g}}~f(\theta_{max}) 
-, \enskip \text{gdzie} \enskip \enskip 
-f(\theta_{max}) = 
-	\sum\limits_{i=0}^{\infty} 
+\begin{equation} \label{eq:T}
+T = 2\pi ~ \sqrt[]{\frac{l}{g}}~f(\theta_{max}) ,
+\end{equation}
+\[
+ \text{gdzie} \enskip  \enskip f(\theta_{max}) = 
+	\sum\limits_{n=0}^{\infty} 
 		\left[ \frac{(2n)!}{(2^nn!)^2} \right]^2 
-			\sin^{2n}\left(\frac{\theta_{max}}{2} \right) \]
+			\sin^{2n}\left(\frac{\theta_{max}}{2} \right)
+\]
 
 Ruch wahadła matematycznego jest więc w ogólności \textbf{anharmoniczny} -- okres
 jest zależny od amplitudy.
@@ -175,51 +176,81 @@ oraz modułu sterowania, za pomocą którego mierzony był okres wahadła.
 \section{Pomiary i obliczenia}
 \subsection{Badanie zależności okresu drgań wahadła od kąta wychylenia}
 
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat nisi vitae est viverra, nec aliquet nulla dapibus. Integer pretium cursus libero, nec sagittis risus facilisis sed. Aenean suscipit iaculis risus, varius semper leo pharetra sagittis. Vivamus sapien velit, pulvinar vitae nibh sit amet, vulputate aliquam turpis. Integer eu sagittis felis. Donec semper lectus dolor, eu fringilla orci congue eget. Suspendisse dignissim justo feugiat, elementum urna dapibus, tempor purus. Aenean id fermentum eros.
 
-\begin{table}[h]
-\centering
-	\begin{tabular}{rrrrrrr}
-	\toprule
-	{} &$2T(\alpha=5^\circ)$ &$2T(10^\circ)$ &$2T(15^\circ)$ &$2T(20^\circ)$ &$2T(25^\circ)$ &$2T(30^\circ)$ \\
-	\midrule
-	1 &  2.6285 &  2.6343 &  2.6368 &  2.6454 &  2.6585 &  2.6701 \\
-	2 &  2.6295 &  2.6346 &  2.6359 &  2.6463 &  2.6589 &  2.6711 \\
-	3 &  2.6295 &  2.6344 &  2.6402 &  2.6467 &  2.6582 &  2.6714 \\
-	4 &  2.6307 &  2.6366 &  2.6394 &  2.6470 &  2.6590 &  2.6709 \\
-	5 &  2.6296 &  2.6358 &  2.6408 &  2.6467 &  2.6578 &  2.6701 \\
-	6 &  2.6286 &  2.6350 &  2.6404 &  2.6463 &  2.6593 &  2.6685 \\
-	7 &  2.6285 &  2.6342 &  2.6396 &  2.6463 &  2.6574 &  2.6698 \\
-	8 &  2.6303 &  2.6350 &  2.6401 &  2.6477 &  2.6588 &  2.6696 \\
-	9 &  2.6287 &  2.6352 &  2.6395 &  2.6476 &  2.6583 &  2.6694 \\
-	10 &  2.6298 &  2.6350 &  2.6396 &  2.6485 &  2.6584 &  2.6708 \\
-	\midrule
-	$2\overline{T}$& 2.62937 & 2.63501 & 2.63923 & 2.64685 & 2.64685 & 2.67017 \\ 
-	$s(2T)$ & 0.00078 & 0.00074 & 0.00160 & 0.00089 & 0.00057 & 0.00089 \\
-	\bottomrule
-\end{tabular}
-\caption{Seria pomiarów czasu trwania 2 okresów wahadła w zależności od kąta wychylenia}
-\label{pomiary_1}
-\end{table}
+Nulla ultricies vehicula tempor. Morbi rutrum velit justo, nec egestas sapien fermentum in. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor nibh vitae purus dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti. Nulla mollis mollis libero, a rutrum nulla congue non. Praesent elementum tincidunt arcu, ut posuere elit pulvinar non. Morbi vitae enim lectus. Vivamus id tincidunt enim. Etiam auctor quis justo non tempus. In sed ante leo. Aliquam a augue at lorem elementum commodo quis vitae urna. Donec eget risus auctor, volutpat neque vitae, lobortis quam.
 
 
-\begin{figure}[h!]
-\centering
-	\includegraphics[scale=0.8]{wykres-1_0.pdf}
-\caption{Wartość średnia 2 okresów wahadła w zależności od maksymalnego kąta wychylenia}
-\label{wykres_1}
-\end{figure}
+%\begin{table}[h]
+%\centering
+%	\begin{tabular}{rrrrrrr}
+%	\toprule
+%	{} &$2T(\alpha=5^\circ)$ &$2T(10^\circ)$ &$2T(15^\circ)$ &$2T(20^\circ)$ &$2T(25^\circ)$ &$2T(30^\circ)$ \\
+%	\midrule
+%	1 &  2.6285 &  2.6343 &  2.6368 &  2.6454 &  2.6585 &  2.6701 \\
+%	2 &  2.6295 &  2.6346 &  2.6359 &  2.6463 &  2.6589 &  2.6711 \\
+%	3 &  2.6295 &  2.6344 &  2.6402 &  2.6467 &  2.6582 &  2.6714 \\
+%	4 &  2.6307 &  2.6366 &  2.6394 &  2.6470 &  2.6590 &  2.6709 \\
+%	5 &  2.6296 &  2.6358 &  2.6408 &  2.6467 &  2.6578 &  2.6701 \\
+%	6 &  2.6286 &  2.6350 &  2.6404 &  2.6463 &  2.6593 &  2.6685 \\
+%	7 &  2.6285 &  2.6342 &  2.6396 &  2.6463 &  2.6574 &  2.6698 \\
+%	8 &  2.6303 &  2.6350 &  2.6401 &  2.6477 &  2.6588 &  2.6696 \\
+%	9 &  2.6287 &  2.6352 &  2.6395 &  2.6476 &  2.6583 &  2.6694 \\
+%	10 &  2.6298 &  2.6350 &  2.6396 &  2.6485 &  2.6584 &  2.6708 \\
+%	\midrule
+%	$2\overline{T}$& 2.62937 & 2.63501 & 2.63923 & 2.64685 & 2.64685 & 2.67017 \\ 
+%	$s(2T)$ & 0.00078 & 0.00074 & 0.00160 & 0.00089 & 0.00057 & 0.00089 \\
+%	\bottomrule
+%\end{tabular}
+%\caption{Seria pomiarów czasu trwania 2 okresów wahadła w zależności od kąta wychylenia}
+%\label{pomiary_1}
+%\end{table}
+%
+%
+%\begin{figure}[h]
+%\centering
+%	\includegraphics[scale=0.8]{wykres-1_0.pdf}
+%\caption{Wartość średnia 2 okresów wahadła w zależności od maksymalnego kąta wychylenia}
+%\label{wykres_1}
+%\end{figure}
+%
+%
+%\begin{figure}[h]
+%\centering
+%	\includegraphics[scale=0.85]{wykres-2_1.pdf}
+%\caption{Odchylenie standardowe 2 okresów wahadła w zależności od maksymalnego kąta wychylenia}
+%\end{figure}
 
+\subsection{Badanie zależności okresu drgań od zmian długości wahadła}
+Przekształcając wzór (\ref{eq:T})  otrzymujemy zależność:
+\[l = g\frac{T^2}{4\pi^2}\frac{1}{f^2(\theta_{max})} \]
+Dalej, korzystając z podstawienia \[g' = \frac{g}{f^2(\theta_{max})} \] oraz z faktu, że mierzona długość wahadła nie jest jego rzeczywistą długością -- wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła i są jedynie wartościami względnymi -- otrzymujemy finalnie:
+\begin{equation} \label{eq:l_wzg}
+ l_{wzg} = -g'\frac{T^2}{4\pi^2}
+\end{equation}
 
-\begin{figure}[h!]
-\centering
-	\includegraphics[scale=0.85]{wykres-2_1.pdf}
-\caption{Odchylenie standardowe 2 okresów wahadła w zależności od maksymalnego kąta wychylenia}
-\end{figure}
+Uzależniono w ten sposób długość wahadła od okresu drgań. Po dokonaniu pomiarów okresu przy zmiennej długości wahadła można skorzystać z regresji liniowej i wyznaczyć nachylenie prostej.
 
-\subsection{Badanie zależności okresu drgań wahadła od zmian długości}
-\subsubsection{Pomiary okresu dla wahadła różnicowego i małego kąta}
+\subsubsection{Pomiary okresu dla małego kąta}
 
+Po przeprowadzeniu pomiarów dla kąta $\theta_{max} = 10^\circ$ dokonano wyznaczenia 
+przyspieszenia ziemskiego przy użyciu metody najmniejszych kwadratów. 
+Wyniki pomiarów wraz z obliczeniami cząstkowymi znajdują się w tabeli \ref{pomiary_2}.
+W celu wyznaczenia współczynników regresji liniowej, jak i ich niepewności pomiarowych skorzystano ze wzorów:
+\begin{align*}
+a &= \frac{n \Sigma X Y - \Sigma X \Sigma Y}{n \Sigma X^2 - \left(\Sigma X\right)^2} \\
+b &= \frac{1}{n}\left(\Sigma Y - a \Sigma X\right) \\
+u(a) &= \sqrt{\frac{n}{n-2} \frac{\Sigma Y^2 - a\Sigma XY - b\Sigma Y}{n\Sigma X^2-\left(\Sigma X \right)^2}} \\
+u(b) &= u(a)\cdot \sqrt{\frac{\Sigma X^2}{n}}
+\end{align*}
 
+Uzyskane wartości wyniosły:
+\begin{align*}
+a &= -9.789(31) \\
+b &= 909.4(1.5)
+\end{align*}
+
+Zatem przekształcając $a$ zgodnie z (\ref{eq:l_wzg}):  $ g' = 9.789(31) $.
 
 \begin{table}[h!]
 \centering
@@ -273,6 +304,7 @@ oraz modułu sterowania, za pomocą którego mierzony był okres wahadła.
 	\end{tabular}
 	
 \caption{Pomiary 2 okresów wahadła dla maksymalnego kąta wychylenia $\theta_{max} = 25^\circ$ w  zależności od $l$ wraz z obliczeniami do wyznaczenia regresji liniowej}
+\label{pomiary_3}
 \end{table}
 
 \begin{figure}[h!]
