@@ -98,9 +98,9 @@
 
 \subsection{Wstęp teoretyczny}
 
-\textbf{Wahadłem matematycznym płaskim} nazywamy punkt materialny, poruszający się
-ruchem okrężnym w jednorodnym polu grawitacyjnym. Praktyczną realizacją tego pojęcia
-jest obciążnik (najczęściej kulka) o małych rozmiarach, zamocowany do nierozciągliwej
+\textbf{Wahadłem matematycznym płaskim} nazywamy punkt materialny, poruszający się po
+fragmęcie okregu w jednorodnym polu grawitacyjnym. Praktyczną realizacją tego pojęcia
+jest obciążnik (najczęściej kulka) o małych rozmiarach, zamocowany na nierozciągliwej
 nici o bardzo małej, pomijalnej masie (Rysunek \ref{wahadlo_matematyczne}).
 
 \begin{figure}[h!]
@@ -112,7 +112,7 @@ nici o bardzo małej, pomijalnej masie (Rysunek \ref{wahadlo_matematyczne}).
 
 Siłę ciężkości $\vec{F}_g = m\vec{g}$ działającą na ciężarek możemy rozłożyć na
 składową radialną $F_g \cos \theta$ oraz styczną do toru ruchu wahadła $F_g \sin \theta$.
-Składowa styczna wpływa na powrót ciężarka do położenia równowagi, gdyż działa ona
+Składowa styczna wpływa na zmianę wektora prędkości ciężarka, gdyż działa ona
 zawsze przeciwnie do jego wychylenia. Z drugiej zasady dynamiki Newtona mamy więc:
 
 \begin{align*}
@@ -131,7 +131,7 @@ można uprościć powyższy wzór, zakładając, że \, $\sin\theta \approx \the
 że \textbf{dla wahadła matematycznego poruszającego się w zakresie małych kątów}
 (przy założeniu $\theta(0) = \theta_{max}$):
 
-\[ \theta(t) = \theta_{max}\cos\left(\sqrt{\frac{g}{l}}\right), \] 
+\[ \theta(t) = \theta_{max}\cos\left(\sqrt{\frac{g}{l}}\right), \]   %TODO MOŻLIWE ŻE BŁĄD(nie jest zalezne od czasu)
 
 czyli ruch \textbf{jest harmoniczny}, a okres tego ruchu wynosi
 
@@ -155,9 +155,9 @@ T = 2\pi ~ \sqrt[]{\frac{l}{g}}~f(\theta_{max}) ,
 Ruch wahadła matematycznego jest więc w ogólności \textbf{anharmoniczny} -- okres
 jest zależny od amplitudy.
 
-\textbf{Wahadło różnicowe} to wahadło o ruchomym punkcie zawieszenia, pozwalające
-mierzyć w precyzyjny sposób zmianę jego długości, nie znając długości bezwzględnej
-wahadła. Wykonując dwa pomiary $T_1, T_2$ dla różnych długości wahadła $l_1, l_2$ otrzymujemy:
+\textbf{Wahadło różnicowe} to wahadło w którym mamy możliwość zmiany długości nici na której 
+jest zawieszony ciężarek, pozwalające
+mierzyć w precyzyjny sposób zmianę jej długości, nie znając długości bezwzględnej. Wykonując dwa pomiary $T_1, T_2$ dla różnych długości wahadła $l_1, l_2$ otrzymujemy:
 
 \[ T^2_1 - T^2_2 = \frac{4\pi ^2}{g}\left(l_1-l_2\right) f(\theta_{max}) \]
 
@@ -166,7 +166,7 @@ Do przeprowadzenia obu części ćwiczenia posłużono się układem pomiarowym,
 przedstawionym na rysunku \ref{uklad_pomiarowy}. Do ruchomego elementu 
 połączonego z nieruchomym statywem przymocowana była długa, nierozciągliwa nitka, 
 o znikomo małej masie, z zamocowanym na jej końcu metalowym obciążnikiem. 
-Ruch elementu w pionie pozwalał modyfikować długość wahadła. Do statywu 
+Statyw pozwalał na modyfikowanie długość wahadła. Do statywu 
 przytwierdzony był również kątomierz oraz linijka, służące do pomiaru kolejno:
 kąta maksymalnego wychylenia wahadła oraz zmiany długości wahadła różnicowego.
 Pod statywem znajdował się elektroniczny układ pomiarowy, złożony z fotokomórki
@@ -244,10 +244,10 @@ a kątem maksymalnego wychylenia (rysunek \ref{fig:std}).
 \end{figure}
 
 
-\subsection{Badanie zależności okresu drgań od zmian długości wahadła}
+\subsection{Badanie zależności okresu drgań od zmian długości wahadła} %TODO możliwe że tu trzeba coś lepiej wytłumaczyć (wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła i są jedynie wartościami względnymi)
 Przekształcając wzór (\ref{eq:T})  otrzymujemy zależność:
 \[l = g\frac{T^2}{4\pi^2}\frac{1}{f^2(\theta_{max})} \]
-Dalej, korzystając z podstawienia \[g' = \frac{g}{f^2(\theta_{max})} \] oraz z faktu, że mierzona długość wahadła nie jest jego rzeczywistą długością -- wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła i są jedynie wartościami względnymi -- otrzymujemy finalnie:
+Dalej, korzystając z podstawienia \[g' = \frac{g}{f^2(\theta_{max})} \] oraz z faktu, że mierzona długość  wahadła nie jest jego rzeczywistą długością -- wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła i są jedynie wartościami względnymi -- otrzymujemy finalnie:
 \begin{equation} \label{eq:l_wzg}
  l_{wzg} = -g'\frac{T^2}{4\pi^2}
 \end{equation}
@@ -345,7 +345,7 @@ uzyskujemy: \[ g = g' \cdot 1.0120289 \approx 9.773(23) \tfrac{m}{s^2}\]
 
 
 \subsection{Wnioski}
-
+%TODO JESZCZE MOŻNA WSPOMNIEĆ O TYM JAKIE JEST PRAWDZIWE g W WARSZAWIE 
 Po wykonaniu obu ćwiczeń potwierdzono anharmoniczność ruchu wahadła matematycznego oraz uzyskano 2 wartości przyspieszenia ziemskiego: $9.789(31) \tfrac{m}{s^2}$ oraz $9.773(23) \tfrac{m}{s^2}$.
 
 W drugim ćwiczeniu, pomimo zastosowania korekty na anharmoniczność drgań przy serii pomiarów dla dużego kąta ($\theta_{max} = 25^\circ$), uzyskana
