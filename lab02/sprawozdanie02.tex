@@ -131,7 +131,7 @@ można uprościć powyższy wzór, zakładając, że \, $\sin\theta \approx \the
 że \textbf{dla wahadła matematycznego poruszającego się w zakresie małych kątów}
 (przy założeniu $\theta(0) = \theta_{max}$):
 
-\[ \theta(t) = \theta_{max}\cos\left(\sqrt{\frac{g}{l}}\right), \]   %TODO MOŻLIWE ŻE BŁĄD(nie jest zalezne od czasu)
+\[ \theta(t) = \theta_{max}\cos\left(\sqrt{\frac{g}{l}}\,t\right), \]
 
 czyli ruch \textbf{jest harmoniczny}, a okres tego ruchu wynosi
 
@@ -244,12 +244,16 @@ a kątem maksymalnego wychylenia (rysunek \ref{fig:std}).
 \end{figure}
 
 
-\subsection{Badanie zależności okresu drgań od zmian długości wahadła} %TODO możliwe że tu trzeba coś lepiej wytłumaczyć (wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła i są jedynie wartościami względnymi)
+\subsection{Badanie zależności okresu drgań od zmian długości wahadła}
+
 Przekształcając wzór (\ref{eq:T})  otrzymujemy zależność:
 \[l = g\frac{T^2}{4\pi^2}\frac{1}{f^2(\theta_{max})} \]
-Dalej, korzystając z podstawienia \[g' = \frac{g}{f^2(\theta_{max})} \] oraz z faktu, że mierzona długość  wahadła nie jest jego rzeczywistą długością -- wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła i są jedynie wartościami względnymi -- otrzymujemy finalnie:
+Dalej, korzystając z podstawienia \[g' = \frac{g}{f^2(\theta_{max})} \]
+oraz z faktu, że odczytywana z linijki długość wahadła nie jest jego rzeczywistą długością --
+wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła --
+otrzymujemy finalnie:
 \begin{equation} \label{eq:l_wzg}
- l_{wzg} = -g'\frac{T^2}{4\pi^2}
+ l_{odczyt} = -g'\frac{T^2}{4\pi^2}
 \end{equation}
 
 W ten sposób po dokonaniu pomiarów okresu przy zmiennej długości wahadła można skorzystać z regresji liniowej i wyznaczyć nachylenie prostej, a w rezultacie wartość $g$.
@@ -345,15 +349,19 @@ uzyskujemy: \[ g = g' \cdot 1.0120289 \approx 9.773(23) \tfrac{m}{s^2}\]
 
 
 \subsection{Wnioski}
-%TODO JESZCZE MOŻNA WSPOMNIEĆ O TYM JAKIE JEST PRAWDZIWE g W WARSZAWIE 
-Po wykonaniu obu ćwiczeń potwierdzono anharmoniczność ruchu wahadła matematycznego oraz uzyskano 2 wartości przyspieszenia ziemskiego: $9.789(31) \tfrac{m}{s^2}$ oraz $9.773(23) \tfrac{m}{s^2}$.
+Po wykonaniu obu ćwiczeń potwierdzono anharmoniczność ruchu wahadła matematycznego oraz uzyskano
+2 wartości przyspieszenia ziemskiego: $9.789(31) \tfrac{m}{s^2}$ oraz $9.773(23) \tfrac{m}{s^2}$.
 
-W drugim ćwiczeniu, pomimo zastosowania korekty na anharmoniczność drgań przy serii pomiarów dla dużego kąta ($\theta_{max} = 25^\circ$), uzyskana
-wartość przyspieszenia ziemskiego była mniej dokładna niż wartość uzyskana
-przy serii pomiarów dla kąta mniejszego ($\theta_{max} = 10^\circ$).
-Oznacza to, że niedoskonałości sprzętu pomiarowego i błędy eksperymentatorów
-znacznie wpłynęły na wyniki pomiarów.
-To przypuszczenie dodatkowo potwierdza kształt wykresu odchylenia standardowego z pierwszego ćwiczenia (rysunek \ref{fig:std}).
+Znając wartość przyspieszenia ziemskiego w Warszawie ($g\approx9,8123 \tfrac{m}{s^2}$)
+można zauważyć, że w drugim ćwiczeniu pomimo zastosowania korekty na anharmoniczność drgań
+przy serii pomiarów dla dużego kąta ($\theta_{max} = 25^\circ$), uzyskana wartość
+przyspieszenia ziemskiego była mniej dokładna niż wartość uzyskana bez zastosowania
+korekty przy serii pomiarów dla kąta mniejszego ($\theta_{max} = 10^\circ$).
+Oznacza to, że niedoskonałości sprzętu pomiarowego i błędy eksperymentatorów znacznie
+wpłynęły na wyniki pomiarów.
+To przypuszczenie dodatkowo potwierdza kształt wykresu odchylenia standardowego
+z pierwszego ćwiczenia (rysunek \ref{fig:std}).
+
 
 Aby zmniejszyć niedoskonałości pomiarów należałoby zadbać o dokładniejszy sposób odczytu
 kąta maksymalnego wychylenia wahadła (wyeliminować zjawisko paralaksy) oraz dodać do
