@@ -97,6 +97,90 @@
 
 \section{Pomiary i obliczenia}
 
+\subsection{Wyznaczenie objętości kulek}
+
+W celu wyznaczenia objętości kulek dokonaliśmy 10 pomiarów średnicy za pomocą śruby mikrometrycznej.
+Wyniki przedstawiliśmy w tabeli \ref{kulki_srednica}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{lrr}
+		\toprule
+		L.p. &  średnica (mm) &  promień (mm) \\
+		\midrule
+		1 &           2.77 &         1.385 \\
+		2 &           2.78 &         1.390 \\
+		3 &           2.78 &         1.390 \\
+		4 &           2.77 &         1.385 \\
+		5 &           2.77 &         1.385 \\
+		6 &           2.76 &         1.380 \\
+		7 &           2.77 &         1.385 \\
+		8 &           2.78 &         1.390 \\
+		9 &           2.78 &         1.390 \\
+		10 &           2.77 &         1.385 \\
+		\midrule
+		Średnia: & 2.773 & 1.3865 \\
+		Odchylenie standardowe: & 0.006749 & 0.003375 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Wyniki 10 pomiarów średnicy kulek}
+	\label{kulki_srednica}
+\end{table}
+
+Średnia wartość średnicy wynosi $d = 2.773$ mm, zaś średnia wartość promienia $r = \frac 1 2 \cdot 2.773 = 1.3865$ mm.
+
+Oznaczmy przez $\Delta d$ -- niepewność wynikającą z wykorzystania śruby mikrometrycznej,
+zaś przez $\Delta d_e$ -- niepewność eksperymentatora.
+
+W przypadku użytej przez nas śruby mikrometrycznej $\Delta d = 0.01$ mm.
+Za niepewność eksperymentatora przyjęliśmy połowę najmniejszej podziałki, tj. $\Delta d_e = 0.005$ mm.
+
+Zatem niepewność pomiarowa typu B wynosi:
+
+\begin{align*}
+	u_b(d) &= \sqrt{\left(\frac{\Delta d}{\sqrt 3}\right)^2 + \left(\frac{\Delta d_e}{\sqrt 3}\right)^2} \\
+	&= \sqrt{\left(\frac{0.01}{\sqrt 3}\right)^2 + \left(\frac{0.005}{\sqrt 3}\right)^2} \, \text{mm} \\
+	&\approx 0.006454972243679028 \, \text{mm} \\
+	&\approx 0.0065 \, \text{mm}
+\end{align*}
+
+Ponadto należy uwzględnić niepewność pomiarową typu A.
+Oznaczmy przed $d_1, \dots, d_{10}$ kolejne promienie kulek.
+Wtedy:
+
+\begin{align*}
+	u_a(d) &= \sqrt{S^{2}_{\overline{d}}} \\
+	&= \sqrt{\frac{1}{10 \cdot 9} \cdot \sum_{i=1}^{10} (d_i - d)^2} \\
+	&\approx 0.0021343747458109344 \, \text{mm} \\
+	&\approx 0.0022 \, \text{mm}
+\end{align*}
+
+Ostatecznie, całkowita niepewność standardowa pomiaru średnicy (uwzględniająca zarówno niepewności typu B, jak i odchylenie standardowe) wynosi:
+
+\begin{align*}
+	u(d) &= \sqrt{u_a^2(d) + u_b^2(d)} \\
+	&\approx \sqrt{0.0022^2 + 0.0065^2} \, \text{mm} \\
+	&\approx 0.006862215385719105 \, \text{mm} \\
+	&\approx 0.007 \, \text{mm}
+\end{align*}
+
+W celu wyliczenia objętości posłużymy się wzorem $V = \frac 4 3 \pi r^3 = \frac 4 3 \pi 1.3865^3$.
+Odpowiadającą niepewność wyliczymy za pomocą wzoru $u(V) = \sqrt{\left(\frac{\partial V}{\partial r}\right)^2 \cdot u^2(r)}$.
+
+Ponieważ $\frac{\partial V}{\partial r} = 4 \pi r^2$, otrzymujemy:
+
+\begin{align*}
+	u(V) &= \sqrt{\left(4 \pi r^2\right)^2 \cdot u^2(r)} \\
+	&= 4 \pi r^2 \cdot u(r) \\
+	&= 4 \pi r^2 \cdot \frac 1 2 u(d) \\
+	&= 2 \pi r^2 \cdot u(d) \\
+	&\approx 2 \pi r^2 \cdot 0.007 \, \text{mm} \\
+	&\approx 0.0609814549988 \, \text{mm}^3 \\
+	&\approx 0.0610 \, \text{mm}^3
+\end{align*}
+
+Zatem objętość pojedynczej kulki wynosi $V = 1.3865 \, (610) \, \text{mm}^3$.
+
 \subsection{Badanie współczynnika lepkości cieczy}
 
 \subsection{Wnioski}
