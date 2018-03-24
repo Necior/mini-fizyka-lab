@@ -181,6 +181,45 @@ Ponieważ $\frac{\partial V}{\partial r} = 4 \pi r^2$, otrzymujemy:
 
 Zatem objętość pojedynczej kulki wynosi $V = 1.3865 \, (610) \, \text{mm}^3$.
 
+\section{Wyznaczenie gęstości kulki}
+
+Do wyznaczenia gęstości kulki, oprócz wyżej obliczonej objętości, potrzebna jest masa pojedynczej kulki.
+W tym celu posłużyliśmy się wagą analityczną, na której zważyliśmy najpierw bibułkę, a następnie 10 kulek na tej samej bibułce.
+
+Podziałka wagi wynosiła $0.1$ mg.
+Za niepewność eksperymentatora przyjęliśmy połowę podziałki.
+Niepewność wyznaczenia masy przy tych warunkach wynosi:
+
+\begin{align*}
+	u(m) &= \sqrt{\left(\frac{0.1}{\sqrt 3}\right)^2 + \left(\frac{0.05}{\sqrt 3}\right)^2} \, \text{mg} \\
+	&\approx 0.064549722436790 \, \text{mg} \\
+	&\approx 0.0646 \, \text{mg} \\
+	&\approx 0.1 \, \text{mg}
+\end{align*}
+
+Uzyskaliśmy masę bibułki $m_b = 543.9 (1) \, \text{mg}$ oraz masę 10 kulek wraz z bibułką $M = 1431.2 (1) \, \text{mg}$.
+Masa pojedynczej (uśrednionej) kulki wynosi $m_k = \frac{M-m_b}{10} = 887.3 \, \text{mg}$ z niepewnością:
+
+\begin{align*}
+	u(m_k) &= \sqrt{\left(\frac{\partial m_k}{\partial M}\right)^2 \cdot u^2(m) + \left(\frac{\partial m_k}{\partial m_b}\right)^2 \cdot u^2(m)} \\
+	&= \sqrt{\frac{1}{100} u^2(m) + \frac{1}{100} u^2(m)} \\
+	&= \frac{\sqrt 2}{10} u(m) \\
+	&\approx 0.0141421356237 \, \text{mg} \\
+	&\approx 0.02 \, \text{mg}
+\end{align*}
+
+W celu wyznaczenia gęstości kulki posłużymy się wzorem $\rho_k = \frac{m_k}{V}$.
+Oszacowanie niepewności uzyskamy poprzez zastosowanie poniższych obliczeń:
+
+\begin{align*}
+	u(\rho_k) &= \sqrt{\left(\frac{\partial \rho_k}{\partial m_k}\right)^2 \cdot u^2(m_k) + \left(\frac{\partial \rho_k}{\partial V}\right)^2 \cdot u^2(V)} \\
+	&= \sqrt{\left(\frac 1 V\right)^2 u^2(m_k) + \left(\frac{-m_k}{V^2}\right)^2 u^2(V)} \\
+	&\approx 28.155330243 \, \frac{\text{g}}{\text{cm}^3} \\
+	&\approx 28.16 \, \frac{\text{g}}{\text{cm}^3}
+\end{align*}
+
+Zatem gęstość wynosi $\rho_k = \frac{m_k}{V} = 639.96 (28.16) \, \frac{\text{g}}{\text{cm}^3}$.
+
 \section{Badanie współczynnika lepkości cieczy}
 
 \subsection{Wnioski}
