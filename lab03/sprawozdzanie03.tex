@@ -164,7 +164,7 @@ Ostatecznie, całkowita niepewność standardowa pomiaru średnicy (uwzględniaj
 	&\approx 0.007 \, \text{mm}
 \end{align*}
 
-W celu wyliczenia objętości posłużymy się wzorem $V = \frac 4 3 \pi r^3 = \frac 4 3 \pi 1.3865^3$.
+W celu wyliczenia objętości posłużymy się wzorem $V = \frac 4 3 \pi r^3 = \frac 4 3 \pi 1.3865^3 \, \text{mm}^3 \approx 11.1647301 \, \text{mm}^3 \approx 11.165 \, \text{mm}^3$.
 Odpowiadającą niepewność wyliczymy za pomocą wzoru $u(V) = \sqrt{\left(\frac{\partial V}{\partial r}\right)^2 \cdot u^2(r)}$.
 
 Ponieważ $\frac{\partial V}{\partial r} = 4 \pi r^2$, otrzymujemy:
@@ -176,10 +176,10 @@ Ponieważ $\frac{\partial V}{\partial r} = 4 \pi r^2$, otrzymujemy:
 	&= 2 \pi r^2 \cdot u(d) \\
 	&\approx 2 \pi r^2 \cdot 0.007 \, \text{mm} \\
 	&\approx 0.0609814549988 \, \text{mm}^3 \\
-	&\approx 0.0610 \, \text{mm}^3
+	&\approx 0.061 \, \text{mm}^3
 \end{align*}
 
-Zatem objętość pojedynczej kulki wynosi $V = 1.3865 \, (610) \, \text{mm}^3$.
+Zatem objętość pojedynczej kulki wynosi $V = 11.165 \, (61) \, \text{mm}^3$.
 
 \section{Wyznaczenie gęstości kulki}
 
@@ -198,7 +198,7 @@ Niepewność wyznaczenia masy przy tych warunkach wynosi:
 \end{align*}
 
 Uzyskaliśmy masę bibułki $m_b = 543.9 (1) \, \text{mg}$ oraz masę 10 kulek wraz z bibułką $M = 1431.2 (1) \, \text{mg}$.
-Masa pojedynczej (uśrednionej) kulki wynosi $m_k = \frac{M-m_b}{10} = 887.3 \, \text{mg}$ z niepewnością:
+Masa pojedynczej (uśrednionej) kulki wynosi $m_k = \frac{M-m_b}{10} = 88.73 \, \text{mg}$ z niepewnością:
 
 \begin{align*}
 	u(m_k) &= \sqrt{\left(\frac{\partial m_k}{\partial M}\right)^2 \cdot u^2(m) + \left(\frac{\partial m_k}{\partial m_b}\right)^2 \cdot u^2(m)} \\
@@ -214,11 +214,11 @@ Oszacowanie niepewności uzyskamy poprzez zastosowanie poniższych obliczeń:
 \begin{align*}
 	u(\rho_k) &= \sqrt{\left(\frac{\partial \rho_k}{\partial m_k}\right)^2 \cdot u^2(m_k) + \left(\frac{\partial \rho_k}{\partial V}\right)^2 \cdot u^2(V)} \\
 	&= \sqrt{\left(\frac 1 V\right)^2 u^2(m_k) + \left(\frac{-m_k}{V^2}\right)^2 u^2(V)} \\
-	&\approx 28.155330243 \, \frac{\text{g}}{\text{cm}^3} \\
-	&\approx 28.16 \, \frac{\text{g}}{\text{cm}^3}
+	&\approx 0.04345624000 \, \frac{\text{mg}}{\text{cm}^3} \\
+	&\approx 0.044 \, \frac{\text{mg}}{\text{cm}^3}
 \end{align*}
 
-Zatem gęstość wynosi $\rho_k = \frac{m_k}{V} = 639.96 (28.16) \, \frac{\text{g}}{\text{cm}^3}$.
+Zatem gęstość wynosi $\rho_k = \frac{m_k}{V} = 7.947 (44) \, \frac{\text{mg}}{\text{cm}^3}$.
 
 \section{Badanie współczynnika lepkości cieczy}
 
@@ -228,9 +228,9 @@ Wprowadziliśmy następujące oznaczenia:
 
 \begin{itemize}
 	\item $g$ -- przyspieszenie ziemskie, $g = 9.8123 \, \frac{\text{m}}{\text{s}^2}$ (wartość dla Warszawy);
-	\item $r$ -- promień kulki, $r = 1.3865$;
+	\item $r$ -- promień kulki, $r = 1.3865$ mm;
 	\item \vgr -- prędkość graniczna poruszania się kulki w cieczy;
-	\item $\rho_k$ -- gęstość kulki, $\rho_k = 639.96 (28.16) \, \frac{\text{g}}{\text{cm}^3}$;
+	\item $\rho_k$ -- gęstość kulki, $\rho_k = 7.947 \, \frac{\text{mg}}{\text{cm}^3}$;
 	\item $\rho_c$ -- gęstość cieczy;
 	\item $R$ -- promień cylindra, w którym znajdowała się ciecz, $R = 2.00$ cm;
 	\item $h$ -- wysokość słupa cieczy, $h = 100.0$ cm.
@@ -293,40 +293,112 @@ Ponadto, niepewność typu A pomiaru czasu wynosi:
 \begin{align*}
 	u_a(t) &= \sqrt{S^{2}_{\overline{t}}} \\
 	&= \sqrt{\frac{1}{5 \cdot 4} \cdot \sum_{i=1}^{5} (t_i - t)^2} \\
-	&\approx 0.0054159999 \, \text{s} \\
-	&\approx 0.006 \, \text{s}
+	&\approx 0.0735934779 \, \text{s} \\
+	&\approx 0.08 \, \text{s}
 \end{align*}
 
-Ostatecznie niepewność czasu spadku wynosi $u(t) = \sqrt{u_a^2(t) + u_b^2(t)} = \sqrt{0.006^2 + 0.35^2} \, \text{s} \approx 0.350051424 \, \text{s} \approx 0.36\, \text{s}$.
+Ostatecznie niepewność czasu spadku wynosi $u(t) = \sqrt{u_a^2(t) + u_b^2(t)} = \sqrt{0.08^2 + 0.35^2} \, \text{s} \approx 0.3590264 \, \text{s} \approx 0.36\, \text{s}$.
 
 Spadek był liczony na fragmencie słupa cieczy o wysokości równej $100.00$ cm.
 Ponieważ na linijce podziałka wynosiła $0.1$ cm, to niepewność tej wartości wynosi $0.07$ cm.
 
-Ponadto przyjęliśmy, że na przed wkroczeniem na odcinek pomiarowy kulka osiągnęła prędkość graniczną.
+Ponadto przyjęliśmy, że przed wkroczeniem na odcinek pomiarowy kulka osiągnęła prędkość graniczną.
 Zatem prędkość graniczną możemy wyliczyć na podstawie przebytej odległości oraz czasu spadku:
-$\vgr = \frac{h}{t} = \frac{100.00 \, \text{cm}}{19.654 \, \text{s}} \approx 5.088022 \, \frac{\text{cm}}{\text{s}^2} \approx 5.088 \, \frac{\text{cm}}{\text{s}^2}$.
+$\vgr = \frac{h}{t} = \frac{100.00 \, \text{cm}}{19.654 \, \text{s}} \approx 5.088022 \, \frac{\text{cm}}{\text{s}} \approx 5.088 \, \frac{\text{cm}}{\text{s}}$.
 
 Niepewność tej wartości:
 
 \begin{align*}
 	u(\vgr) &= \sqrt{\left(\frac{\partial \vgr}{\partial h}\right)^2 u2^(h) + \left(\frac{\partial \vgr}{\partial t}\right)^2 u^2(t)} \\
 	&= \sqrt{\frac{u^2(h)}{t^2} + \frac{h^2 u^2(t)}{t^4}} \\
-	&\approx 0.09326474416 \, \frac{\text{cm}}{\text{s}^2} \\
-	&\approx 0.094 \, \frac{\text{cm}}{\text{s}^2}
+	&\approx 0.305392770313 \, \frac{\text{cm}}{\text{s}} \\
+	&\approx 0.31 \, \frac{\text{cm}}{\text{s}}
 \end{align*}
 
 Do wyliczenia niepewności do równania \ref{eq_lepkosc} potrzebne jeszcze będą nastepujące pochodne cząstkowe:
 
 \begin{itemize}
-	\item $\frac{\partial \eta}{\partial r} = $;
-	\item $\frac{\partial \eta}{\partial \vgr}$;
-	\item $\frac{\partial \eta}{\partial R}$;
-	\item $\frac{\partial \eta}{\partial h}$.
+	\item $\frac{\partial \eta}{\partial r} \approx \frac{g h r R (b (-0.0925926 h r - 0.0771605 h R - 0.119599 r R) + a (0.0925926 h r + 0.0771605 h R + 0.119599 r R))}{\vgr (h + 3.1r)^2 (r + 0.416667 R)^2}$;
+	\item $\frac{\partial \eta}{\partial \vgr} \approx \frac{-0.0925926(\rho_k - \rho_c) g h r^2 R}{\vgr^2 (h + 3.1r)(r + 0.416667R)}$;
+	\item $\frac{\partial \eta}{\partial R} \approx \frac{0.0925926(\rho_k - \rho_c) g h r^3}{\vgr (h + 3.1r)(r + 0.416667 R)^2}$;
+	\item $\frac{\partial \eta}{\partial h} \approx \frac{0.287037 g r^3 R (\rho_k - \rho_c)}{v(h + 3.1r)^2 (r + 0.416667 R)}$.
 \end{itemize}
+
+Zatem, dla gliceryny:
+
+\begin{align*}
+	u(\eta) &= \sqrt{
+	  \left(\frac{\partial \eta}{\partial r}\right)^2 u^2(r)
+	+ \left(\frac{\partial \eta}{\partial \vgr}\right)^2 u^2(\vgr)
+	+ \left(\frac{\partial \eta}{\partial R}\right)^2 u^2(R)
+	+ \left(\frac{\partial \eta}{\partial h}\right)^2 u^2(h)
+	} \\
+	&\approx 0.0287390 \, \text{Pa s}\\
+	&\approx 0.03 \, \text{Pa s}
+\end{align*}
+
+Korzystając z równania \ref{eq_lepkosc} mamy (dla gliceryny): $\eta \approx 0.47023461423 \, \text{Pa s} \approx 0.47 \, \text {Pa s}$.
 
 \subsection{Wyznaczenie współczynnika lepkości oleju silnikowego}
 
+Wyznaczenie współczynnika lepkości oleju silnikowego przebiegało w sposób analogiczny.
+Należy do obliczeń użyć innej wartości prędkości granicznej poruszania się kulki w cieczy oraz gęstości cieczy.
+Wartości pozostałych parametrów są takie same.
+
 Za gęstość oleju silnikowego w warunkach laboratoryjnych przyjęliśmy wartość $\rho_\text{olej} = 0.867 \, \frac{\text{g}}{\text{cm}^3}$.
+
+W tabeli \ref{olej} przedstawione zostały sumaryczne czasy wraz z międzyczasami.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{lrrrrrrrrrrr}
+		\toprule
+		L.p. &  \#1 &  \#2 &  \#3 &  \#4 &  \#5 &  \#6 &  \#7 &  \#8 &  \#9 &  \#10 & suma (s)\\
+		\midrule
+		1 &           0.94 &           1.00 &           0.94 &           0.91 &           0.94 &           0.88 &           1.07 &           0.96 &           0.97 &            1.06 & 9.67 \\
+		2 &           1.14 &           0.71 &           0.92 &           1.00 &           0.99 &           0.91 &           0.97 &           0.97 &           1.01 &            1.01 & 9.63 \\
+		3 &           0.92 &           0.97 &           0.91 &           0.95 &           1.09 &           0.86 &           0.95 &           1.07 &           0.90 &            1.10 & 9.72 \\
+		4 &           1.14 &           0.77 &           0.98 &           0.95 &           0.84 &           1.04 &           0.91 &           1.01 &           1.00 &            1.08 & 9.72 \\
+		5 &           0.83 &           0.98 &           0.88 &           1.02 &           1.00 &           0.96 &           0.92 &           0.97 &           0.96 &            0.96 & 9.48 \\
+		\bottomrule
+		\end{tabular}
+	\caption{Międzyczasy (s) pięciokrotnego pomiaru spadku kulki w oleju silnikowym.}
+	\label{olej}
+\end{table}
+
+Zatem niepewność standardowa typu B pozostaje taka sama, $u_b(t) = 0.35$.
+
+Przez $t_1, \dots, t_5$ oznaczmy kolejne sumaryczne czasy spadku.
+Średni sumaryczny czas spadku wynosi $t = \frac 1 5 (t_1 + \dots + t_5) = 9.644 \approx 9.64$ s.
+Ponadto, niepewność typu A pomiaru czasu wynosi:
+
+\begin{align*}
+	u_a(t) &= \sqrt{S^{2}_{\overline{t}}} \\
+	&= \sqrt{\frac{1}{5 \cdot 4} \cdot \sum_{i=1}^{5} (t_i - t)^2} \\
+	&\approx 0.04433959 \, \text{s} \\
+	&\approx 0.05 \, \text{s}
+\end{align*}
+
+Ostatecznie niepewność czasu spadku wynosi $u(t) = \sqrt{u_a^2(t) + u_b^2(t)} = \sqrt{0.05^2 + 0.35^2} \, \text{s} \approx 0.35355339 \, \text{s} \approx 0.36\, \text{s}$.
+
+Ponownie przyjęliśmy, że przed wkroczeniem na odcinek pomiarowy kulka osiągnęła prędkość graniczną.
+Zatem prędkość graniczną możemy wyliczyć na podstawie przebytej odległości oraz czasu spadku:
+$\vgr = \frac{h}{t} = \frac{100.00 \, \text{cm}}{9.64 \, \text{s}} \approx 10.373443983402 \, \frac{\text{cm}}{\text{s}} \approx 10.37 \, \frac{\text{cm}}{\text{s}}$.
+
+Niepewność tej wartości:
+
+\begin{align*}
+	u(\vgr) &= \sqrt{\left(\frac{\partial \vgr}{\partial h}\right)^2 u2^(h) + \left(\frac{\partial \vgr}{\partial t}\right)^2 u^2(t)} \\
+	&= \sqrt{\frac{u^2(h)}{t^2} + \frac{h^2 u^2(t)}{t^4}} \\
+	&\approx 0.387458073 \, \frac{\text{cm}}{\text{s}} \\
+	&\approx 0.39 \, \frac{\text{cm}}{\text{s}}
+\end{align*}
+
+Licząc analogicznie współczynnik lepkości oraz jego niepewność -- analogicznie jak w przypadku gliceryny -- otrzymujemy:
+
+$$
+\eta = 0.24 (1) \, \text{Pa s}
+$$
 
 \subsection{Wnioski}
 
