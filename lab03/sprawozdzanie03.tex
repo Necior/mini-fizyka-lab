@@ -96,10 +96,39 @@ Za pomocą pomiaru czasu spadania małych kulek w cieczach byliśmy w stanie osz
 
 \subsection{Wstęp teoretyczny}
 
+\subsubsection{Lepkość}
+
 Lepkość to zdolność płynów (czyli cieczy i gazów) do stawiania oporu przy wzajemnym przemieszczaniu się elementów płynu względem siebie.
 Podczas ruchu ciała w płynie pojawia się siła oporu, która jest zwrócona przeciwnie do zwrotu prędkości ciała.
 
 Jednostką lepkości jest Pa$\cdot$s.
+
+\subsubsection{Liczba Reynoldsa}
+
+Parametrem pozwalającym na przybliżone przewidywanie zachowania się
+ruchu płynu jest liczba Reynoldsa, Re. Definiujemy ją jako:
+
+ \[ \text{Re} = \frac{u \rho l}{\eta} \]
+
+gdzie:
+\begin{itemize}
+	\item $u$ -- prędkość charakterystyczna płynu $(\text{m}/\text{s})$,
+    \item $\rho$ -- gęstość płynu $(\text{kg}/\text{m}^3)$,
+    \item $l$ -- parametr liniowy charakterystyczny dla zagadnienia $(\text{m})$,
+	\item $\eta$ -- lepkość dynamiczna płynu $(\text{Pa} \cdot \text{s})$,
+\end{itemize}
+
+Dla małej prędkości $u$, małej gęstości płynu $\rho$ i dużej jego lepkości $\eta$, Re $<< 1$ a wtedy ruch
+płynu nazywamy laminarnym (bezwirowym). Gdy prędkość przepływu płynu lub prędkość ruchu
+ciała w nim zanurzonego przekroczy wartość krytyczną, kształt i rozmieszczenie przestrzenne rurek
+płynu zmienia się w układ wirów. Ruch płynu nazywamy wtedy turbulentnym.
+
+
+\subsubsection{Prawo Stokesa}
+
+Na kulę o promieniu $r$ spadającą swobodnie w cieczy o gęstości $\rho$ z prędkością $v$
+przy zachowaniu warunków przepływu laminarnego, działa siła oporu równa:
+\[ F_S = - 6\pi \eta v r \]
 
 \subsection{Układ pomiarowy}
 
@@ -367,11 +396,11 @@ Zatem, dla gliceryny:
 	+ \left(\frac{\partial \eta}{\partial R}\right)^2 u^2(R)
 	+ \left(\frac{\partial \eta}{\partial h}\right)^2 u^2(h)
 	} \\
-	&\approx 0.029171820 \, \text{Pa s}\\
-	&\approx 0.03 \, \text{Pa s}
+	&\approx 0.029171820 \, \text{Pa} \cdot \text{s}\\
+	&\approx 0.03 \, \text{Pa} \cdot \text{s}
 \end{align*}
 
-Korzystając z równania \ref{eq_lepkosc} mamy (dla gliceryny): $\eta \approx 0.47377301330 \, \text{Pa s} \approx 0.47 \, \text {Pa s}$.
+Korzystając z równania \ref{eq_lepkosc} mamy (dla gliceryny): $\eta \approx 0.47377301330 \, \text{Pa} \cdot \text{s} \approx 0.47 \, \text {Pa s}$.
 
 \subsubsection{Wyznaczenie współczynnika lepkości oleju silnikowego}
 
@@ -440,12 +469,23 @@ Niepewność tej wartości:
 Licząc analogicznie współczynnik lepkości oraz jego niepewność -- analogicznie jak w przypadku gliceryny -- otrzymujemy:
 
 $$
-\eta = 0.24 (1) \, \text{Pa s}
+\eta = 0.24 (1) \, \text{Pa} \cdot \text{s}
 $$
 
 \section{Wnioski}
 
-Warto zaznaczyć, że lepkość cieczy w dużym stopniu zależy od temperatury.
-W celu nadania znaczenia wyliczonym wartościom lepkości, należałoby również wyznaczyć temperaturę cieczy podczas doświadczenia.
+Po dokonaniu pomiarów ustalono, że współczynnik lepkości gliceryny wynosi $0.47(3)$ Pa $\cdot$ s,
+a współczynnik lepkości oleju silnikowego, znajdującego się w laboratorium: $0.24(1)$ Pa $\cdot$ s.
+
+Aby zminimalizować wpływ błędów na wyniki ćwiczenia, należałoby użyć automatycznego układu
+pomiarowego czasu, gdzie zatrzymanie stopera wykonywałoby się:
+\begin{itemize}
+\item z minimalnym opóźnieniem (mniejszym od czasu reakcji eksperymentatora)
+\item w wyniku pokonania przez spadającą kulkę drogi o tej samej długości przy każdym pomiarze.
+\end{itemize}
+
+Warto zaznaczyć, że lepkość cieczy w dużym stopniu zależy od jej temperatury.
+Aby wnioski z ćwiczenia były bardziej użyteczne, należałoby również wyznaczyć temperaturę cieczy
+podczas doświadczenia.
 
 \end{document}
