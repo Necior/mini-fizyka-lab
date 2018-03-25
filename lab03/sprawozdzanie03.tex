@@ -303,8 +303,17 @@ Spadek był liczony na fragmencie słupa cieczy o wysokości równej $100.00$ cm
 Ponieważ na linijce podziałka wynosiła $0.1$ cm, to niepewność tej wartości wynosi $0.07$ cm.
 
 Ponadto przyjęliśmy, że przed wkroczeniem na odcinek pomiarowy kulka osiągnęła prędkość graniczną.
-Zatem prędkość graniczną możemy wyliczyć na podstawie przebytej odległości oraz czasu spadku:
-$\vgr = \frac{h}{t} = \frac{100.00 \, \text{cm}}{19.654 \, \text{s}} \approx 5.088022 \, \frac{\text{cm}}{\text{s}} \approx 5.088 \, \frac{\text{cm}}{\text{s}}$.
+Używając metody najmniejszych kwadratów, wyznaczyliśmy prostą regresji.
+Dane zostały zaprezentowane na wykresie \ref{wykres_gliceryna}.
+Wartość współczynnika kierunkowego jest wartością graniczną prędkości, tzn.
+$\vgr \approx 5.053795 \, \frac{\text{cm}}{\text{s}} \approx 5.05 \, \frac{\text{cm}}{\text{s}}$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{regresja_gliceryna.pdf}
+\caption{Wyliczona prosta regresji liniowej zestawiona wraz z uśrednioną drogą przebytą w czasie przez kulkę w glicerynie.}
+\label{wykres_gliceryna}
+\end{figure}
 
 Niepewność tej wartości:
 
@@ -333,11 +342,11 @@ Zatem, dla gliceryny:
 	+ \left(\frac{\partial \eta}{\partial R}\right)^2 u^2(R)
 	+ \left(\frac{\partial \eta}{\partial h}\right)^2 u^2(h)
 	} \\
-	&\approx 0.0287390 \, \text{Pa s}\\
+	&\approx 0.029171820 \, \text{Pa s}\\
 	&\approx 0.03 \, \text{Pa s}
 \end{align*}
 
-Korzystając z równania \ref{eq_lepkosc} mamy (dla gliceryny): $\eta \approx 0.47023461423 \, \text{Pa s} \approx 0.47 \, \text {Pa s}$.
+Korzystając z równania \ref{eq_lepkosc} mamy (dla gliceryny): $\eta \approx 0.47377301330 \, \text{Pa s} \approx 0.47 \, \text {Pa s}$.
 
 \subsection{Wyznaczenie współczynnika lepkości oleju silnikowego}
 
@@ -382,13 +391,22 @@ Ponadto, niepewność typu A pomiaru czasu wynosi:
 Ostatecznie niepewność czasu spadku wynosi $u(t) = \sqrt{u_a^2(t) + u_b^2(t)} = \sqrt{0.05^2 + 0.35^2} \, \text{s} \approx 0.35355339 \, \text{s} \approx 0.36\, \text{s}$.
 
 Ponownie przyjęliśmy, że przed wkroczeniem na odcinek pomiarowy kulka osiągnęła prędkość graniczną.
-Zatem prędkość graniczną możemy wyliczyć na podstawie przebytej odległości oraz czasu spadku:
-$\vgr = \frac{h}{t} = \frac{100.00 \, \text{cm}}{9.64 \, \text{s}} \approx 10.373443983402 \, \frac{\text{cm}}{\text{s}} \approx 10.37 \, \frac{\text{cm}}{\text{s}}$.
+Używając metody najmniejszych kwadratów, wyznaczyliśmy prostą regresji.
+Dane zostały zaprezentowane na wykresie \ref{wykres_olej}.
+Wartość współczynnika kierunkowego jest wartością graniczną prędkości, tzn.
+$\vgr \approx 10.4028361 \, \frac{\text{cm}}{\text{s}} \approx 10.40 \, \frac{\text{cm}}{\text{s}}$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{regresja_olej.pdf}
+\caption{Wyliczona prosta regresji liniowej zestawiona wraz z uśrednioną drogą przebytą w czasie przez kulkę w oleju.}
+\label{wykres_olej}
+\end{figure}
 
 Niepewność tej wartości:
 
 \begin{align*}
-	u(\vgr) &= \sqrt{\left(\frac{\partial \vgr}{\partial h}\right)^2 u2^(h) + \left(\frac{\partial \vgr}{\partial t}\right)^2 u^2(t)} \\
+	u(\vgr) &= \sqrt{\left(\frac{\partial \vgr}{\partial h}\right)^2 u^2(h) + \left(\frac{\partial \vgr}{\partial t}\right)^2 u^2(t)} \\
 	&= \sqrt{\frac{u^2(h)}{t^2} + \frac{h^2 u^2(t)}{t^4}} \\
 	&\approx 0.387458073 \, \frac{\text{cm}}{\text{s}} \\
 	&\approx 0.39 \, \frac{\text{cm}}{\text{s}}
