@@ -8,6 +8,7 @@
 \usepackage{pdfpages}
 \usepackage{indentfirst}
 \usepackage{listings}
+\usepackage{gensymb}
 
 % Adjust penalties
 \brokenpenalty=1000
@@ -104,17 +105,61 @@ $$E^2 = E_{01}^2 sin^2 (\omega t − kx ) + E_{02}^2 sin^2 ( \omega t − kx −
 
 Mając powyższą zależność możemy wyznaczyć wcześniej wspomnianą średnią ilość energii na jednostę powierzchni
 $$I = E^2 =\frac{E_{01}}{2} \frac{E_{02}}{2} + E_{01}E_{02} cos \phi$$
-\subsubsection{Niepewności pomiarowe}
 
-Niepewnością pomiarową nazywamy miarę dokładności wykonanego pomiaru.
-Wśród pomiarów bezpośrednich wyróżniamy dwa rodzaje metod wyliczania niepewności.
+Ostatecznie otrzymując 
+$$I = I_{1} + I_{2} + 2 \sqrt{I_{1} I_{2}} cos \phi$$
 
-\begin{itemize}
-\item Metody typu A -- jest to klasa metod, która oblicza niepewność za pomocą statystycznych technik analizy ciągu 	wyników pomiarów;
-\item Metody typu B -- klasa metod, które opierają się na innych metod niż metody typu A, np.~metody biorące pod uwagę własności przyrządów pomiarowych.
-\end{itemize}
+co dla przypadku przez nas badanego $I_{1} = I_{2}$ sprowadza się do związku
+$$I = 2I_{0} + 2 I_{0} cos \phi$$
 
-\subsection{Analiza wyników}
+w zależności od kąta przesunięcia fazowego $\phi =\frac{2\pi}{\lambda}\Delta$ otrzymujemy $0$ lub $4 I_{0}$ bo $cos \phi$ odpowiednio osiąga wartości $-1$ lub $1$. Z powyższych rozważań wynikia ostatecznie że 
+$\lambda = 2 \frac{\Delta}{2m+1} $ dla osłabienia oraz $\lambda = \frac{\Delta}{m}$ dla wzmocnienia.
+
+\newpage
+
+\subsection{Siatka dyfrakcyjna}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{siatka_dyfrakcyjna_rysunek.png}
+\caption{Schemat układu pomiarowego dla siatki dyfrakcyjnej}
+\label{siatka_dyfrakcyjna}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{siatka.png}
+\caption{Schemat układu pomiarowego dla siatki dyfrakcyjnej}
+\label{siatka}
+\end{figure}
+
+
+Do przeprowadzenia eksperymentu z siatką dyfrakcyjną posłużono się układem widocznym na rysunku \ref{siatka_dyfrakcyjna}. Źródło mikrofal które znajdowało się w odległości $\frac{1}{2}$ promienia krzywizny
+zwierciadła wysyłało fale elektromagnetyczne które odbijały się od zwierciadła. Dzięki temu osiągaliśmy równoległe fale elektromagnetyczne. Następnie przechodziły przez szczeliny siatki dyfrakcyjnej
+i zgodnie z zasadą Huyghensa były one wtórnymi źródłami fal kulistych które ze sobą interferowały dając minima oraz maksima sygnału obserwowanego na woltomierzu w miejsach o odpowiednich kątach względem siatki dyfrakcyjnej w których znajdował się odbiornik fal.
+Na siatce dyfrakcyjnej dochodzi do powstania fal rozchodzących się kuliście jeśli różnica dróg widoczna na rysunku \ref{siatka} wynosi $d sin \alpha_{m} = m \lambda$ wówczas dochodzi do maksymalnego wzmocnienia fali wynikowej.
+
+Otrzymano następujące wyniki:
+
+\begin{table}
+\centering
+\begin{tabular}{rrrrrrr}
+\toprule
+Lp. &  $\alpha$ (\degree) \\
+\midrule
+1 &          0\\
+2 &          26  \\
+3 &          26 \\
+4 &          53  \\
+5 &          55  \\
+\bottomrule
+\end{tabular}
+\caption{Wielokrotne pomiary prądu $I_{R_4}$ i napięcia $U_{R_4}$ na rezystorze $R_4$.}
+\label{pomiary_siatka}
+\end{table}
+
+
+
+\subsubsection{•}
 
 Pierwsze ćwiczenie polegało na zbadaniu relacji między napięciem a natężeniem prądu.
 W tym celu dokonaliśmy 10 pomiarów napięcia na rezystorze $R_4$ oraz 10 pomiarów natężenia prądu płynącego w obwodzie.
