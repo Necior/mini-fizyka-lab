@@ -43,7 +43,7 @@
 \newcommand{\Hsp}[1]{\hbox to #1 {}}
 \newcommand{\Small}{\scriptsize}
 
-\title{Sprawozdanie nr 1}
+\title{Sprawozdanie nr 4}
 \date{}
 
 \begin{document}
@@ -68,25 +68,42 @@
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
-\section{Prawo Ohma}
+\section{Interferencja fal} %TODO może lepsza nazwa
 
 \subsection{Opis ćwiczenia}
 
-Celem ćwiczenia jest wyznaczenie rezystancji oporników $R_1$, $R_2$, $R_3$ oraz $R_4$.
-Obwód złożony jest z szeregowo podłączonego amperomierza cyfrowego, równolegle podłączonego woltomierza analogowego, rezystora oraz z zasilacza.
-
+Celem ćwiczenia jest pomiar długości fal elektromagnetycznych metodami interferencyjnymi.
+Wykorzystujemy do tego następujące przyrządy:
+\begin{itemize}
+\item interferometr Michelsona
+\item interferometr Fabry-Perota
+\item siatkę dyfrakcyjną
+\end{itemize}
+W eksperymentach zostały wykorzystane mikrofale oraz światło widzialne w postaci lasera o kolorze czerwonym.
 
 \subsection{Wstęp teoretyczny}
 
-\subsubsection{Prawo Ohma}
+\subsubsection{Interferencja}
 
-Prądem nazywamy uporządkowany ruch ładunków elektrycznych.
-W obwodzie elektrycznym stosunek napięcia do natężenia prądu jest stały:
+Interferencja jest efektem nakładania się fal. W wyniku nałożenia może nastąpić wzmocnienie fali wypadkowej lub jej osłabienie.  Warunkiem trwałej interferencji fal jest ich spójność, czyli korelacja faz i równość częstotliwości. W przeciwnym wypadku może dość np. do dudnienia. %TODO może usunąć dudnienie
+Fale powinny też posiadać identyczną częstość kołową w i mieć taką samą polaryzację.
+Natężenia nakładających się fal opisane są wzorami
+$$E_{1} = E_{01} sin( \omega t − kx )$$
+$$E_{2} = E_{02} sin( \omega t − k ( x + \Delta ))$$
 
-$$\frac{U}{I} = \text{const}$$
+gdzie dla fali drugiej przebywa ona dodatkową drogę $\Delta$ która powoduje różnicę w fazach pomiędzy falami.
 
-Powyższa zależność jest nazywana \emph{prawem Ohma}. Współczynnik proporcjonalności nazywamy \emph{rezystancją} (oporem), mierzymy ją w omach ($\Omega$) i zwyczajowo oznaczamy za pomocą litery $R$.
+Podczas interferencji czyli dodaniu się fal otrzymujemy następującą zależność
+$$E = E_{1} + E_{2} = E_{01} sin( \omega t − kx ) + E_{02} sin( \omega t − k x  − \phi )$$ gdzie $\phi =\frac{2\pi}{\lambda}\Delta$ - opisuje zmianę fazy spowodowaną przebyciem dodatkowej drogi optycznej.
 
+Używane przez nas detektory reagują na średnią ilość energii padającej na jednostkę powierzchni w jednostce czasu. Energia fali jest proporcjonalna do kwadratu natężenia pola elektrycznego, zależność tą możemy otrzymać z poprzedniego wzoru wynosi ona:
+$$E^2 = ( E_{1} + E_{2} ) = E_{01}^2 sin^2 ( \omega t − kx ) + E_{02}^2 sin^2 ( \omega t − kx − \phi ) + 2 E_{01} E_{02} sin( \omega t − kx ) sin( \omega t − kx − \phi )$$
+
+Z czego po odpowiednich przekształceniach otrzymujemy 
+$$E^2 = E_{01}^2 sin^2 (\omega t − kx ) + E_{02}^2 sin^2 ( \omega t − kx − \phi ) + E_{01} E_{02} [cos \phi − cos[ 2 ( \omega t − kx ) − \phi ]]$$
+
+Mając powyższą zależność możemy wyznaczyć wcześniej wspomnianą średnią ilość energii na jednostę powierzchni
+$$I = E^2 =\frac{E_{01}}{2} \frac{E_{02}}{2} + E_{01}E_{02} cos \phi$$
 \subsubsection{Niepewności pomiarowe}
 
 Niepewnością pomiarową nazywamy miarę dokładności wykonanego pomiaru.
