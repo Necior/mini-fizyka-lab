@@ -325,21 +325,23 @@ Wyniki przedstawiamy w tej tabeli:
 Numer maksimum & odległość (mm) \\
 \midrule
 0 & 10.00 \\
-110 & 10.33 \\
+100 & 10.33 \\
 \bottomrule
 \end{tabular}
 \caption{Wyniki pomiaru na interferometrze Michelsona z laserem}
 \label{pomiary_michelsona_laser}
 \end{table}
 
-Czyli otrzymujemy $\lambda = 660nm$ co jest zgodne z oczekiwaniami (światło czerwone ma długość fali około $700 nm$)
-
-
+Czyli otrzymujemy $\lambda = 660nm$ co jest zgodne z oczekiwaniami (światło czerwone ma długość fali około $700 nm$). By policzyć niepewność stosujemy wzór $$u_d (\text{typ B}) = \sqrt{\frac{(\Delta d)^2}{3} + \frac{(\Delta d_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.0065 \enskip \text{cm}$$
+Następnie ze wzoru na niepewność złożoną
+$$u_{\lambda} = \sqrt{(\frac{\partial \lambda}{\partial d})^2 \cdot u_d^2 } = ((\frac{1}{n}):10) \cdot 2 u_d$$
+mamy 
+$u_{\lambda} = 13nm$
+Czyli ostatecznie $\lambda = 660(13)nm$
 \section{Wnioski}
 Najdokładniejszą metodą okazał się być interferometr Michelsona a najmniej dokładne pomiary występowały na siatce dyfrakcyjnej, co ukazuje poniższa tabela
 
 \begin{table}[h!]
-\centering
 \begin{tabular}{rrrrrrr}
 \toprule
 Metoda & Wynik(cm) & Niepewność(cm) & Niepewność względna\\
