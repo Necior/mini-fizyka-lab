@@ -77,7 +77,7 @@ Celem ćwiczenia jest pomiar długości fal elektromagnetycznych metodami interf
 Wykorzystujemy do tego następujące przyrządy:
 \begin{itemize}
 \item interferometr Michelsona
-\item interferometr Fabry-Perota
+\item interferometr Fabry-Perotaa
 \item siatkę dyfrakcyjną
 \end{itemize}
 W eksperymentach zostały wykorzystane mikrofale oraz światło widzialne w postaci lasera o kolorze czerwonym.
@@ -244,31 +244,31 @@ Lp. &  odległość ($cm$) & różnica pomiędzy maksimami [m] & długość fali
 \bottomrule
 \end{tabular}
 \caption{Pomiary dla interferometru Michelsona}
-\label{pomiary_michelson}
+\label{pomiary_michelson2}
 \end{table}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{michelson_micro.png}
 \caption{Wykres różnicy dróg optycznych w zależności od numeru wzmocnienia}
-\label{michelson}
+\label{michelson2}
 \end{figure}
 
 Obliczenia długości fali przeprowadzamy z użyciem metody najmniejszych kwadratów. Otrzymujemy współczynnik $a = 1.7441$ współczynnik b powinin być bliski 0 i tak jest w rzeczywistości, w naszych pomiarach wynosi on $b=0.2735$. Długość fali wynosi $\lambda = 3.49(0.02)cm$
 
 
-\subsection{Interferometr Fabry-Perot}
+\subsection{Interferometr Fabry'ego-Perotaa}
 Interferometr Fabry – Perota składa się z dwóch płytek, jedna z nich przepuszcza część promieniowania, a druga ma zdolność do odbijania. Płytki ustawiamy tak aby, powietrze pomiędzy płytkami tworzyło płaskorównoległą warstwę. Fale, które przez górną płytkę przedostają się do warstwy powietrza, ulegają wielokrotnym odbiciom od ścianek płytek. Jeśli na pierwszą płytkę pada wiązka fal, to z drugiej płytki wychodzi szereg równoległych wiązek. 
 \\
 \\
 \\
-Do pomiaru długości fal elektromagnetycznych wykorzystaliśmy drugi typ interferometru Fabry – Perota, gdzie jedna z płytek jest nieruchoma a druga jest zastąpiona zwierciadłem. Zmieniając położenie zwierciadła bada się różnicę dróg optycznych fal przy maksymalnych wzmocnieniach. Wyniki przedstawiliśmy w tabeli obok.
+Do pomiaru długości fal elektromagnetycznych wykorzystaliśmy drugi typ interferometru Fabry – Perotaa, gdzie jedna z płytek jest nieruchoma a druga jest zastąpiona zwierciadłem. Zmieniając położenie zwierciadła bada się różnicę dróg optycznych fal przy maksymalnych wzmocnieniach. Wyniki przedstawiliśmy w tabeli obok.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.7]{fabry_perot.png}
-\caption{Schemat układu pomiarowego dla interferometru Fabry-Perot \texttt{http://www.lodd.p.lodz.pl/\textasciitilde konrad/wyklad8/wyklad8/wyklad2.gif}}
-\label{fabry_perot}
+\caption{Schemat układu pomiarowego dla interferometru Fabry'ego-Perota \texttt{http://www.lodd.p.lodz.pl/\textasciitilde konrad/wyklad8/wyklad8/wyklad2.gif}}
+\label{Fabry'ego_Perota}
 \end{figure}
 
 Wyniki zestawiliśmy w poniższej tabeli. 
@@ -283,7 +283,7 @@ Numer maksimum & odległość (cm) \\
 18 & 38.9 \\
 \bottomrule
 \end{tabular}
-\caption{Wyniki pomiaru na interferometrze Fabry-Perot}
+\caption{Wyniki pomiaru na interferometrze Fabry'ego-Perota}
 \label{pomiary_fabry_perot}
 \end{table}
 
@@ -339,24 +339,28 @@ mamy
 $u_{\lambda} = 13nm$
 Czyli ostatecznie $\lambda = 660(13)nm$
 \section{Wnioski}
-Najdokładniejszą metodą okazał się być interferometr Michelsona a najmniej dokładne pomiary występowały na siatce dyfrakcyjnej, co ukazuje poniższa tabela
-
+Metodą o najmniejszej niepewności okazał się być interferometr Michelsona, a największej -- pomiary z wykorzystaniem siatki dyfrakcyjnej, co ukazuje tablica \ref{porownanie_metod}.
 \begin{table}[h!]
 \begin{tabular}{rrrrrrr}
 \toprule
-Metoda & Wynik(cm) & Niepewność(cm) & Niepewność względna\\
+Metoda & Wynik & Niepewność & Niepewność względna\\
 \midrule
-Siatka dyfrakcyjna & 3.07 & 0.08 & 0.026\\
-Interferometr Michelsona & 3.49 & 0.02 & 0.005\\
-Interferometr Fabry-Perot & 3.32 & 0.02 & 0.006\\
+Siatka dyfrakcyjna & 3.07 cm & 0.08 cm & 0.026\\
+Interferometr Michelsona (mikrofale) & 3.49 cm & 0.02 cm & 0.005\\
+Interferometr Fabry'ego-Perota & 3.32 cm & 0.02 cm & 0.006\\
+Interferometr Michelsona (laser) & 660 nm & 13 nm & 0.020\\
 \bottomrule
 \end{tabular}
 \caption{Porównanie metod określania długości fal poprzez interferencję}
 \label{porownanie_metod}
 \end{table}
+Wskazuje na to najmniejsza wartość niepewności względnej. Należy zaznaczyć, że porównujemy tu niepewności
+względne a nie wartości błędów (bezwzględnych bądź względnych), ponieważ w przeprowadzonych doświadczeniach
+nie zakładamy pomiaru fal tej samej długości oraz nie znamy ich rzeczywistej długości.
 
-Wskazuje na to najmniejsza wartość niepewności. Niepewności pomiarowe wynikały przede
-wszystkim z niedokładności przyrządów pomiarowych oraz niepewności odczytu wskazań urządzeń
-przez eksperymentatora.
+Oprócz niedokładności przyrządów pomiarowych oraz niepewności odczytu wskazań urządzeń przez eksperymentatora,
+niepewności pomiarowe w ćwiczeniu z siatką dyfrakcyjną mogły wynikać z odbicia fal od pobliskich przedmiotów.
+Dodatkowo, pomiary długości fali lasera wymagały nadzwyczaj dużej dokładności eksperymentatorów z powodu niskiego
+przełożenia śruby -- zwiększenie przełożenia mogłoby pozwolić na osiągnięcie większej dokładności.
 
 \end{document}
