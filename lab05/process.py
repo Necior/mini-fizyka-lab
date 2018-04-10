@@ -47,12 +47,13 @@ table.columns = [
 
 print(table)
 table.plot(
-        title='Zależność natężenia prądu od kąta analizatora',
+        title='Natężenie prądu fali docierającej do detektora od kąta analizatora',
         kind='scatter',
         s=8,
         x='kąt obrotu analizatora (deg)',
         y='natężenie prądu (uA)',
-        yerr=std_uncert_total
+        yerr=std_uncert_total,
+        figsize=(6,8)
 )
 plt.savefig('malus.png')
 
