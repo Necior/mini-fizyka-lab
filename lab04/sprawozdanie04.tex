@@ -8,6 +8,7 @@
 \usepackage{pdfpages}
 \usepackage{indentfirst}
 \usepackage{listings}
+\usepackage{gensymb}
 
 % Adjust penalties
 \brokenpenalty=1000
@@ -43,7 +44,7 @@
 \newcommand{\Hsp}[1]{\hbox to #1 {}}
 \newcommand{\Small}{\scriptsize}
 
-\title{Sprawozdanie nr 1}
+\title{Sprawozdanie nr 4}
 \date{}
 
 \begin{document}
@@ -64,304 +65,302 @@
 \end{tabular}
 \end{center}
 
-{\let\newpage\relax\maketitle}  % stolen from: https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
+{\let\newpage\relax\maketitle}
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
-\section{Prawo Ohma}
+\section{Interferencja fal} %TODO może lepsza nazwa
 
 \subsection{Opis ćwiczenia}
 
-Celem ćwiczenia jest wyznaczenie rezystancji oporników $R_1$, $R_2$, $R_3$ oraz $R_4$.
-Obwód złożony jest z szeregowo podłączonego amperomierza cyfrowego, równolegle podłączonego woltomierza analogowego, rezystora oraz z zasilacza.
-
+Celem ćwiczenia jest pomiar długości fal elektromagnetycznych metodami interferencyjnymi.
+Wykorzystujemy do tego następujące przyrządy:
+\begin{itemize}
+\item interferometr Michelsona
+\item interferometr Fabry-Perotaa
+\item siatkę dyfrakcyjną
+\end{itemize}
+W eksperymentach zostały wykorzystane mikrofale oraz światło widzialne w postaci lasera o kolorze czerwonym.
 
 \subsection{Wstęp teoretyczny}
 
-\subsubsection{Prawo Ohma}
+\subsubsection{Interferencja}
 
-Prądem nazywamy uporządkowany ruch ładunków elektrycznych.
-W obwodzie elektrycznym stosunek napięcia do natężenia prądu jest stały:
+Interferencja jest efektem nakładania się fal. W wyniku nałożenia może nastąpić wzmocnienie fali wypadkowej lub jej osłabienie.  Warunkiem trwałej interferencji fal jest ich spójność, czyli korelacja faz i równość częstotliwości. W przeciwnym wypadku może dość np. do dudnienia. %TODO może usunąć dudnienie
+Fale powinny też posiadać identyczną częstość kołową w i mieć taką samą polaryzację.
+Natężenia nakładających się fal opisane są wzorami
+$$E_{1} = E_{01} sin( \omega t − kx )$$
+$$E_{2} = E_{02} sin( \omega t − k ( x + \Delta ))$$
 
-$$\frac{U}{I} = \text{const}$$
+gdzie dla fali drugiej przebywa ona dodatkową drogę $\Delta$ która powoduje różnicę w fazach pomiędzy falami.
 
-Powyższa zależność jest nazywana \emph{prawem Ohma}. Współczynnik proporcjonalności nazywamy \emph{rezystancją} (oporem), mierzymy ją w omach ($\Omega$) i zwyczajowo oznaczamy za pomocą litery $R$.
+Podczas interferencji czyli dodaniu się fal otrzymujemy następującą zależność
+$$E = E_{1} + E_{2} = E_{01} sin( \omega t − kx ) + E_{02} sin( \omega t − k x  − \phi )$$ gdzie $\phi =\frac{2\pi}{\lambda}\Delta$ - opisuje zmianę fazy spowodowaną przebyciem dodatkowej drogi optycznej.
 
-\subsubsection{Niepewności pomiarowe}
+Używane przez nas detektory reagują na średnią ilość energii padającej na jednostkę powierzchni w jednostce czasu. Energia fali jest proporcjonalna do kwadratu natężenia pola elektrycznego, zależność tą możemy otrzymać z poprzedniego wzoru wynosi ona:
+$$E^2 = ( E_{1} + E_{2} ) = E_{01}^2 sin^2 ( \omega t − kx ) + E_{02}^2 sin^2 ( \omega t − kx − \phi ) + 2 E_{01} E_{02} sin( \omega t − kx ) sin( \omega t − kx − \phi )$$
 
-Niepewnością pomiarową nazywamy miarę dokładności wykonanego pomiaru.
-Wśród pomiarów bezpośrednich wyróżniamy dwa rodzaje metod wyliczania niepewności.
+Z czego po odpowiednich przekształceniach otrzymujemy 
+$$E^2 = E_{01}^2 sin^2 (\omega t − kx ) + E_{02}^2 sin^2 ( \omega t − kx − \phi ) + E_{01} E_{02} [cos \phi − cos[ 2 ( \omega t − kx ) − \phi ]]$$
 
-\begin{itemize}
-\item Metody typu A -- jest to klasa metod, która oblicza niepewność za pomocą statystycznych technik analizy ciągu 	wyników pomiarów;
-\item Metody typu B -- klasa metod, które opierają się na innych metod niż metody typu A, np.~metody biorące pod uwagę własności przyrządów pomiarowych.
-\end{itemize}
+Mając powyższą zależność możemy wyznaczyć wcześniej wspomnianą średnią ilość energii na jednostkę powierzchni
+$$I = E^2 =\frac{E_{01}}{2} \frac{E_{02}}{2} + E_{01}E_{02} cos \phi$$
 
-\subsection{Analiza wyników}
+Ostatecznie otrzymując 
+$$I = I_{1} + I_{2} + 2 \sqrt{I_{1} I_{2}} cos \phi$$
 
-Pierwsze ćwiczenie polegało na zbadaniu relacji między napięciem a natężeniem prądu.
-W tym celu dokonaliśmy 10 pomiarów napięcia na rezystorze $R_4$ oraz 10 pomiarów natężenia prądu płynącego w obwodzie.
-Uzyskane wyniki zostały przedstawione w tabeli (Rysunek \ref{wykres}) oraz na wykresie zależności napięcia na $R_4$ od natężenia prądu (Tablica \ref{pomiary_r4}).
+co dla przypadku przez nas badanego $I_{1} = I_{2}$ sprowadza się do związku
+$$I = 2I_{0} + 2 I_{0} cos \phi$$
 
+w zależności od kąta przesunięcia fazowego $\phi =\frac{2\pi}{\lambda}\Delta$ otrzymujemy $0$ lub $4 I_{0}$ bo $cos \phi$ odpowiednio osiąga wartości $-1$ lub $1$. Z powyższych rozważań wynika ostatecznie, że
+$\lambda = 2 \frac{\Delta}{2m+1} $ dla osłabienia oraz $\lambda = \frac{\Delta}{m}$ dla wzmocnienia.
 
 \newpage
 
-Dla użytego woltomierza, przy zakresie $Z(U)$, niepewność wyznaczenia napięcia wynosi:
+\section{Pomiary i obliczenia}
+\subsection{Siatka dyfrakcyjna}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{siatka_dyfrakcyjna_rysunek.png}
+\caption{Schemat układu pomiarowego dla siatki dyfrakcyjnej}
+\label{siatka_dyfrakcyjna}
+\end{figure}
 
-$$u_U = \frac{1\% \cdot Z(U)}{\sqrt{3}}$$
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{siatka.png}
+\caption{Schemat układu pomiarowego dla siatki dyfrakcyjnej}
+\label{siatka}
+\end{figure}
 
-Niepewność wyznaczenia natężenia prądu (przy użytym amperomierzu) jest zależna od odczytanej wartości i wynosi:
 
-% Note: values in the table are correct but formula below is incorrent for measurement ranges other than 200 mA.
-$$u_I = \frac{1.2\% \text{rdg} + 1 \text{dgt}}{\sqrt{3}}$$
+Do przeprowadzenia eksperymentu z siatką dyfrakcyjną posłużono się układem widocznym na rysunku \ref{siatka_dyfrakcyjna}.
+Źródło mikrofal, które znajdowało się w odległości $\frac{1}{2}$ promienia krzywizny
+zwierciadła, wysyłało fale elektromagnetyczne, które odbijały się od zwierciadła.
+Dzięki temu osiągaliśmy równoległe fale elektromagnetyczne.
+Następnie przechodziły one przez szczeliny siatki dyfrakcyjnej i zgodnie z zasadą Huyghensa
+były one wtórnymi źródłami fal kulistych, które ze sobą interferowały.
+W rezultacie otrzymywaliśmy minima oraz maksima sygnału obserwowanego na woltomierzu przy
+konkretnym (ze względu na kąt) umiejscowieniu odbiornika fal względem siatki dyfrakcyjnej.
+Na siatce dyfrakcyjnej dochodzi do powstania fal rozchodzących się kuliście, jeśli różnica
+dróg (wyznaczona przez długość pomiędzy punktami BC) widoczna na rysunku \ref{siatka} wynosi $$d sin \alpha_{m} = m \lambda$$
+Wówczas dochodzi do maksymalnego wzmocnienia fali wynikowej.
+Nasze pomiary polegały na wyznaczeniu kąta dla którego zachodzą te wzmocnienia,
+dzięki temu możemy określić długość fali.
+Podziałka na kątomierzu określającym położenie maksimum wynosiła
+$\Delta \alpha=1 \degree = 0.01745329 rad$
+przyjmujemy niepewność eksperymentatora jako
+$\Delta \alpha_{e}=0.5 \degree = 0.008726646 rad$
+stąd mamy, że niepewność pomiarowa typu B wynosi
+$$u_\alpha (\text{typ B}) = \sqrt{\frac{(\Delta \alpha)^2}{3} + \frac{(\Delta \alpha_e)^2}{3}} = \sqrt{\frac{(0.01745329)^2}{3} + \frac{(0.008726646)^2}{3}} rad \approx 0,011 \enskip \text{rad}$$
 
-\begin{table}
+
+Otrzymano następujące wyniki:
+\begin{table}[h!]
+\centering
+\begin{tabular}{rrr}
+\toprule
+Lp. &  $\alpha$ prawe (\degree) & $\alpha$ lewe (\degree)\\
+\midrule
+1 & 0 & 0\\
+2 & 26 & 26\\
+3 & 53 & 55\\
+\bottomrule
+\end{tabular}
+\caption{Pomiary kątów dla maksimów wskazań woltomierza w eksperymencie z siatką dyfrakcyjną}
+\label{pomiary_siatka}
+\end{table}
+
+Dokonaliśmy również pomiaru stałej siatki potrzebnej do wyznaczenia długości fali.
+Metrówka którą wykonywaliśmy pomiar stałej siatki miała podziałkę $\Delta d=0.1 cm$ przyjmujemy niepewność eksperymentatora jako $\Delta d_e = 0.05cm$ skąd otrzymujemy niepewność typu B:
+$$u_d (\text{typ B}) = \sqrt{\frac{(\Delta d)^2}{3} + \frac{(\Delta d_e)^2}{3}} = \sqrt{\frac{(0.1)^2}{3} + \frac{(0.05)^2}{3}} \approx 0.065 \enskip \text{cm}$$
+Stała siatki wynosiła $d = \frac{89.1cm}{12} = 7.425cm$ by wyznaczyć ją z większą dokładnością należało określić łączną szerokość wielu szczelin i podzielić je przez ilość szczelin, dzięki temu niepewności polegające na niedokładnym przyłożeniu metrówki oraz niedokładnym odczytaniu końca ostatniej szczeliny możemy znacząco zmniejszyć.
+Czyli uwzględniając niepewność otrzymujemy $d = 7.425(0.065)cm$
+\\
+Mając dwie powyższe niepewności przystępujemy do wyznaczenia niepewności dla pomiaru długości fali, obliczamy ją zgodnie ze wzorem
+$$u_{\lambda} = \sqrt{(\frac{\partial \lambda}{\partial d})^2 \cdot u_d^2 + (\frac{\partial \lambda}{\partial \alpha})^2 \cdot u_{\alpha}^2} = \sqrt{sin^2 \alpha \cdot u_d^2 + d^2 \cdot cos^2 \alpha \cdot u_{\alpha}^2}$$
+
+Kąty poszczególnych maksimów obliczamy jako średnia arytmetyczna z pomiaru lewego i prawego maksimum
+$$\alpha_{n}=\frac{\alpha_{n}^L+\alpha_{n}^R}{2}$$
+
+Ostateczne wyniki długości fali przedstawia tabela
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{rrrr}
+\toprule
+Lp &  kąt średni & długość fali [m] & niepewność pomiarowa\\
+\midrule
+1 & 0 & 0 & 0\\
+2 & 26 & 0.03137 & 0.00079\\
+3 & 54 & 0.03003 & 0.00071\\
+\bottomrule
+\end{tabular}
+\caption{Długości fali w eksperymencie z siatką dyfrakcyjną}
+\label{pomiary_michelson}
+\end{table}
+
+
+\subsection{Interferometr Michelsona - mikrofale}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{Michelson_interferometer.png}
+\caption{Schemat układu pomiarowego dla interferometru Michelsona
+\texttt{https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/} \newline
+\texttt{Michelson\_interferometer\_with\_labels.svg/} \newline
+\texttt{1024px-Michelson\_interferometer\_with\_labels.svg.png} \newline
+}
+\label{michelson}
+\end{figure}
+
+ Wiązka mikrofal wychodzi ze źródła i pada na płytkę półprzepuszczalną. Połowa  wiązki odbija się od płytki pada na jedno ze zwierciadeł, odbija się i wraca tą samą drogą, przechodzi przez płytkę i pada na detektor.  Druga połowa wiązki przechodzi przez płytkę odbija się od drugiego zwierciadła i wraca tą samą drogą, odbija się od płytki, spotyka się z wiązką pierwszą w detektorze. Przesuwając jedno ze zwierciadeł zbadaliśmy ilość maksymalnych wzmocnień obserwowanych w detektorze oraz odległość na jakiej miało miejsce dane wzmocnienie.
+By wyznaczyć długość fali posłużyliśmy się następującym wzorem $\lambda = \frac{2 \sigma}{m}$
+ Wyniki zestawiliśmy w poniższej tabeli. 
+\newpage
+\begin{table}[h!]
+\centering
+\begin{tabular}{rrrr}
+\toprule
+Lp. &  odległość ($cm$) & różnica pomiędzy maksimami [m] & długość fali [m]\\
+\midrule
+1 & 2 & -- & -- \\
+2 & 3.7 & 0.017 & 0.034\\
+3 & 5.5 & 0.018 & 0.036\\
+4 & 7.3 & 0.018 & 0.036\\
+5 & 9.0 & 0.017 & 0.034\\
+6 & 10.8 & 0.018 & 0.036\\
+7 & 12.5 & 0.017 & 0.034\\
+8 & 14.2 & 0.017 & 0.034\\
+9 & 16.0 & 0.018 & 0.036\\
+10 & 17.7 & 0.017 & 0.034\\
+11 & 19.4 & 0.017 & 0.034\\
+12 & 21.2 & 0.018 & 0.036\\
+13 & 23.0 & 0.018 & 0.036\\
+14 & 24.7 & 0.017 & 0.034\\
+15 & 26.4 & 0.017 & 0.034\\
+16 & 28.2 & 0.018 & 0.036\\
+17 & 29.9 & 0.017 & 0.034\\
+\bottomrule
+\end{tabular}
+\caption{Pomiary dla interferometru Michelsona}
+\label{pomiary_michelson2}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{michelson_micro.png}
+\caption{Wykres różnicy dróg optycznych w zależności od numeru wzmocnienia}
+\label{michelson2}
+\end{figure}
+
+Obliczenia długości fali przeprowadzamy z użyciem metody najmniejszych kwadratów. Otrzymujemy współczynnik $a = 1.7441$ współczynnik b powinin być bliski 0 i tak jest w rzeczywistości, w naszych pomiarach wynosi on $b=0.2735$. Długość fali wynosi $\lambda = 3.49(0.02)cm$
+
+
+\subsection{Interferometr Fabry'ego-Perotaa}
+Interferometr Fabry – Perota składa się z dwóch płytek, jedna z nich przepuszcza część promieniowania, a druga ma zdolność do odbijania. Płytki ustawiamy tak aby, powietrze pomiędzy płytkami tworzyło płaskorównoległą warstwę. Fale, które przez górną płytkę przedostają się do warstwy powietrza, ulegają wielokrotnym odbiciom od ścianek płytek. Jeśli na pierwszą płytkę pada wiązka fal, to z drugiej płytki wychodzi szereg równoległych wiązek. 
+\\
+\\
+\\
+Do pomiaru długości fal elektromagnetycznych wykorzystaliśmy drugi typ interferometru Fabry – Perotaa, gdzie jedna z płytek jest nieruchoma a druga jest zastąpiona zwierciadłem. Zmieniając położenie zwierciadła bada się różnicę dróg optycznych fal przy maksymalnych wzmocnieniach. Wyniki przedstawiliśmy w tabeli obok.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.7]{fabry_perot.png}
+\caption{Schemat układu pomiarowego dla interferometru Fabry'ego-Perota \texttt{http://www.lodd.p.lodz.pl/\textasciitilde konrad/wyklad8/wyklad8/wyklad2.gif}}
+\label{Fabry'ego_Perota}
+\end{figure}
+
+Wyniki zestawiliśmy w poniższej tabeli. 
+
+\begin{table}[h!]
 \centering
 \begin{tabular}{rrrrrrr}
 \toprule
-Lp. &  $U$ (V) &  $Z(U)$ (V) &  $u_U$ (V) &  $I$ (mA) &  $Z(I)$ (mA) &  $u_I$ (mA) \\
+Numer maksimum & odległość (cm) \\
 \midrule
-1 &          8.800  &                10 &                 0.058  &             22.80  &                200 &                     0.22 \\
-2 &          8.000  &                10 &                 0.058  &             20.50  &                200 &                     0.20 \\
-3 &          7.000  &                10 &                 0.058  &             17.930 &                 20 &                     0.058 \\
-4 &          6.200  &                10 &                 0.058  &             15.740 &                 20 &                     0.051 \\
-5 &          5.200  &                10 &                 0.058  &             13.510 &                 20 &                     0.045 \\
-6 &          4.400  &                10 &                 0.058  &             11.230 &                 20 &                     0.038 \\
-7 &          3.600  &                10 &                 0.058  &              9.060 &                 20 &                     0.032 \\
-8 &          2.600  &                 3 &                 0.017  &              6.760 &                 20 &                     0.025 \\
-9 &          1.800  &                 3 &                 0.017  &              4.500 &                 20 &                     0.019 \\
-10 &         0.8600 &                 1 &                 0.0058 &              2.290 &                 20 &                     0.012 \\
+0 & 9.0 \\
+18 & 38.9 \\
 \bottomrule
 \end{tabular}
-\caption{Wielokrotne pomiary prądu $I_{R_4}$ i napięcia $U_{R_4}$ na rezystorze $R_4$.}
-\label{pomiary_r4}
+\caption{Wyniki pomiaru na interferometrze Fabry'ego-Perota}
+\label{pomiary_fabry_perot}
 \end{table}
 
-Na podstawie pomiarów napięcia i natężenia -- oraz uwzględniając błędy pomiarowe -- możemy stwierdzić, że natężenie prądu rośnie wprost proporcjonalnie do napięcia.
-Stosunek napięcia do natężenia jest stały.
-Wyniki doświadczenia potwierdzają słuszność prawa Ohma.
+Długość fali obliczamy ze wzoru
+$$\lambda = \frac{2}{r}cos \alpha (d_{m+r} - d_{m})$$
+dla parametrów
+$\alpha = 0, r = 18$
+otrzymujemy $\lambda = 0.03322 m$
+niepewności liczymy analogicznie do przypadku z siatką dyfrakcyjną otrzymując taką samą niepewność typu B dla metrówki (z powodu takich samych podziałek na obu linijkach) czyli
+$$u_d (\text{typ B}) \approx 0.00065 \enskip \text{m}$$
 
-\subsection{Regresja liniowa}
+Skąd możemy policzyć niepewność dla wyznaczenia długości fali. 
+$$u_{\lambda} = \sqrt{(\frac{\partial \lambda}{\partial d})^2 \cdot u_d^2 } = \sqrt{\frac{2}{r}cos \alpha u_d^2}$$
 
-Używając metody najmniejszych kwadratów można wyznaczyć współczynnik kierunkowy prostej $y = ax + b$.
-Ponieważ napięcie i natężenie prądu są powiązane postacią $U = RI$, to przyjmujemy $b = 0$.
-Zatem dopasowywana prosta będzie postaci $y = ax$.
+po podstawieniu do wzoru otrzymujemy niepewność
+$$u_{\lambda} = 0,00021 m$$
+czyli ostatecznie długość fali $$\lambda = 0.03322(0.00021)m$$
 
-Współczynnik kierunkowy szukanej prostej będzie szukaną rezystancją opornika. Ponadto, rezystancja ta będzie wyrażona wzorem:
+\subsection{Interferometr Michelsona - laser}
+W ćwiczeniu interferometru Michelsona z laserem sam przyrząd został zbudowany w analogiczny sposób
+do wcześniej opisanego interferometru Michelsona.
+Wyjątkiem było sterowanie ruchami zwierciadła poprzez obroty śruby mikrometrycznej, której podziałka
+miała dokładność $0.01 mm$ oraz zamiana detektora na biały ekran.
+Śruba była zamontowana dodatkowo na dźwigni, która umożliwiała 10-krotne zwiększenie dokładności ruchów.
+Jest to zbyt mała dokładność przy próbie bezpośredniego określenia długości fali, dlatego w naszym ćwiczeniu
+zastosowaliśmy metodę zliczania kolejnych maksimów
+i policzenia długości fali na podstawie różnicy wskazań na śrubie oraz ilości "miniętych" maksimów.
 
-$$R = a = \frac{\sum_{i = 1}^{10}\frac{I_i U_i}{u_{U_i}^2}}{\sum_{i = 1}^{10}\frac{I_i^2}{u_{U_i}^2}}$$
+Mamy więc zależność
+$$\lambda = ((\frac{d_{k} - d_{p}}{n}):10) \cdot 2$$
 
-Z niepewnością wynoszącą:
-
-$$u_a = \sqrt{\frac{1}{\sum_{i = 1}^{10}\frac{I_i^2}{u_{U_i}^2}}}$$
-
-W celu wyznaczenia powyższych wartości pomocna będzie tabela z pośrednimi wartościami obliczeń (Tablica \ref{wartosci_posrednie}). Zachowano w niej dodatkowe cyfry znaczące, aby uniknąć błędów numerycznych przy kolejnych obliczeniach.
+Wyniki przedstawiamy w tej tabeli:
 
 
-Otrzymujemy $a = \frac{313502.546}{805575.221} \approx 0.3892 \enskip \text{k} \Omega = 389.2 \enskip \Omega $ 
-
-oraz $\enskip u_a = \sqrt{\frac{1}{805575.221}} \approx 0.0011 \enskip \text{k}\Omega = 1.1 \enskip \Omega$.
-
-Zatem opór $R_4 = 389.2 \, (1.1) \enskip \Omega$.
-\vspace{2em}
-
-\begin{table}[h]
+\begin{table}[h!]
 \centering
-\begin{tabular}{lrrrrrrrrr}
+\begin{tabular}{rrrrrrr}
 \toprule
-{} &  $U$  &    $u_U$  &     $I$ &    $u_I$   &    $IU$  &    $u_U^2$ &   $I^2$ &    $\frac{I^2}{u_U^2}$ & $\frac{IU}{u_U^2}$ \\
+Numer maksimum & odległość (mm) \\
 \midrule
-1  &  8.80 &  0.0577350 &  22.80 &  0.215698  & 200.64   &  0.00333 &  519.84    & 155953.560  & 60192.602 \\
-2  &  8.00 &  0.0577350 &  20.50 &  0.199763  & 164.00   &  0.00333 &  420.25    & 126076.261  & 49200.492 \\
-3  &  7.00 &  0.0577350 &  17.93 &  0.057533  & 125.51   &  0.00333 &  321.4849  &  96446.434  & 37653.377 \\
-4  &  6.20 &  0.0577350 &  15.74 &  0.051211  &  97.588  &  0.00333 &  247.7476  &  74325.023  & 29276.693 \\
-5  &  5.20 &  0.0577350 &  13.51 &  0.044774  &  70.252  &  0.00333 &  182.5201  &  54756.578  & 21075.811 \\
-6  &  4.40 &  0.0577350 &  11.23 &  0.038192  &  49.412  &  0.00333 &  126.1129  &  37834.248  & 14823.748 \\
-7  &  3.60 &  0.0577350 &   9.06 &  0.031928  &  32.616  &  0.00333 &   82.0836  &  24625.326  &  9784.898 \\
-8  &  2.60 &  0.0173205 &   6.76 &  0.025288  &  17.576  &  0.00030 &   45.6976  & 152325.333  & 58586.667 \\
-9  &  1.80 &  0.0173205 &   4.50 &  0.018764  &   8.1    &  0.00030 &   20.25    &  67500.000  & 27000.000 \\
-10 &  0.86 &  0.0057735 &   2.29 &  0.012384  &   1.9694 &  0.00003 &    5.2441  &  15732.457  &  5908.259 \\
-\midrule
-	suma & {} & {} & {} & {} & {} & {} & {} & 805575.221 & 313502.546 \\
+0 & 10.00 \\
+100 & 10.33 \\
 \bottomrule
 \end{tabular}
-\caption{Wartości pośrednie obliczeń, które pozwalają wyznaczyć wartość współczynnika kierunkowego w zagadnieniu regresji liniowej}
-\label{wartosci_posrednie}
+\caption{Wyniki pomiaru na interferometrze Michelsona z laserem}
+\label{pomiary_michelsona_laser}
 \end{table}
 
-
-\subsection{Obliczenia wartości $R_1$, $R_2$, $R_3$}
-
-Wyniki pomiarów umieszczono w tablicy \ref{pomiary_r123}.
-
-Niepewności napięcia oraz natężenia prądu są liczone jak wyżej.
-
-Niepewność rezystancji wyznaczonej za pomocą wzoru $R = \frac{U}{I}$ wynosi:
-
-$$u_R = \sqrt{(\frac{\partial R}{\partial U})^2 \cdot u_U^2 + (\frac{\partial R}{\partial I})^2 \cdot u_I^2} = \sqrt{\frac{1}{I^2} \cdot u_U + \frac{U^2}{I^2} \cdot u_I}$$
-
-
-
-Zatem wartości $R_1$, $R_2$, $R_3$ wynoszą (zapis na trzy sposoby):
-
-\begin{itemize}
-\item $R_1 = 51.537 \enskip \Omega$, $u_{R_1} = 0.035 \enskip \Omega$
-
-$R_2 = 103.90 \enskip \Omega$, $u_{R_2} = 0.06 \enskip \Omega$
-
-$R_3 = 103.90 \enskip \Omega$, $u_{R_3} = 0.06 \enskip \Omega$
-
-\item $R_1 = 51.537 \, (35) \enskip \Omega$
-
-$R_2 = 103.90 \, (6) \enskip \Omega$
-
-$R_3 = 103.90 \, (6) \enskip \Omega$
-
-\item $R_1 = 51.537 \, (0.035) \enskip \Omega$
-
-$R_2 = 103.90 \, (0.06) \enskip \Omega$
-
-$R_3 = 103.90 \, (0.06) \enskip \Omega$
-\end{itemize}
-
-\begin{table}
-\centering
-\begin{tabular}{lrrrrrrl}
+Czyli otrzymujemy $\lambda = 660nm$ co jest zgodne z oczekiwaniami (światło czerwone ma długość fali około $700 nm$). By policzyć niepewność stosujemy wzór $$u_d (\text{typ B}) = \sqrt{\frac{(\Delta d)^2}{3} + \frac{(\Delta d_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.0065 \enskip \text{cm}$$
+Następnie ze wzoru na niepewność złożoną
+$$u_{\lambda} = \sqrt{(\frac{\partial \lambda}{\partial d})^2 \cdot u_d^2 } = ((\frac{1}{n}):10) \cdot 2 u_d$$
+mamy 
+$u_{\lambda} = 13nm$
+Czyli ostatecznie $\lambda = 660(13)nm$
+\section{Wnioski}
+Metodą o najmniejszej niepewności okazał się być interferometr Michelsona, a największej -- pomiary z wykorzystaniem siatki dyfrakcyjnej, co ukazuje tablica \ref{porownanie_metod}.
+\begin{table}[h!]
+\begin{tabular}{rrrrrrr}
 \toprule
-Rezystor &  $U$ (V) &  $u_U$ (V) &  $I$ (mA) &  $u_I$ (mA) &  R ($\Omega$) &  $u_R$ ($\Omega$) \\
+Metoda & Wynik & Niepewność & Niepewność względna\\
 \midrule
-$R_1$ &          2.85 &           0.018 &                  55.30 &              0.45 &             51.537 &             0.035 \\
-$R_2$ &          4.0 &           0.06 &                  38.50 &              0.33 &            103.90 &             0.06 \\
-$R_3$ &          4.0 &           0.06 &                  38.50 &              0.33 &            103.90 &             0.06 \\
+Siatka dyfrakcyjna & 3.07 cm & 0.08 cm & 0.026\\
+Interferometr Michelsona (mikrofale) & 3.49 cm & 0.02 cm & 0.005\\
+Interferometr Fabry'ego-Perota & 3.32 cm & 0.02 cm & 0.006\\
+Interferometr Michelsona (laser) & 660 nm & 13 nm & 0.020\\
 \bottomrule
 \end{tabular}
-\caption{Wyniki pojedynczych pomiarów na rezystorach $R_1$, $R_2$ oraz $R_3$}
-\label{pomiary_r123}
+\caption{Porównanie metod określania długości fal poprzez interferencję}
+\label{porownanie_metod}
 \end{table}
+Wskazuje na to najmniejsza wartość niepewności względnej. Należy zaznaczyć, że porównujemy tu niepewności
+względne a nie wartości błędów (bezwzględnych bądź względnych), ponieważ w przeprowadzonych doświadczeniach
+nie zakładamy pomiaru fal tej samej długości oraz nie znamy ich rzeczywistej długości.
 
-
-\newpage
-
-\section{Pomiary wielkości mechanicznych}
-
-\subsection{Opis ćwiczenia}
-Celem ćwiczenia jest pomiar trzech wymiarów metalowej płytki oraz wyznaczenie jej objętości, wraz z niepewnościami.
-
-\subsection{Pomiary za pomocą suwmiarki}
-
-Przy użyciu suwmiarki dokonano dwukrotnego pomiaru długości ($l_1$, $l_2$) oraz jednokrotnego pomiaru szerokości ($l_3$).
-
-Rozdzielczość suwmiarki wynosi $\Delta x = 0.02$ mm, zatem niepewność typu B wynosi: 
-
-$u_B(x) = \frac{\Delta x}{\sqrt{3}} \approx 0.01154700 \approx 0.012$ mm.
-
-Uzyskane pomiary w serii wyniosły kolejno: $36.600$ mm, $37.420$ mm, $30.700$ mm.
-
-Zatem wartości $l_1$, $l_2$, $l_3$ wynoszą (zapis na trzy sposoby):
-
-
-\begin{itemize}
-\item $l_1 = 36.600 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
-
-$l_2 = 37.420 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
-
-$l_3 = 30.700 \enskip \text{mm}$, $u_B = 0.012 \enskip \text{mm}$
-
-\item $l_1 = 36.600 \, (12) \enskip \text{mm}$
-
-$l_2 = 37.420 \, (12) \enskip \text{mm}$ 
-
-$l_3 = 30.700 \, (12) \enskip \text{mm}$
-
-\item $l_1 = 36.600 \, (0.012) \enskip \text{mm}$
-
-$l_2 = 37.420 \, (0.012) \enskip \text{mm}$
-
-$l_3 = 30.700 \, (0.012) \enskip \text{mm}$
-\end{itemize}
-
-\subsection{Pomiary za pomocą śruby mikrometrycznej}
-
-W tym ćwiczeniu, za pomocą śruby mikrometrycznej, badana była grubość metalowej płytki.
-Wykonane pomiary ($n=60$) przedstawione zostały w tablicy \ref{pomiary_sruba} oraz za pomocą histogramu (tablica \ref{histogram_sruba}).
-
-\textit{Uwaga}: pomiar wynoszący $2.97$ uznajemy za \textit{błąd gruby}.
-W tabeli ten fakt został zaznaczony poprzez skreślenie, zaś w histogramie (oraz wszelkich obliczeniach) pomiar ten został pominięty.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline
-2.94 & 2.93 & 2.94 & 2.92 & 2.94 & 2.95 \\
-\hline
-2.93 & 2.93 & \cancel{2.97} & 2.94 & 2.93 & 2.93 \\
-\hline
-2.93 & 2.94 & 2.93 & 2.93 & 2.94 & 2.93 \\
-\hline
-2.94 & 2.93 & 2.94 & 2.92 & 2.93 & 2.94 \\
-\hline
-2.93 & 2.94 & 2.94 & 2.93 & 2.94 & 2.94 \\
-\hline
-2.94 & 2.95 & 2.95 & 2.93 & 2.93 & 2.94 \\
-\hline
-2.94 & 2.93 & 2.94 & 2.94 & 2.94 & 2.93 \\
-\hline
-2.94 & 2.94 & 2.94 & 2.94 & 2.94 & 2.93 \\
-\hline
-2.94 & 2.93 & 2.93 & 2.94 & 2.93 & 2.94 \\
-\hline
-2.94 & 2.94 & 2.94 & 2.94 & 2.93 & 2.93 \\
-\hline
-\end{tabular}
-\caption{Wyniki wielokrotnych pomiarów grubości płytki za pomocą śruby mikrometrycznej.}
-\label{pomiary_sruba}
-\end{table}
-
-
-
-Oznaczmy pomiary jako $x_i$, $i = 1, \dots, 59$.
-
-Średnia wartość wszystkich pomiarów wynosi: $x = \frac{1}{59} \sum_{i = 1}^{59} x_i = \frac{1}{59} \cdot 173.22 \approx 2.935932203389$.
-
-Odchylenie standardowe: $s_x = \sqrt{\frac{\sum_{i=1}^{59} (x_i - x)^2}{59 - 1}} \approx 0.0064643969$.
-
-Niepewność typu A: $u_x (\text{typ A}) = \frac{s_x}{\sqrt{59}} \approx 0.00084159279 \enskip \text{mm} \approx 0.00084 \enskip \text{mm}$.
-
-Niepewność typu B: $u_x (\text{typ B}) = \sqrt{\frac{(\Delta x)^2}{3} + \frac{(\Delta x_e)^2}{3}} = \sqrt{\frac{(0.01)^2}{3} + \frac{(0.005)^2}{3}} \approx 0.006454972 \approx 0.00645 \enskip \text{mm}$.
-
-Niepewność całkowita: $u_x = \sqrt{(u_x (\text{typ A}))^2 + (u_x (\text{typ B}))^2} \approx 0.006504467695 \approx 0.0065 \enskip \text{mm}$.
-
-Ostatecznie, grubość płytki wynosi (zapis na 3 sposoby):
-\begin{itemize}
-\item $d = 2.9365$ mm, $u_x = 0.0065$ mm
-\item $d = 2.9365 \, (65)$ mm
-\item $d = 2.9365 \, (0.0065)$ mm
-\end{itemize}
-
-\subsection{Wyznaczanie objętości płytki}
-
-Zmierzone zostały trzy wymiary metalowej płytki.
-Jako pierwszy wymiar ($x$) przyjmiemy średnią arytmetyczną dwóch pomiarów z niepewnością typu B.
-Oznaczmy objętość $V = x \cdot y \cdot z$, gdzie $x = 37.510 \, (0.012)$ mm, $y = 30.700 \, (0.012)$ mm, $z = 2.9365 \, (0.0066)$ mm.
-Zauważmy, że $x$ oraz $y$ są obarczone niepewnościami typu B, zaś $z$ niepewnością typu A oraz B.
-W celu wyznaczenia objętości $V$ wraz z niepewnością całkowitą, posłużymy się następującymi oznaczeniami oraz wzorami:
-
-$$V = x \cdot y \cdot z = 37.010 \cdot 30.700 \cdot 2.9365 \enskip \text{mm}^3 = 3336.4718555 \enskip \text{mm}^3 \approx 3336 \enskip \text{mm}^3$$
-
-\begin{align*}
-u_V &= \sqrt{(\frac{\partial V}{\partial x})^2 \cdot u_x^2 + (\frac{\partial V}{\partial y})^2 \cdot u_y^2 + (\frac{\partial V}{\partial z})^2 \cdot (u_z \text{(typ A)})^2 + (\frac{\partial V}{\partial z})^2 \cdot (u_z \text{(typ B)})^2} \\
-	&= \sqrt{(yz \cdot u_x)^2 + (xz \cdot u_y)^2 + (xy \cdot u_z \text{(typ A)})^2 + (xy \cdot u_z \text{(typ B)})^2} \\
-	&= \sqrt{(30.7 \cdot 2.9365 \cdot 0.012)^2 + (37.01 \cdot 2.9365 \cdot 0.012)^2 + (37.01 \cdot 30.7 \cdot 0.0009))^2 + (37.01 \cdot 30.7 \cdot 0.0065)^2} \enskip \text{mm}^3\\
-	&\approx 58.4370490542980344 \enskip \text{mm}^3 \\
-	&\approx 58 \enskip \text{mm}^3
-\end{align*}
-
-Ostatecznie, objętość płytki wynosi (zapis na 3 sposoby):
-
-\begin{itemize}
-\item $V = 3336 \enskip \text{mm}^3$, $u_V = 58 \enskip \text{mm}^3$
-\item $V = 3336 \, (58) \enskip \text{mm}^3$
-\item $V = 3336 \, (58) \enskip \text{mm}^3$
-\end{itemize}
+Oprócz niedokładności przyrządów pomiarowych oraz niepewności odczytu wskazań urządzeń przez eksperymentatora,
+niepewności pomiarowe w ćwiczeniu z siatką dyfrakcyjną mogły wynikać z odbicia fal od pobliskich przedmiotów.
+Dodatkowo, pomiary długości fali lasera wymagały nadzwyczaj dużej dokładności eksperymentatorów z powodu niskiego
+przełożenia śruby -- zwiększenie przełożenia mogłoby pozwolić na osiągnięcie większej dokładności.
 
 \end{document}
