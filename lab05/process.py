@@ -57,3 +57,37 @@ table.plot(
 )
 plt.savefig('malus.png')
 
+
+
+print(data_2)
+std_uncert = {'niepewność': [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5]}
+std_uncert = pandas.DataFrame(std_uncert)
+std_uncert = std_uncert.transform(lambda x: np.deg2rad(x)/math.sqrt(3))
+std_uncert['niepewność kąta (rad)'] = std_uncert['niepewność']
+std_uncert = std_uncert.drop(columns=['niepewność'])
+data_2['alfa (rad)'] = data_2['alfa (deg)'].transform(lambda x: np.deg2rad(x))
+data_2['beta (rad)'] = data_2['beta (deg)'].transform(lambda x: np.deg2rad(x))
+data_2['sin(alfa)'] = data_2['alfa (rad)'].transform(lambda x: np.sin(x))
+data_2['sin(beta)'] = data_2['beta (rad)'].transform(lambda x: np.sin(x))
+data_2['niepewność sin(alfa)'] = np.multiply(np.abs(np.cos(data_2['alfa (rad)'])), std_uncert['niepewność kąta (rad)'])
+data_2['niepewność sin(beta)'] = np.multiply(np.abs(np.cos(data_2['beta (rad)'])), std_uncert['niepewność kąta (rad)'])
+x = data_2['sin(alfa)']
+y = data_2['sin(beta)']
+A = np.array([x, np.ones(7)])
+a, b = np.linalg.lstsq(A.T, y, rcond=None)[0]
+print(f"a = {a}, b = {b}")
+data_2.plot(
+        title='Sinus kąta odbicia w zależności od sinusa kąta padania',
+        kind='scatter',
+        s=10,
+        x='sin(alfa)',
+        y='sin(beta)',
+        figsize=(8,8),
+        xerr='niepewność sin(alfa)',
+        yerr='niepewność sin(beta)'
+        )
+plt.plot(x, a*x + b, 'r', label='Metoda najmniejszych kwadratów')
+plt.legend(loc=2)
+plt.text(0.1, 0.6, f"a = {round(a, 6)}\nb = {round(b, 6)}", bbox=dict(facecolor='red', alpha=0.5))
+plt.savefig('snell.png')
+
