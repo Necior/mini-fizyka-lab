@@ -161,8 +161,18 @@ Korzystając z metody propagacji błędu dla pomiarów pośrednich, jakimi są s
 
 Pomiary wraz z niepewnościami na iksach i igrekach zostały naniesione na wykresie (rysunek \ref{snell-wykres}).
 Następnie, korzystając z metody najmniejszych kwadratów, zostało odnalezione najlepsze dopasowanie funkcji liniowej, przedstawione na wykresie kolorem czerwonym.
+Skorzystano z poniższych wzorów:
+\begin{align*}
+a &= \frac{n \Sigma X Y - \Sigma X \Sigma Y}{n \Sigma X^2 - \left(\Sigma X\right)^2} \\
+b &= \frac{1}{n}\left(\Sigma Y - a \Sigma X\right) \\
+u(a) &= \sqrt{\frac{n}{n-2} \frac{\Sigma Y^2 - a\Sigma XY - b\Sigma Y}{n\Sigma X^2-\left(\Sigma X \right)^2}} \\
+u(b) &= u(a)\cdot \sqrt{\frac{\Sigma X^2}{n}}
+\end{align*}
+gdzie $X = \sin\alpha, \ Y = \sin\beta, \ n = 7$.
+
+
 Współczynnik nachylenia prostej wyniósł $a = 0.66688$, a wyraz wolny: $b = 0.00415$.
-Niepewności uzyskanych wartości wynoszą odpowiednio:
+Niepewności uzyskanych wartości to odpowiednio:
 $ u_a=0.00591, \ u_b=0.00411 $
 
 Zatem, korzystając z prawa Snella:
@@ -183,7 +193,7 @@ Niepewność standardową otrzymanego wyniku otrzymamy ponownie ze wzoru na prop
 		\left| \frac{1}{a^2} u_{a}\right| = \frac{1}{0.66688^2}\cdot 0.00591 \approx 0.01329
 \]
 
-Zatem uwzględniając niepewność standardową, współczynnik załamania światła płytki wykorzystanej w ćwiczeniu (obliczony przy użyciu metody wykorzystującej prawo Snella) wynosi $\ n_2 = 1.500(13)$.
+Zatem uwzględniając niepewność standardową, współczynnik załamania światła płytki wykorzystanej w ćwiczeniu (obliczony przy użyciu metody wykorzystującej prawo Snella) wynosi \[ n_2 = 1.500(13)\]
 \begin{table}
 \centering
 \begin{tabular}{lrrrrrrrr}
