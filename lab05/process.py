@@ -93,8 +93,9 @@ data_2.plot(
         xerr='niepewność sin(alfa)',
         yerr='niepewność sin(beta)'
         )
-plt.plot(x, a*x + b, 'r', label='Metoda najmniejszych kwadratów')
+plt.plot(np.linspace(0,1.2,100), a*np.linspace(0, 1.2, 100) + b, 'r', label='Metoda najmniejszych kwadratów')
 plt.legend(loc=2)
+plt.axis((0,1,0,0.7))
 plt.text(0.1, 0.6, f"a = {round(a, 6)}\nb = {round(b, 6)}", bbox=dict(facecolor='red', alpha=0.5))
 plt.savefig('snell.png')
 print(data_2.to_latex())
