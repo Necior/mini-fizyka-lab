@@ -238,9 +238,9 @@ u(\alpha_{gr}) = \sqrt{ \left( \frac{0.0349}{\sqrt{3}} \right)^2 + \left( \frac{
 \approx 0.02254 \ \text{rad}
 \]
 
-Ponieważ: 
+Ponieważ z definicji kąta granicznego mamy: 
 \[ 
-	\sin \alpha_{gr} = \frac{n_{powietrze}}{n_{plytka}} ,
+	\frac{\sin \alpha_{gr}}{\sin 90^\circ} = \frac{n_{powietrze}}{n_{plytka}} ,
 \]
 a zakładamy, że
 \[ 
@@ -253,12 +253,48 @@ stąd:
 Propagacja niepewności:
 \[
 	u(n_{plytka}) = \sqrt{\left( \frac{\partial n_{plytka}}{\partial \alpha_{gr}}u(\alpha_{gr})\right)^2} = 
-	\left| \frac{2\cos(\alpha_{gr})}{\cos(2\alpha_{gr})-1} \, u(\alpha_{gr}) \right| = ...
+	\left| \frac{2\cos(\alpha_{gr})}{\cos(2\alpha_{gr})-1} \, u(\alpha_{gr}) \right| \approx 0.03544
+\]
+Zatem współczynnik załamania światła obliczony za pomocą wyznaczenia kąta granicznego wynosi:
+\[
+	n_{plytka} = 1.466(35)
 \]
 
 \subsection{Wyznaczenie kąta Brewstera}
+Ostatnim ćwiczeniem było wyznaczenie kąta Brewstera.
+W tym celu szukano takiego kąta padania światła, dla którego wiązka odbita będzie tworzyła wraz z wiązką załamaną kąt $90^\circ$.
+Kąt ten został wyznaczony eksperymentalnie na ...? stopni, a niepewność standardowa została oszacowana na \[
+	u(\alpha_B) =\sqrt{ 
+		  \left( \frac{0.0175}{\sqrt{3}} \right)^2 
+		+ \left( \frac{0.0175}{\sqrt{3}} \right)^2
+		+ \left( \frac{0.009}{\sqrt{3}} \right)^2
+	}
+	 \approx 0.015 \ \text{rad}
+\]
 
+Korzystając z zależności:
+\[
+	\text{tg}\alpha_B = \frac{n_{plytka}}{n_{powietrze}}
+\]
+i ponownie stosując podstawienie $n_{powietrze} = 1$, otrzymujemy:
+\[
+	n_{plytka} = \text{tg}... \approx ...
+\]
 
+Propagacja niepewności:
+\[
+	u(n_{plytka})
+		= \sqrt{
+			\left( \frac{\partial n_{plytka}}{\partial \alpha_B}u(\alpha_B)\right)^2
+		}
+		=	\left| \frac{1}{\cos^2 \alpha_B} \, u(\alpha_B) \right| 
+		\approx ...
+\]
+
+Zatem współczynnik załamania światła obliczony za pomocą wyznaczenia kąta Brewstera wynosi:
+\[
+	n_{plytka} = ...
+\]
 \subsection{Wnioski}
 
 
