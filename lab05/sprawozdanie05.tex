@@ -150,11 +150,67 @@ Biorąc pod uwagę trudności podczas przeprowadzania ćwiczenia, pomimo większ
 
 
 \subsection{Badanie prawa Snella}
+Następnie, wykonano pomiary prowadzące do wyznaczenia współczynnika załamania światła dla płytki z pleksiglasu.
+W tym celu zmierzono kąty padania światła, jak i kąty odbicia.
+Wyniki zostały przedstawione w tabeli \ref{snell-pomiary}.
+Niepewność pomiaru typu B wyniosła $1.5^\circ$, stąd standardowa niepewność pomiarowa, podana w radianach jest równa $u_x = \frac{1.5 \cdot 2 \pi}{360 \cdot \sqrt{3}} = 0.015115$.
+Korzystając z metody propagacji błędu dla pomiarów pośrednich, jakimi są sinusy mierzonych kątów, otrzymujemy, że:
+\[
+	u_{\sin(x)} = \sqrt{\left(\frac{\partial \sin(x)}{\partial x}u_{x}\right)^2} = \left|\cos(x)u_{x}\right|
+\]
+
+Pomiary wraz z niepewnościami na iksach i igrekach zostały naniesione na wykresie (rysunek \ref{snell-wykres}).
+Następnie, korzystając z metody najmniejszych kwadratów, zostało odnalezione najlepsze dopasowanie funkcji liniowej, przedstawione na wykresie kolorem czerwonym.
+Współczynnik nachylenia prostej wyniósł $a = 0.66688$, a wyraz wolny: $b = 0.00415$.
+Niepewności uzyskanych wartości wynoszą odpowiednio:
+$ u_a=0.00591, \ u_b=0.00411 $
+
+Zatem, korzystając z prawa Snella:
+\begin{align*}
+\frac{n_2}{n_1} &= \frac{\sin\alpha}{\sin\beta} \\ 
+\frac{n_2}{n_1} &= \frac{\sin\alpha}{a \cdot \sin\alpha + b}
+\end{align*}
+
+Zakładając, że $n_1 \approx 1, \ b \approx 0$ otrzymujemy:
+\[ n_2 = \frac{1}{a}\]
+
+Stąd: $n_2 = \frac{1}{0.66688} \approx 1.49952$
+
+Niepewność standardową otrzymanego wyniku otrzymamy ponownie ze wzoru na propagację błędu:
+
+\[
+		u_{n_2(a)} = \sqrt{\left(\frac{\partial n_2(a)}{\partial a}u_{a}\right)^2} = 
+		\left| \frac{1}{a^2} u_{a}\right| = \frac{1}{0.66688^2}\cdot 0.00591 \approx 0.01329
+\]
+
+Zatem uwzględniając niepewność standardową, współczynnik załamania światła płytki wykorzystanej w ćwiczeniu (obliczony przy użyciu metody wykorzystującej prawo Snella) wynosi $\ n_2 = 1.500(13)$.
+\begin{table}
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+
+l.p.&  $\alpha \ ({}^\circ)$ & $\beta \ ({}^\circ)$ &  $\alpha \ (\text{rad})$ &  $\beta \ (\text{rad})$ &  $\sin(\alpha)$ &  $\sin(\beta)$ &  $u_{\sin(\alpha)}$ &  $u_{\sin(\beta)}$ \\
+\midrule
+0  &           5 &         3.5& 0.087266 &    0.061087 &   0.087156 &   0.061049 &              0.015057 &              0.015087 \\
+1  &          15 &        10.5 & 0.261799 &    0.183260 &   0.258819 &   0.182236 &              0.014600 &              0.014862 \\
+2 & 30 & 19.5 &0.523599 &    0.340339 &   0.500000 &   0.333807 &              0.013090 &              0.014248 \\
+3&          45 &        28.0 & 0.785398 &    0.488692 &   0.707107 &   0.469472 &              0.010688 &              0.013346 \\
+4&          60 &        36.0 & 1.047198 &    0.628319 &   0.866025 &   0.587785 &              0.007557 &              0.012228 \\
+5  &          70 &        39.0& 1.221730 &    0.680678 &   0.939693 &   0.629320 &              0.005170 &              0.011747 \\
+6 &          75 &        40.5& 1.308997 &    0.706858 &   0.965926 &   0.649448 &              0.003912 &              0.011494 \\
+\bottomrule
+\end{tabular}
+
+\caption{Pomiary zależności kąta odbicia ($\beta$) od kąta padania ($\alpha$)}
+\label{snell-pomiary}
+\end{table}
+
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{snell.png}
-\caption{Wykres }
+\caption{Prawo Snella}
+\label{snell-wykres}
 \end{figure}
 
 

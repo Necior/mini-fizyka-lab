@@ -76,8 +76,8 @@ data_2['alfa (rad)'] = data_2['alfa (deg)'].transform(lambda x: np.deg2rad(x))
 data_2['beta (rad)'] = data_2['beta (deg)'].transform(lambda x: np.deg2rad(x))
 data_2['sin(alfa)'] = data_2['alfa (rad)'].transform(lambda x: np.sin(x))
 data_2['sin(beta)'] = data_2['beta (rad)'].transform(lambda x: np.sin(x))
-data_2['niepewność sin(alfa)'] = np.multiply(np.abs(np.cos(data_2['alfa (rad)'])), std_uncert['niepewność kąta (rad)'])
-data_2['niepewność sin(beta)'] = np.multiply(np.abs(np.cos(data_2['beta (rad)'])), std_uncert['niepewność kąta (rad)'])
+data_2['niepewność sin(alfa)'] = np.abs(np.multiply(np.cos(data_2['alfa (rad)']), std_uncert['niepewność kąta (rad)']))
+data_2['niepewność sin(beta)'] = np.abs(np.multiply(np.cos(data_2['beta (rad)']), std_uncert['niepewność kąta (rad)']))
 x = data_2['sin(alfa)']
 y = data_2['sin(beta)']
 A = np.array([x, np.ones(7)])
@@ -97,3 +97,18 @@ plt.plot(x, a*x + b, 'r', label='Metoda najmniejszych kwadratów')
 plt.legend(loc=2)
 plt.text(0.1, 0.6, f"a = {round(a, 6)}\nb = {round(b, 6)}", bbox=dict(facecolor='red', alpha=0.5))
 plt.savefig('snell.png')
+print(data_2.to_latex())
+print(std_uncert.to_latex())
+
+# Counting least squares fit w/ uncertainties by hand
+print("Counting least squares fit by hand:")
+x = np.array([0.087156,0.258819,0.5,0.707107,0.866025,0.939693,0.965926])
+y = np.array([0.061049,0.182236,0.333807,0.469472,0.587785,0.629320,0.649448])
+n = 7
+xy = np.multiply(x, y)
+a = (n*xy.sum() - x.sum() * y.sum()) / (n * np.power(x, 2).sum() - x.sum() **2 )
+b = 1/n * (y.sum() - a*x.sum())
+u_a = np.sqrt(n/(n-2) * (np.power(y, 2).sum() - a*xy.sum() - b*y.sum())/(n * np.power(x, 2).sum() - x.sum() ** 2))
+u_b = u_a * np.sqrt(np.power(x, 2).sum()/n)
+print(f"a={a}\nb={b}\nu_a={u_a}\nu_b={u_b}")
+
