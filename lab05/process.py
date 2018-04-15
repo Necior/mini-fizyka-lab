@@ -52,9 +52,16 @@ table.plot(
         s=8,
         x='kąt obrotu analizatora (deg)',
         y='natężenie prądu (uA)',
+        xerr=np.divide(np.array([2, 2, 2, 2, 2, 2, 2, 2]), math.sqrt(3)),
         yerr=std_uncert_total,
-        figsize=(6,8)
+        figsize=(6,8),
+        label='pomiary'
 )
+
+x = np.linspace(60, 190, 100)
+plt.plot(x, 262*np.power(np.cos(np.deg2rad(x+2)), 2), 'r-', label='262 * cos^2(x+2)')
+plt.plot(x, 266*np.power(np.cos(np.deg2rad(x+9)), 2), 'g--', label='266 * cos^2(x+9)')
+plt.legend(loc=2)
 plt.savefig('malus.png')
 
 
@@ -90,4 +97,3 @@ plt.plot(x, a*x + b, 'r', label='Metoda najmniejszych kwadratów')
 plt.legend(loc=2)
 plt.text(0.1, 0.6, f"a = {round(a, 6)}\nb = {round(b, 6)}", bbox=dict(facecolor='red', alpha=0.5))
 plt.savefig('snell.png')
-
