@@ -190,7 +190,7 @@ Stąd: $n_2 = \frac{1}{0.66688} \approx 1.49952$
 Niepewność standardową otrzymanego wyniku otrzymamy ponownie ze wzoru na propagację błędu:
 
 \[
-		u_{n_2(a)} = \sqrt{\left(\frac{\partial n_2(a)}{\partial a}u_{a}\right)^2} = 
+		u(n_2) = \sqrt{\left(\frac{\partial n_2(a)}{\partial a}u_{a}\right)^2} = 
 		\left| \frac{1}{a^2} u_{a}\right| = \frac{1}{0.66688^2}\cdot 0.00591 \approx 0.01329
 \]
 
@@ -226,6 +226,36 @@ l.p.&  $\alpha \ ({}^\circ)$ & $\beta \ ({}^\circ)$ &  $\alpha \ (\text{rad})$ &
 
 
 \subsection{Wyznaczenie kąta granicznego}
+Kolejnym ćwiczeniem było wyznaczenie kąta granicznego zadanej przezroczystej płytki.
+Obserwując załamaną wiązkę światła, przechodzącą przez granicę "szkło/powietrze", szukany był kąt $\alpha_{gr}$, powyżej którego wiązka światła zanikała.
+Wartość tego kąta została wyznaczona eksperymentalnie na: 
+\[
+\alpha_{gr} = 43^\circ \approx 0.7504916 \ \text{rad}
+\]
+Standardowa niepewność pomiaru została oszacowana na 
+\[
+u(\alpha_{gr}) = \sqrt{ \left( \frac{0.0349}{\sqrt{3}} \right)^2 + \left( \frac{0.0175}{\sqrt{3}} \right)^2}
+\approx 0.02254 \ \text{rad}
+\]
+
+Ponieważ: 
+\[ 
+	\sin \alpha_{gr} = \frac{n_{powietrze}}{n_{plytka}} ,
+\]
+a zakładamy, że
+\[ 
+	n_{powietrze} = 1,
+\]
+stąd:
+\[
+	n_{plytka} = \frac{1}{\sin \alpha_{gr}} \approx 1.4662792
+\]
+Propagacja niepewności:
+\[
+	u(n_{plytka}) = \sqrt{\left( \frac{\partial n_{plytka}}{\partial \alpha_{gr}}u(\alpha_{gr})\right)^2} = 
+	\left| \frac{2\cos(\alpha_{gr})}{\cos(2\alpha_{gr})-1} \, u(\alpha_{gr}) \right| = ...
+\]
+
 \subsection{Wyznaczenie kąta Brewstera}
 
 
