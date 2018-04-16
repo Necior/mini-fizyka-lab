@@ -148,11 +148,11 @@ Wyniki zostały przedstawione w tablicy \ref{malus-pomiary}.
 % Pomiary 1. i 7. zostały uznane jako błędy grube na podstawie próby dopasowania wykresu funkcji $263 \cos^2(x+10)$ do wyników pomiarów (patrz rysunek \ref{malus-wykres}).
 Na rysunku \ref{malus-wykres} przedstawione zostały 2 próby jak najlepszego dopasowania wykresu funkcji $\cos^2$ uwzględniając wszystkie niepewności standardowe, przy założeniach:
 \begin{itemize}
-	\item kąt $\alpha_0$ jest kątem, dla którego natężenie jest maksymalne -- kolor czerwony
-	\item kąty obrotu analizatora zostały odczytane z przesunięciem $10^\circ$, pomiar $k=1$ jest błędem grubym, a kąt $\alpha_0$ \textbf{nie} jest kątem maksymalnego natężenia -- kolor zielony
+	\item kąt $\alpha_0$ jest kątem, dla którego natężenie jest maksymalne -- kolor czerwony, linia ciągła
+	\item kąty obrotu analizatora zostały odczytane z przesunięciem $10^\circ$, pomiar $k=1$ jest błędem grubym, a kąt $\alpha_0$ \textbf{nie} jest kątem maksymalnego natężenia -- kolor zielony, linia przerywana
 \end{itemize}
 
-Biorąc pod uwagę trudności podczas przeprowadzania ćwiczenia, pomimo większej ilości założeń prawdziwy zdaje się być przypadek drugi (kolor zielony na wykresie).
+Biorąc pod uwagę trudności podczas przeprowadzania ćwiczenia, pomimo większej ilości założeń prawdziwy zdaje się być przypadek drugi (linia przerywana na wykresie).
 
 
 \begin{table}[h]
@@ -175,25 +175,27 @@ Biorąc pod uwagę trudności podczas przeprowadzania ćwiczenia, pomimo większ
 \label{malus-pomiary}
 \end{table}
 
-Wykres funkcji $266 \cdot \cos^2(\alpha + 9)$ (gdzie argument funkcji cosinus: $(\alpha + 9)$ jest podany w stopniach) zdaje się dobrze odzwierciedlać uzyskane wyniki pomiarów, potwierdzając tym samym, że natężenie światła spolaryzowanego liniowo jest proporcjonalne do kwadratu cosinusa kąta między płaszczyzną polaryzacji światła padającego a płaszczyzną polaryzacji światła po przejściu przez polaryzator.
-
-
-\begin{figure}[h]
+\begin{figure}[b]
 \centering
-\includegraphics[scale=0.6]{malus.png}
+\includegraphics[scale=0.8]{malus.png}
 \caption{Prawo Malusa}
 \label{malus-wykres}
 \end{figure}
+
+Wykres funkcji $266 \cdot \cos^2(\alpha + 9)$ (gdzie argument funkcji cosinus: $(\alpha + 9)$ jest podany w stopniach) zdaje się dobrze odzwierciedlać uzyskane wyniki pomiarów, potwierdzając tym samym, że natężenie światła spolaryzowanego liniowo jest proporcjonalne do kwadratu cosinusa kąta między płaszczyzną polaryzacji światła padającego a płaszczyzną polaryzacji światła po przejściu przez polaryzator.
 
 
 \subsection{Badanie prawa Snella}
 Następnie, wykonano pomiary prowadzące do wyznaczenia współczynnika załamania światła dla płytki z pleksiglasu.
 W tym celu zmierzono kąty padania światła, jak i kąty odbicia.
 Wyniki zostały przedstawione w tabeli \ref{snell-pomiary}.
-Niepewność pomiaru typu B wyniosła $1.5^\circ$, stąd standardowa niepewność pomiarowa, podana w radianach jest równa $u_x = \frac{1.5 \cdot 2 \pi}{360 \cdot \sqrt{3}} = 0.015115$.
+Standardowa niepewność pomiarowa, została oszacowana na
+\[
+	u_x = \frac{1.5 \cdot 2 \pi}{360 \cdot \sqrt{3}} = 0.015115
+\]
 Korzystając z metody propagacji błędu dla pomiarów pośrednich, jakimi są sinusy mierzonych kątów, otrzymujemy, że:
 \[
-	u_{\sin(x)} = \sqrt{\left(\frac{\partial \sin(x)}{\partial x}u_{x}\right)^2} = \left|\cos(x)u_{x}\right|
+	u(\sin(x)) = \sqrt{\left(\frac{\partial \sin(x)}{\partial x}u(x)\right)^2} = \left|\cos(x)u(x)\right|
 \]
 
 Pomiary wraz z niepewnościami na iksach i igrekach zostały naniesione na wykresie (rysunek \ref{snell-wykres}).
@@ -214,24 +216,24 @@ $ u_a=0.00591, \ u_b=0.00411 $
 
 Zatem, korzystając z prawa Snella:
 \begin{align*}
-\frac{n_2}{n_1} &= \frac{\sin\alpha}{\sin\beta} \\ 
-\frac{n_2}{n_1} &= \frac{\sin\alpha}{a \cdot \sin\alpha + b}
+\frac{n_{plytka}}{n_{powietrze}} &= \frac{\sin\alpha}{\sin\beta} \\ 
+\frac{n_{plytka}}{n_{powietrze}} &= \frac{\sin\alpha}{a \cdot \sin\alpha + b}
 \end{align*}
 
-Zakładając, że $n_1 \approx 1, \ b \approx 0$ otrzymujemy:
-\[ n_2 = \frac{1}{a}\]
+Zakładając, że $n_{powietrze} \approx 1, \ b \approx 0$ otrzymujemy:
+\[ n_{plytka} = \frac{1}{a}\]
 
-Stąd: $n_2 = \frac{1}{0.66688} \approx 1.49952$
+Stąd: $n_{plytka} = \frac{1}{0.66688} \approx 1.49952$
 
 Niepewność standardową otrzymanego wyniku otrzymamy ponownie ze wzoru na propagację błędu:
 
 \[
-		u(n_2) = \sqrt{\left(\frac{\partial n_2(a)}{\partial a}u_{a}\right)^2} = 
+		u(n_{plytka}) = \sqrt{\left(\frac{\partial n_{plytka}(a)}{\partial a}u_{a}\right)^2} = 
 		\left| \frac{1}{a^2} u_{a}\right| = \frac{1}{0.66688^2}\cdot 0.00591 \approx 0.01329
 \]
 
-Zatem uwzględniając niepewność standardową, współczynnik załamania światła płytki wykorzystanej w ćwiczeniu (obliczony przy użyciu metody wykorzystującej prawo Snella) wynosi \[ n_2 = 1.500(13)\]
-\begin{table}
+Zatem uwzględniając niepewność standardową, współczynnik załamania światła płytki wykorzystanej w ćwiczeniu (obliczony przy użyciu metody wykorzystującej prawo Snella) wynosi \[ n_{plytka} = 1.500(13)\]
+\begin{table}[h!]
 \centering
 \begin{tabular}{lrrrrrrrr}
 \toprule
@@ -253,7 +255,7 @@ l.p.&  $\alpha \ ({}^\circ)$ & $\beta \ ({}^\circ)$ &  $\alpha \ (\text{rad})$ &
 \end{table}
 
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[scale=0.7]{snell.png}
 \caption{Prawo Snella}
@@ -299,7 +301,7 @@ Zatem współczynnik załamania światła obliczony za pomocą wyznaczenia kąta
 \subsection{Wyznaczenie kąta Brewstera}
 Ostatnim ćwiczeniem było wyznaczenie kąta Brewstera.
 W tym celu szukano takiego kąta padania światła, dla którego wiązka odbita będzie tworzyła wraz z wiązką załamaną kąt $90^\circ$.
-Kąt ten został wyznaczony eksperymentalnie na ...? stopni, a niepewność standardowa została oszacowana na \[
+Kąt ten został wyznaczony eksperymentalnie na $56^\circ$ stopni, a niepewność standardowa została oszacowana na \[
 	u(\alpha_B) =\sqrt{ 
 		  \left( \frac{0.0175}{\sqrt{3}} \right)^2 
 		+ \left( \frac{0.0175}{\sqrt{3}} \right)^2
@@ -314,7 +316,7 @@ Korzystając z zależności:
 \]
 i ponownie stosując podstawienie $n_{powietrze} = 1$, otrzymujemy:
 \[
-	n_{plytka} = \text{tg}... \approx ...
+	n_{plytka} = \text{tg}56^\circ \approx 1.483
 \]
 
 Propagacja niepewności:
@@ -324,14 +326,55 @@ Propagacja niepewności:
 			\left( \frac{\partial n_{plytka}}{\partial \alpha_B}u(\alpha_B)\right)^2
 		}
 		=	\left| \frac{1}{\cos^2 \alpha_B} \, u(\alpha_B) \right| 
-		\approx ...
+		\approx 0.048
 \]
 
 Zatem współczynnik załamania światła obliczony za pomocą wyznaczenia kąta Brewstera wynosi:
 \[
-	n_{plytka} = ...
+	n_{plytka} = 1.483(48)
 \]
 \subsection{Wnioski}
+Pierwsza część ćwiczenia pozwoliła nam pokazać, że zgodnie z prawem Malusa, natężenie światła spolaryzowanego liniowo, przechodzącego przez analizator jest wprost proporcjonalne do kwadratu cosinusa kąta między płaszczyzną polaryzacji światła wpadającego a płaszczyzną polaryzacji światła wychodzącego z analizatora.
 
+Kolejne trzy części ćwiczenia miały na celu wyznaczenie współczynnika liniowego płytki z pleksiglasu na 3 różne sposoby.
+Wyniki zostały przedstawione w tabeli \ref{wnioski-wartości}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Metoda & $n_{plytka}$ & $u(n_{plytka})$ \\
+\midrule
+Prawo Snella  & 1.500 & 0.013 \\
+Kąt graniczny & 1.466 & 0.035 \\
+Kąt Brewstera & 1.483 & 0.048 \\
+\bottomrule
+\end{tabular}
+\caption{Uzyskane wartości współczynnika załamania światła dla płytki z pleksiglasu}
+\label{wnioski-wartości}
+\end{table}
+
+Korzystając z wartości współczynnika załamania światła, wyznaczonej przez Cargille Labs \cite{cargille}, tj. $n = 1.4917$, możemy porównać uzyskane wyniki.
+Wykres uzyskanych wyników wraz z ich niepewnością rozszerzoną przy $k = 1$ przedstawiony został na rysunku \ref{wnioski-wykres}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{wnioski.png}	
+\caption{Porównanie metod wyznaczania wsp. załamania światła}
+\label{wnioski-wykres}
+\end{figure}
+
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{cargille}
+  Strona internetowa firmy Cargille-Sacher Laboratories Inc,
+  
+  http://www.cargille.com/specimmerliq.shtml
+
+
+\end{thebibliography}
 
 \end{document}

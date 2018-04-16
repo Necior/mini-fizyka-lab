@@ -113,3 +113,18 @@ u_a = np.sqrt(n/(n-2) * (np.power(y, 2).sum() - a*xy.sum() - b*y.sum())/(n * np.
 u_b = u_a * np.sqrt(np.power(x, 2).sum()/n)
 print(f"a={a}\nb={b}\nu_a={u_a}\nu_b={u_b}")
 
+# Preparing summary plot
+x = np.array([1, 2, 3])
+y = np.array([1.500, 1.466, 1.483])
+x_ticks = ['Prawo Snella', 'Kąt graniczny', 'Kąt Brewstera']
+yerr = np.multiply(np.array([0.013, 0.035, 0.048]), 1)
+x_exact = np.linspace(0, 4, 100)
+y_exact = np.ones(100) * 1.4917
+
+plt.figure()
+plt.xticks(x, x_ticks)
+plt.errorbar(x, y, yerr=yerr, fmt='o', capsize=5)
+plt.plot(x_exact, y_exact, 'g--')
+plt.axis((0,4,1.42, 1.54))
+plt.text(0.2, 1.495, '1.4917', color='g')
+plt.savefig('wnioski.png')
