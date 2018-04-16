@@ -47,7 +47,7 @@ table.columns = [
 
 print(table)
 table.plot(
-        title='Natężenie prądu fali docierającej do detektora od kąta analizatora',
+        title='Natężenie prądu na amperomierzu od kąta obrotu analizatora',
         kind='scatter',
         s=8,
         x='kąt obrotu analizatora (deg)',
@@ -64,20 +64,22 @@ plt.plot(x, 266*np.power(np.cos(np.deg2rad(x+9)), 2), 'g--', label='266 * cos^2(
 plt.legend(loc=2)
 plt.savefig('malus.png')
 
-
+# Snell's Law
 
 print(data_2)
-std_uncert = {'niepewność': [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5]}
-std_uncert = pandas.DataFrame(std_uncert)
-std_uncert = std_uncert.transform(lambda x: np.deg2rad(x)/math.sqrt(3))
-std_uncert['niepewność kąta (rad)'] = std_uncert['niepewność']
-std_uncert = std_uncert.drop(columns=['niepewność'])
+# std_uncert = {'niepewność': [1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5]}
+# std_uncert = pandas.DataFrame(std_uncert)
+# std_uncert = std_uncert.transform(lambda x: np.deg2rad(x)/math.sqrt(3))
+# std_uncert['niepewność kąta (rad)'] = std_uncert['niepewność']
+# std_uncert = std_uncert.drop(columns=['niepewność'])
 data_2['alfa (rad)'] = data_2['alfa (deg)'].transform(lambda x: np.deg2rad(x))
 data_2['beta (rad)'] = data_2['beta (deg)'].transform(lambda x: np.deg2rad(x))
 data_2['sin(alfa)'] = data_2['alfa (rad)'].transform(lambda x: np.sin(x))
 data_2['sin(beta)'] = data_2['beta (rad)'].transform(lambda x: np.sin(x))
-data_2['niepewność sin(alfa)'] = np.abs(np.multiply(np.cos(data_2['alfa (rad)']), std_uncert['niepewność kąta (rad)']))
-data_2['niepewność sin(beta)'] = np.abs(np.multiply(np.cos(data_2['beta (rad)']), std_uncert['niepewność kąta (rad)']))
+
+std_uncert_FIXED = 0.01136 # Calculated by hand: u(x) = sqrt( (1rad/sqrt(3))^2 + (0.5rad/sqrt(3))^2 )
+data_2['niepewność sin(alfa)'] = np.abs(np.multiply(np.cos(data_2['alfa (rad)']), std_uncert_FIXED))
+data_2['niepewność sin(beta)'] = np.abs(np.multiply(np.cos(data_2['beta (rad)']), std_uncert_FIXED))
 x = data_2['sin(alfa)']
 y = data_2['sin(beta)']
 A = np.array([x, np.ones(7)])
@@ -99,7 +101,7 @@ plt.axis((0,1,0,0.7))
 plt.text(0.1, 0.6, f"a = {round(a, 6)}\nb = {round(b, 6)}", bbox=dict(facecolor='red', alpha=0.5))
 plt.savefig('snell.png')
 print(data_2.to_latex())
-print(std_uncert.to_latex())
+# print(std_uncert.to_latex())
 
 # Counting least squares fit w/ uncertainties by hand
 print("Counting least squares fit by hand:")
@@ -123,6 +125,8 @@ y_exact = np.ones(100) * 1.4917
 
 plt.figure()
 plt.xticks(x, x_ticks)
+plt.title('Pomiary wraz z niepewnością rozszerzoną (k=1)')
+plt.ylabel('Współczynnik załamania światła')
 plt.errorbar(x, y, yerr=yerr, fmt='o', capsize=5)
 plt.plot(x_exact, y_exact, 'g--')
 plt.axis((0,4,1.42, 1.54))
