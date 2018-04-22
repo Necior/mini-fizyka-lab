@@ -8,6 +8,9 @@
 \usepackage{pdfpages}
 \usepackage{indentfirst}
 \usepackage{listings}
+\usepackage{isotope}
+
+
 
 % Adjust penalties
 \brokenpenalty=1000
@@ -86,82 +89,73 @@
 \label{pieczatka}
 \end{center}
 
-{\let\newpage\relax\maketitle}  % stolen from: https://tex.stackexchange.com/questions/86249/maketitle-text-before-title
+{\let\newpage\relax\maketitle}
 \setcounter{secnumdepth}{2}
 
 
 \section{Opis ćwiczenia}
-Ćwiczenie złożone było z dwóch części:
+Ćwiczenie miało na celu zbadanie stopnia osłabienie promieniowania $\gamma$ przy przejściu przez 3 różne materiały:
 \begin{enumerate}
-	\item{Badanie anharmoniczności drgań wahadła matematycznego}
-	\item{Wyznaczanie przyspieszenia ziemskiego za pomocą wahadła różnicowego}
+	\item{Ołów - Pb}
+	\item{Miedź - Cu}
+	\item{Aluminium - Al}
 \end{enumerate}
 
 
 \subsection{Wstęp teoretyczny}
-
-\textbf{Wahadłem matematycznym płaskim} nazywamy punkt materialny, poruszający się po
-fragmęcie okregu w jednorodnym polu grawitacyjnym. Praktyczną realizacją tego pojęcia
-jest obciążnik (najczęściej kulka) o małych rozmiarach, zamocowany na nierozciągliwej
-nici o bardzo małej, pomijalnej masie (Rysunek \ref{wahadlo_matematyczne}).
-
-%\begin{figure}[h!]
-%\centering
-%\includegraphics[scale=0.8]{wahadlo.eps}
-%\caption{Wahadło matematyczne}
-%\label{wahadlo_matematyczne}
-%\end{figure}
-
-Siłę ciężkości $\vec{F}_g = m\vec{g}$ działającą na ciężarek możemy rozłożyć na
-składową radialną $F_g \cos \theta$ oraz styczną do toru ruchu wahadła $F_g \sin \theta$.
-Składowa styczna wpływa na zmianę wektora prędkości ciężarka, gdyż działa ona
-zawsze przeciwnie do jego wychylenia. Z drugiej zasady dynamiki Newtona mamy więc:
-
+\textbf{Promieniowanie $\gamma$} jest to obok promieniowania $\alpha$ oraz $\beta$ jedno z trzech podstawowych rodzajów promieniowania występujących w przyrodzie. Jest ono wysokoenergetyczną formą promieniowania elektromagnetycznego, o energii kwantu większej od 50 keV. Podczas zachodzenia przemiany $\gamma$ następuje pozbycie się nadmiaru energii z jądra atomowego. Liczba nukleonów w jądrze pozostaje bez zmiany. Pozostałe rodzaje promieniowania polegają na emitowaniu cząstek. Odpowiednio dla przemiany $\alpha$ jest to cząstka która składa się z 2 protonów i 2 neutronów, czyli jest jądrem izotopu atomu helu, jest to najmniej przenikliwe promieniowanie z wymienionych. Przemiana $\beta$ dzieli się na dwa rodzaje $\beta^{-}$ oraz $\beta^{+}$, w pierwszej emitowany jest elektron oraz antynetrino elektronowe, natomiast w drugim pozyton i neutrino elektronowe. \\
+Promieniowanie $\gamma$ przenika przez materiał, podczas tego procesu oddziaływuje ono z elektronami oraz jądrami atomów. Występują 3 zjawiska w których bierze udział cząstka $\gamma$:
+\begin{enumerate}
+	\item{rozpraszanie Komptonowskie}
+	\item{zjawisko fotoelektryczne}
+	\item{tworzenie par elektron-pozyton}
+\end{enumerate}
+ 
+\textbf{Zjawisko Comptona} polega na rozpraszaniu się cząstek promieniowania na elektronach które możemy traktować jako swobodne (znajdują się one na ostatnich orbitach w atomie). Jako rezultat oddziaływania otrzymujemy kwant $\gamma$ który zmiania kierunek oraz oddaje od część energii dla elektronu.\\
+\textbf{Zjawisko fotoelektryczne} zachodzi pomiędzy cząstkami $\gamma$ a elektronami znajdującymi się na orbitalach blisko jądra atomowego. Po jego zajściu kwant zostanie pochłonięty i elektron zostanie oderwany od atomu oraz otrzyma pewną energię kinentyczną.\\
+ \textbf{Tworzenie się par elektron-pozyton} polega na stworzeniu pary cząstek przy odziaływaniu kwantów $\gamma$ z jądrami atomowymi. Energią progową do zajścia tego zjawiska jest 1.02 MeV co jest sumaryczną energią elektronu i pozytonu.\\
+W naszym doświadczeniu jako źródła promieniowania używaliśmy \isotope[60][27]{Co} którego czas połowicznego rozpadu wynosi 5 lat. Zgodnie ze wzorem 
 \begin{align*}
- ma &= -mg\sin\theta \\
- \frac{d^2S}{dt^2} &= -g\sin\theta
+N(t) = N_0 e^{−\lambda t}
 \end{align*}
+gdzie:
+$N(t)$ – liczba jąder promieniotwórczych, które nie uległy rozpadowi do chwili czasu t,
+$N_0$ – liczba jąder promieniotwórczych w chwili czasu t = 0, $N(0) = N_0$ , $\lambda$ – stała, zwana stałą rozpadu.\\
+Promieniowanie wysyłane przez naszą próbkę podczas trwania eksperymentu możemy traktować jako stałe ponieważ czas trwania doświadczenia (~1h) jest znikomy w porównaniu do 5 lat.\\
+Następujący wzór:
+\begin{align*}
+I = I_0 e^{− \mu  x}
+\end{align*}
+gdzie: $I(x)$ – natężenie wiązki po przejściu przez absorbent o grubości x, $I_0 = I(0)$ – początkowe natężenie
+wiązki, $\mu$ – współczynnik osłabienia promieniowania gamma\\
+opisuje związek natężenia wiązki wypromieniowanej po przejściu przez absorbent grubości x. Możemy go wyprowadzić w następujący sposób:
+Do pochłaniania promieniowania $\gamma$ w materii przyczyniają się 3 wcześniej wymienione zjawiska. Możemy to zapisać zależnością
+\begin{align*}
+\mu = \mu_c +\mu_f +\mu_p
+\end{align*}
+do sumy włączają się zjawisko Comptona, fotoelektryczne oraz tworzenie się par elektron-pozyton.
+Jako że zmieniejszenie się natężenia kwantów $\gamma$ jest wprost proporcjonalne do grubości meterii przez którą one przelecą możemy zapisać następującą zależość:
+\begin{align*}
+−dI = B I dx
+\end{align*}
+z czego po scałkowaniu otrzymujemy:
+\begin{align*}
+I ( x)=I_0 e^{−B x}
+\end{align*}
+co daje nam wzór na osłabienie wiązki z współczynnikiem $B = \mu$.
+W naszym doświadczeniu chcemy właśnie wyznaczyć współczynnik osłabienia $\mu$ lecz nie jesteśmy tego w stanie zrobić metodą bezpośrednią (mierząc natęrzęnie początkowe $I_0$). By wyznaczyć wspomniany współczynnik posłużymy się metodą najmniejszych kwadratów w następujący sposób:\\
+Logarytmujemy obie strony wyznaczonego wzoru na osłabienie promieniowania otrzymując:
+\begin{align*}
+ln( I )=ln( I_0 )−\mu x
+\end{align*}
+teraz możemy dokonać podstawienia $ln(I) = y$ oraz $ln (I_0 ) =b$ i $\mu = a$ dzięki czemu otrzymujemy równanie prostej:
+\begin{align*}
+y = ax + b
+\end{align*}
+Z czego po przeprowadzeniu serii pomiarów możemy wyznaczyć wspomniany wczesniej współczynnik
 
-Ponieważ $S = l \cdot \theta$:
+%TODO WSPOMNIEĆ O KOLIMATORZE
 
-\[ \frac{d^2\theta}{dt^2} = -\frac{g}{l}\sin\theta \]
-
-
-Nie istnieje analityczne rozwiązanie tego równania różniczkowego. Dla małych kątów
-można uprościć powyższy wzór, zakładając, że \, $\sin\theta \approx \theta$ \,
--- wtedy równanie różniczkowe daje się rozwiązać analitycznie. W rezultacie otrzymujemy,
-że \textbf{dla wahadła matematycznego poruszającego się w zakresie małych kątów}
-(przy założeniu $\theta(0) = \theta_{max}$):
-
-\[ \theta(t) = \theta_{max}\cos\left(\sqrt{\frac{g}{l}}\,t\right), \]
-
-czyli ruch \textbf{jest harmoniczny}, a okres tego ruchu wynosi
-
-\[ T = 2\pi~\sqrt{\frac{l}{g}} \]
-
-
-W ogólności (bez założenia małych wychyleń), korzystając z rozwinięcia funkcji $sin$
-w szereg, możemy finalnie otrzymać zależność okresu drgań wahadła $T$ od kąta
-maksymalnego wychylenia $\theta_{max}$:
-\begin{equation} \label{eq:T}
-T = 2\pi ~ \sqrt[]{\frac{l}{g}}~f(\theta_{max}) ,
-\end{equation}
-\begin{equation} \label{eq:f}
-\text{gdzie} \enskip  \enskip f(\theta_{max}) = 
-	\sum\limits_{n=0}^{\infty} 
-		\left[ \frac{(2n)!}{(2^nn!)^2} \right]^2 
-			\sin^{2n}\left(\frac{\theta_{max}}{2} \right)
-\end{equation}
-
-
-Ruch wahadła matematycznego jest więc w ogólności \textbf{anharmoniczny} -- okres
-jest zależny od amplitudy.
-
-\textbf{Wahadło różnicowe} to wahadło w którym mamy możliwość zmiany długości nici na której 
-jest zawieszony ciężarek, pozwalające
-mierzyć w precyzyjny sposób zmianę jej długości, nie znając długości bezwzględnej. Wykonując dwa pomiary $T_1, T_2$ dla różnych długości wahadła $l_1, l_2$ otrzymujemy:
-
-\[ T^2_1 - T^2_2 = \frac{4\pi ^2}{g}\left(l_1-l_2\right) f(\theta_{max}) \]
 
 \subsection{Układ pomiarowy}
 Do przeprowadzenia obu części ćwiczenia posłużono się układem pomiarowym,
@@ -175,12 +169,12 @@ Pod statywem znajdował się elektroniczny układ pomiarowy, złożony z fotokom
 oraz modułu sterowania, za pomocą którego mierzony był okres wahadła.
 
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[scale=1]{uklad.eps}
-%\caption{Schemat układu pomiarowego}
-%\label{uklad_pomiarowy}
-%\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{schemat_ukladu}
+\caption{Schemat układu pomiarowego}
+\label{uklad_pomiarowy}
+\end{figure}
 
 
 \section{Pomiary i obliczenia}
