@@ -10,7 +10,8 @@
 \usepackage{listings}
 \usepackage{isotope}
 
-
+\usepackage{csvsimple}
+\setlength{\tabcolsep}{2pt}
 
 % Adjust penalties
 \brokenpenalty=1000
@@ -46,7 +47,7 @@
 \newcommand{\Hsp}[1]{\hbox to #1 {}}
 \newcommand{\Small}{\scriptsize}
 
-\title{Sprawozdanie nr 1}
+\title{Sprawozdanie nr 6}
 \date{}
 
 
@@ -157,19 +158,12 @@ Z czego po przeprowadzeniu serii pomiarów możemy wyznaczyć wspomniany wczesni
 %TODO WSPOMNIEĆ O KOLIMATORZE
 
 
-\subsection{Układ pomiarowy}
-Do przeprowadzenia obu części ćwiczenia posłużono się układem pomiarowym,
-przedstawionym na rysunku \ref{uklad_pomiarowy}. Do ruchomego elementu 
-połączonego z nieruchomym statywem przymocowana była długa, nierozciągliwa nitka, 
-o znikomo małej masie, z zamocowanym na jej końcu metalowym obciążnikiem. 
-Statyw pozwalał na modyfikowanie długość wahadła. Do statywu 
-przytwierdzony był również kątomierz oraz linijka, służące do pomiaru kolejno:
-kąta maksymalnego wychylenia wahadła oraz zmiany długości wahadła różnicowego.
-Pod statywem znajdował się elektroniczny układ pomiarowy, złożony z fotokomórki
-oraz modułu sterowania, za pomocą którego mierzony był okres wahadła.
+\subsection{Układ pomiarowy} %TODO MOŻE WIĘCJE NAPISAĆ W OPISIE UKŁADU POMIAROWEGO
+Do przeprowadzenia ćwiczenia posłużono się układem pomiarowym,
+przedstawionym na rysunku \ref{uklad_pomiarowy}. Próbka umieszczona w domku osłonowym wysyła promieniowanie które jest formowane przy przejściu przez kolimator, daje trafia ono na absorbent o zadanej grubości. Po przejściu przez absorbent zostaje zliczony przez detektor który wysyła informację do komputera.
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.6]{schemat_ukladu}
 \caption{Schemat układu pomiarowego}
@@ -178,192 +172,212 @@ oraz modułu sterowania, za pomocą którego mierzony był okres wahadła.
 
 
 \section{Pomiary i obliczenia}
-\subsection{Badanie zależności okresu drgań wahadła od kąta wychylenia}
-
-Dokonano po 10 pomiarów dwóch okresów wahadła dla sześciu różnych kątów maksymalnego wychylenia wahadła. 
-Wartości kątów wynosiły kolejno:
-$5^\circ, 10^\circ, 15^\circ, 20^\circ, 25^\circ$ i $30^\circ$. 
-Wyniki pomiarów znajdują się w tabeli \ref{pomiary_1}. Sporządzono również dwa wykresy: 
-wartości średniej dwóch okresów wahadła względem kąta maksymalnego wychylenia oraz 
-odchylenia standardowego pomiaru dla danego kąta (kolejno rysunki \ref{fig:mean}, \ref{fig:std}).
-
-Długość wahadła nie była znana eksperymentatorom -- linijka używana w układzie pomiarowym
-nie wskazywała bezwzględnej długości nici (służyła do odczytywania zmian długości nici wahadła różnicowego). 
-Dlatego też w tym doświadczeniu nie można było wykorzystać zmierzonej wartości okresu
-wahadła do wyliczenia przyspieszenia ziemskiego.
-
-Z wykresu na rysunku \ref{fig:mean} można wywnioskować, że po pierwsze: \textbf{istnieje nie stała} funkcja długości okresu wahadła od kąta maksymalnego wychylenia (wartość średnia nie jest stała dla kolejnych kątów) oraz po drugie: funkcja ta jest \textbf{nieliniowa}. 
-Uzyskane wyniki są zgodne z rozważaniami teoretycznymi (patrz wzór (\ref{eq:T})).
-
-
-\begin{table}[h!]
-\centering
-	\begin{tabular}{rrrrrrr}
-	\toprule
-	{} &$2T(\alpha=5^\circ)$ &$2T(10^\circ)$ &$2T(15^\circ)$ &$2T(20^\circ)$ &$2T(25^\circ)$ &$2T(30^\circ)$ \\
-	\midrule
-	1 &  2.6285 &  2.6343 &  2.6368 &  2.6454 &  2.6585 &  2.6701 \\
-	2 &  2.6295 &  2.6346 &  2.6359 &  2.6463 &  2.6589 &  2.6711 \\
-	3 &  2.6295 &  2.6344 &  2.6402 &  2.6467 &  2.6582 &  2.6714 \\
-	4 &  2.6307 &  2.6366 &  2.6394 &  2.6470 &  2.6590 &  2.6709 \\
-	5 &  2.6296 &  2.6358 &  2.6408 &  2.6467 &  2.6578 &  2.6701 \\
-	6 &  2.6286 &  2.6350 &  2.6404 &  2.6463 &  2.6593 &  2.6685 \\
-	7 &  2.6285 &  2.6342 &  2.6396 &  2.6463 &  2.6574 &  2.6698 \\
-	8 &  2.6303 &  2.6350 &  2.6401 &  2.6477 &  2.6588 &  2.6696 \\
-	9 &  2.6287 &  2.6352 &  2.6395 &  2.6476 &  2.6583 &  2.6694 \\
-	10 &  2.6298 &  2.6350 &  2.6396 &  2.6485 &  2.6584 &  2.6708 \\
-	\midrule
-	$2\overline{T}$& 2.62937 & 2.63501 & 2.63923 & 2.64685 & 2.64685 & 2.67017 \\ 
-	$s(2T)$ & 0.00078 & 0.00074 & 0.00160 & 0.00089 & 0.00057 & 0.00089 \\
-	\bottomrule
-\end{tabular}
-\caption{Seria pomiarów czasu trwania 2 okresów wahadła w zależności od kąta wychylenia}
-\label{pomiary_1}
-\end{table}
-
-%\begin{figure}[h!]
-%\centering
-%	\includegraphics[scale=0.7]{wykres-1_0.pdf}
-%\caption{Wartość średnia 2 okresów wahadła w zależności od maksymalnego kąta wychylenia}
-%\label{fig:mean}
-%\end{figure}
-
-Nie zaobserwowano natomiast żadnej zależności między odchyleniem standardowym pomiarów 
-a kątem maksymalnego wychylenia (rysunek \ref{fig:std}).
-
-
-%\begin{figure}[h!]
-%\centering
-%	\includegraphics[scale=0.7]{wykres-2_1.pdf}
-%\caption{Odchylenie standardowe 2 okresów wahadła w zależności od maksymalnego kąta wychylenia}
-%\label{fig:std}
-%\end{figure}
-
-
-\subsection{Badanie zależności okresu drgań od zmian długości wahadła}
-
-Przekształcając wzór (\ref{eq:T})  otrzymujemy zależność:
-\[l = g\frac{T^2}{4\pi^2}\frac{1}{f^2(\theta_{max})} \]
-Dalej, korzystając z podstawienia \[g' = \frac{g}{f^2(\theta_{max})} \]
-oraz z faktu, że odczytywana z linijki długość wahadła nie jest jego rzeczywistą długością --
-wartości na linijce zmieniają się \textbf{odwrotnie proporcjonalnie} do długości wahadła --
-otrzymujemy finalnie:
-\begin{equation} \label{eq:l_wzg}
- l_{odczyt} = -g'\frac{T^2}{4\pi^2}
-\end{equation}
-
-W ten sposób po dokonaniu pomiarów okresu przy zmiennej długości wahadła można skorzystać z regresji liniowej i wyznaczyć nachylenie prostej, a w rezultacie wartość $g$.
-
-\subsubsection{Pomiary okresu dla małego kąta}
-
-Po przeprowadzeniu pomiarów dla kąta $\theta_{max} = 10^\circ$ dokonano wyznaczenia 
-przyspieszenia ziemskiego przy użyciu metody najmniejszych kwadratów. 
-Wyniki pomiarów wraz z obliczeniami cząstkowymi oraz oznaczenia $X$, $Y$ znajdują się w tabeli \ref{pomiary_2}.
-W celu wyznaczenia współczynników regresji liniowej, jak i ich niepewności pomiarowych skorzystano ze wzorów:
+\subsection{Pomiary grubości absorbentów}
+Na początku ćwiczania otrzymaliśmy listę ze wcześniej wykonanymi pomiarami grubości absorbentów. Skorzystaliśmy z następujących wzorów w  celu wyznaczenia niepewności pomiarowych: 
 \begin{align*}
-a &= \frac{n \Sigma X Y - \Sigma X \Sigma Y}{n \Sigma X^2 - \left(\Sigma X\right)^2} \\
-b &= \frac{1}{n}\left(\Sigma Y - a \Sigma X\right) \\
-u(a) &= \sqrt{\frac{n}{n-2} \frac{\Sigma Y^2 - a\Sigma XY - b\Sigma Y}{n\Sigma X^2-\left(\Sigma X \right)^2}} \\
-u(b) &= u(a)\cdot \sqrt{\frac{\Sigma X^2}{n}}
+S_{\bar{x}} = \sqrt{\frac{\sum_{i=1}^{10}(x_i-\bar{x})^2}{N(N-1)}}
 \end{align*}
+gdzie: $S_{\bar{x}}$ - niepewność typu A, $N = 10$, $\bar{x} = \frac{\sum_{i=1}^{10}x_i}{10}$. \\
+Natomiast niepewność pomiaru z uwzględnieniem niepewności ekperymentatora
 
-Uzyskane wartości wyniosły: $a = -9.789(31)$  , \ $b = 909.4(1.5)$,
-zatem przekształcając $a$ zgodnie ze wzorem (\ref{eq:l_wzg}):  \[g' = 9.789(31)  \tfrac{m}{s^2}\]
+\begin{align*}
+U_{\bar{x}} = \sqrt{S_{\bar{x}}^2 + \frac{(\Delta x)^2}{3} + \frac{(\Delta x_E)^2}{3}}
+\end{align*}
+dla parametrów: $\Delta x = 0.001 mm$, $\Delta x_E = 0.005 mm$
 
-Ponieważ kąt maksymalnego wychylenia jest dostatecznie mały oraz z powodów dydaktycznych ćwiczenia,
-w tym kroku doświadczenia celowo pominięto korektę na anharmoniczność.
+Pomiary w których występuje błąd gruby zostały przekreślone w tabelkach.
+
+Otrzymaliśmy następujące pomiary grubości poszczególnych absorbentów:
+
+\begin{table}[h!]
+
+\begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+\hline
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & $\bar{x}$ [mm] & $\Delta x$ [mm] & $S_{\bar{x}}$ [mm] & $U_{\bar{x}}$ [mm] \\ \hline
+5 & 5.05 & 5.04 & 5.04 & 5.05 & 5.04 & 5.04 & 5.04 & 5.05 & 5.04 & 5.04 & 5.043 & 0.01 & 0.002 & 0.0018  \\ \hline
+10 & 10.00 & 10.01 & 10.00 & 10.00 & 10.01 & \cancel{10.12} & 10.00 & 10.01 & 10.01 & 10.01 & 10.0056 & 0.01 & 0.002 & 0.0021 \\ \hline
+15 & 14.77 & 14.78 & 14.78 & 14.77 & 14.76 & 14.75 & 14.77 & 14.78 & 14.79 & 14.78 & 14.7730 & 0.01 & 0.004 & 0.0044 \\ \hline
+20 & 20.07 & 20.08 & 20.07 & 20.06 & 20.06 & 20.07 & 20.07 & 20.08 & 20.08 & 20.07 & 20.0710 & 0.01 & 0.002 & 0.0028 \\ \hline
+\end{tabular}
+\caption{Wyniki wielokrotnych pomiarów grubości aluminiowego absorbentu}
+\label{grubosc_aluminium}
+\end{table}
+
+
 
 \begin{table}[h!]
 \centering
-	\begin{tabular}{lrrrrrr}
-	\toprule
-	{} & $l$ (mm) $=Y$ &  $2T$ (s) & \small$1000T^2/4\pi^2$\normalsize$=X (s^2)$ & $X^2$ & $Y^2$ & $XY$ \\
-	\midrule
-	1 &     480 &  2.6325 &  43.885094 &  1925.9015 &  230400 &  21064.845 \\
-	2 &     460 &  2.6918 &  45.884484 &  2105.3859 &  211600 &  21106.863 \\
-	3 &     440 &  2.7515 &  47.942349 &  2298.4688 &  193600 &  21094.634 \\
-	4 &     420 &  2.8101 &  50.006196 &  2500.6196 &  176400 &  21002.602 \\
-	5 &     400 &  2.8676 &  52.073578 &  2711.6575 &  160000 &  20829.431 \\
-	6 &     380 &  2.9218 &  54.060647 &  2922.5536 &  144400 &  20543.046 \\
-	\midrule
-	$\Sigma$ & 2580 & 16.6753 & 293.852348 & 14464.5869 & 1116400 & 125641.421 \\
-	\end{tabular}
-\caption{Pomiary 2 okresów wahadła dla maksymalnego kąta wychylenia $\theta_{max} = 10^\circ$ w  zależności od $l$ wraz z obliczeniami do wyznaczenia regresji liniowej}
-\label{pomiary_2}
+\begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
+\hline
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & $\bar{x}$ [mm] & $\Delta x$ [mm] & $S_{\bar{x}}$ [mm] & $U_{\bar{x}}$ [mm] \\ \hline
+2 & 1.88 & 1.89 & 1.9 & 1.88 & 1.89 & 1.9 & 1.87 & 1.89 & 1.89 & 1.88 & 1.887 & 0.01 & 0.003 & 0.0036 \\ \hline
+5 & 5 & 5.01 & 5 & 5.01 & 5.01 & 5.01 & 5.02 & 5 & 5.01 & 5.03 & 5.0100 & 0.01 & 0.003 & 0.0035 \\ \hline
+7 & 6.99 & 6.98 & 6.98 & 6.99 & 6.98 & 6.98 & 6.98 & 6.97 & 6.98 & 6.98 & 6.9810 & 0.01 & 0.002 & 0.0021\\ \hline
+10 & 9.91 & 9.9 & 9.92 & 9.91 & 9.91 & 9.92 & 9.9 & 9.9 & 9.91 & 9.9 & 9.9080 & 0.01 & 0.002 & 0.0030 \\ \hline
+12 & 11.89 & 11.9 & 11.9 & 11.89 & 11.88 & 11.89 & 11.89 & 11.9 & 11.9 & 11.89 & 11.8930 & 0.01 & 0.002 & 0.0025 \\ \hline
+15 & 14.97 & 14.98 & 14.98 & 14.99 & 14.98 & 14.98 & 14.97 & 14.98 & 14.97 & \cancel{14.10} & 14.9778 & 0.01 & 0.002 & 0.0026 \\ \hline
+17 & 16.99 & 16.98 & 16.98 & 16.97 & 16.99 & 16.98 & 16.98 & 16.97 & 16.98 & 16.98 & 16.9800 & 0.01 & 0.002 & 0.0025 \\ \hline
+20 & 20.01 & 20.02 & 20 & 20.01 & 20.02 & 20.01 & 20.02 & 20.01 & 20.01 & 20.01 & 20.0120 & 0.01 & 0.002 & 0.0024\\ \hline
+
+\end{tabular}
+\caption{Wyniki wielokrotnych pomiarów grubości ołowianego absorbentu}
+\label{pomiary_sruba}
 \end{table}
 
-
-%\begin{figure}[h!]
-%\centering
-%	\includegraphics[scale=0.6]{wykres-3_0.pdf}
-%\caption{Regresja liniowa metodą najmniejszych kwadratów dla $\theta_{max} = 10^\circ$}
-%\label{regresja_10}
-%\end{figure}
-
-
-\subsubsection{Pomiary okresu dla dużego kąta}
-
-Następnie dokonano pomiarów dla kąta $\theta_{max} = 25^\circ$. 
-Dokonano analogicznych obliczeń (patrz Tabela \ref{pomiary_3}).
-Uzyskane wartości parametrów prostej to: $a = -9.658(23)$, $b = 911.6(1.1)$,
-zatem \[g' = 9.658(23)  \tfrac{m}{s^2}\]
-
-Korzystając z korekty na anharmoniczność drgań dla pierwszych 3 wyrazów szeregu ze wzoru~(\ref{eq:f})
-\[ K(\theta_{max}) = \left( 1 + \frac{1}{16}\theta^2_{max} + \frac{11}{3072}\theta^4_{max} + ... \right) \]
-uzyskujemy: \[ g = g' \cdot 1.0120289 \approx 9.773(23) \tfrac{m}{s^2}\]
-
-
-
-\begin{table}[h]
+\begin{table}[h!]
 \centering
-
-	\begin{tabular}{lrrrrrr}
-	\toprule
-		{} & $l$ (mm) $=Y$ &  $2T$ (s) & \small$1000T^2/4\pi^2$\normalsize$=X (s^2)$ & $X^2$ & $Y^2$ & $XY$ \\
-	\midrule
-	1 &     480 &  2.6582 &  44.74614 &  2002.2170 &  230400 &  21478.147 \\
-	2 &     460 &  2.7160 &  46.71322 &  2182.1249 &  211600 &  21488.081 \\
-	3 &     440 &  2.7764 &  48.81399 &  2382.8056 &  193600 &  21478.136 \\
-	4 &     420 &  2.8339 &  50.85683 &  2586.4132 &  176400 &  21359.869 \\
-	5 &     400 &  2.8918 &  52.95620 &  2804.3591 &  160000 &  21182.480 \\
-	6 &     380 &  2.9494 &  55.08681 &  3034.5566 &  144400 &  20932.988 \\
-	\midrule
-	$\Sigma$ & 2580 & 16.8257 & 299.17319& 14992.4764 & 1116400 & 127919.701 \\
-	\bottomrule
-	\end{tabular}
-	
-\caption{Pomiary 2 okresów wahadła dla maksymalnego kąta wychylenia $\theta_{max} = 25^\circ$ w  zależności od $l$ wraz z obliczeniami do wyznaczenia regresji liniowej}
-\label{pomiary_3}
+\begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l |}
+\hline
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & $\bar{x}$ [mm] & $\Delta x$ [mm] & $S_{\bar{x}}$ [mm] & $U_{\bar{x}}$ [mm] \\ \hline
+2 & 1.95 & 1.94 & 1.98 & 1.96 & 1.95 & 1.94 & 1.95 & 1.95 & 1.94 & 1.95 & 1.9510 & 0.01 & 0.004 & 0.0045\\ \hline
+5 & 4.88 & 4.89 & 4.88 & 4.88 & 4.89 & 4.9 & 4.88 & 4.87 & 4.88 & 4.9 & 4.8850 & 0.01 & 0.003 & 0.0037 \\ \hline
+7 & 7.07 & 7.08 & 7.08 & 7.09 & 7.09 & 7.08 & 7.09 & 7.09 & 7.08 & 7.08 & 7.0830 & 0.01 & 0.002 & 0.0025 \\ \hline
+10 & 10.08 & 10.07 & 10.08 & 10.08 & 10.09 & 10.07 & 10.07 & 10.07 & 10.08 & 10.08 & 10.0770 & 0.01 & 0.002 & 0.0025\\ \hline
+12 & 12.05 & 12.04 & 12.05 & 12.06 & 12.06 & 12.05 & 12.04 & 12.05 & 12.06 & 12.05 & 12.0510 & 0.01 & 0.002 & 0.0028\\ \hline
+15 & 15.06 & 15.05 & 15.04 & 15.06 & 15.06 & 15.05 & 15.06 & 15.04 & 15.05 & 15.06 & 15.0530 & 0.01 & 0.003 & 0.0031\\ \hline
+17 & 17.08 & 17.09 & 17.09 & 17.08 & 17.07 & 17.08 & 17.08 & 17.09 & 17.08 & 17.07 & 17.0810 & 0.01 & 0.002 & 0.0028\\ \hline
+20 & 20.15 & 20.14 & 20.15 & 20.15 & 20.14 & 20.13 & 20.13 & 20.14 & 20.15 & 20.16 & 20.1440 & 0.01 & 0.003 & 0.0036\\ \hline
+\end{tabular}
+\caption{Wyniki wielokrotnych pomiarów grubości miedzianego absorbentu}
+\label{pomiary_sruba}
 \end{table}
 
-%\begin{figure}[h]
-%\centering
-%	\includegraphics[scale=0.6]{wykres-4_0.pdf}
-%\caption{Regresja liniowa metodą najmniejszych kwadratów dla $\theta_{max} = 25^\circ$}
-%\label{regresja_25}
-%\end{figure}
 
+
+\subsection{Promieniowanie tła}
+Na początku ćwiczenia dokonaliśmy kilku pomiarów promieniowania tła (bez umieszczenia próbki promieniotwórczej w domku osłonowym) w celu zbadania średniego promieniowania które dociera do detektora z różnych źródeł np. promieniowania kosmicznego, promieniowania wysyłanego przez inne materiały. Promieniowanie tła było następnie automatycznie odejmowane od otrzymanej liczby zliczeń przez program komputerowy. Promieniowanie tła było rzędu kilkudziesięciu zliczeń w ciągu minuty.
+
+\subsection{Badanie liczby zliczeń kwantów gamma}
+Liczba wypromieniowanych kwantów $\gamma$ podlega rozkładowi Poissona dzięki czemu $u_N=\sqrt{N}$.
+Otrzymaliśmy następujące pomiary zliczeń w zależności od rodzaju absorbenta oraz jego grubości:\\
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | l | l | l | l | l | }
+\hline
+Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
+1 & 5.0430(0.007) & 1514(39) & 7.323(0.026)  \\ \hline
+2 & 10.0056(0.007) & 1380(37) & 7.230(0.027)  \\ \hline
+3 & 14.7730(0.007) & 1285(36) & 7.159(0.028) \\ \hline
+4 & 20.0710(0.007) & 1226(35) & 7.112(0.029) \\ \hline
+\end{tabular}
+\caption{Liczba otrzymanych kwantów gamma w zależności od grubości aluminium}
+\label{pomiary_sruba}
+\end{table}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | l | l | l | l | l | }
+\hline
+Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
+1 & 1.887(0.007) & 1452(38) & 7.281(0.026)  \\ \hline
+2 & 5.010(0.007) & 1214(35) & 7.102(0.029)  \\ \hline
+3 & 6.981(0.007) & 1048(32) & 6.955(0.031) \\ \hline
+4 & 9.908(0.007) & 899(30) & 6.801(0.033) \\ \hline
+5 & 11.893(0.007) & 803(28) & 6.688(0.035) \\ \hline
+6 & 14.978(0.007) & 712(27) & 6.568(0.037) \\ \hline
+7 & 16.980(0.007) & 565(24) & 6.337(0.042) \\ \hline
+8 & 20.012(0.007) & 531(23) & 6.75(0.043) \\ \hline   
+\end{tabular}
+\caption{Liczba otrzymanych kwantów gamma w zależności od grubości ołowiu}
+\label{pomiary_sruba}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | l | l | l | l | l | }
+\hline
+Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
+1 & 1.948(0.007) & 1469(38) & 7.292(0.026)  \\ \hline
+2 & 4.885(0.007) & 1346(37) & 7.205(0.027)  \\ \hline
+3 & 7.083(0.007) & 1156(34) & 7.053(0.029) \\ \hline
+4 & 10.077(0.007) & 1066(33) & 6.971(0.031) \\ \hline
+5 & 12.051(0.007) & 961(31) & 6.868(0.032) \\ \hline
+6 & 15.053(0.007) & 908(30) & 6.811(0.033) \\ \hline
+7 & 17.081(0.007) & 780(28) & 6.659(0.036) \\ \hline
+8 & 20.144(0.007) & 686(26) & 6.531(0.038) \\ \hline   
+\end{tabular}
+\caption{Liczba otrzymanych kwantów gamma w zależności od grubości miedzi}
+\label{pomiary_sruba}
+\end{table}
+
+Otrzymujemy odpowiednio wykresy liniowo-liniowy oraz logarytmiczno-liniowy.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.55]{liniowo_liniowy.png}
+\caption{Wykres liniowo liniowy liczby zliczeń w zależności od grubości absorbentów}
+\label{uklad_pomiarowy}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.55]{ln_x_wykres.png}
+\caption{Wykres logarytmiczno liniowy liczby zliczeń w zależności od grubości absorbentów}
+\label{uklad_pomiarowy}
+\end{figure}
+
+\newpage
+\subsection{Wyniki}
+By wyznaczyć poszczególne współczynniki użyliśmy metody najmniejszych kwaratów w sposób w jaki zostało to opisane we wstępie teoretycznym. Odpowiednio otrzymujemy: \\
+Aluminium:\\
+$\mu_{Al} = 0.014$\\
+$u_{\mu} = 0.02$\\
+$b = 7.381$\\
+$S_{b} = 0.022$\\
+Odpowiedź: $\mu_{Al} = 0.014(0.002) \frac{1}{mm}$
+Ołów:\\
+$\mu_{Pb} = 0.056$\\
+$u_{\mu} = 0.02$\\
+$b = 7.374$\\
+$S_{b} = 0.030$\\
+
+Odpowiedź: $\mu_{Pb} = 0.056(0.002) \frac{1}{mm}$\\
+Miedź:\\
+$\mu_{Cu} = 0.041$\\
+$u_{\mu} = 0.02$\\
+$b = 7.381$\\
+$S_{b} = 0.023$\\
+Odpowiedź: $\mu_{Cu} = 0.041(0.002) \frac{1}{mm}$ \\
+Co możemy porównać z wartościami tablicowymi dla poszczególnych materiałów (wyliczone przez program komputerowy)
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | l | l | l | l | l | }
+\hline
+materiał & MeV & $\mu$[1/mm] \\ \hline
+Al & 1.33 & 0.012 \\ \hline  
+Cu & 1.33 & 0.043 \\ \hline  
+Pb & 1.33 & 0.062 \\ \hline  
+\end{tabular}
+\caption{Wartości tablicowe współczyników osłabienia promieniowania}
+\label{pomiary_sruba}
+\end{table}
 
 \subsection{Wnioski}
-Po wykonaniu obu ćwiczeń potwierdzono anharmoniczność ruchu wahadła matematycznego oraz uzyskano
-2 wartości przyspieszenia ziemskiego: $9.789(31) \tfrac{m}{s^2}$ oraz $9.773(23) \tfrac{m}{s^2}$.
-
-Znając wartość przyspieszenia ziemskiego w Warszawie ($g\approx9,8123 \tfrac{m}{s^2}$)
-można zauważyć, że w drugim ćwiczeniu pomimo zastosowania korekty na anharmoniczność drgań
-przy serii pomiarów dla dużego kąta ($\theta_{max} = 25^\circ$), uzyskana wartość
-przyspieszenia ziemskiego była mniej dokładna niż wartość uzyskana bez zastosowania
-korekty przy serii pomiarów dla kąta mniejszego ($\theta_{max} = 10^\circ$).
-Oznacza to, że niedoskonałości sprzętu pomiarowego i błędy eksperymentatorów znacznie
-wpłynęły na wyniki pomiarów.
-To przypuszczenie dodatkowo potwierdza kształt wykresu odchylenia standardowego
-z pierwszego ćwiczenia (rysunek \ref{fig:std}).
-
-
-Aby zmniejszyć niedoskonałości pomiarów należałoby zadbać o dokładniejszy sposób odczytu
-kąta maksymalnego wychylenia wahadła (wyeliminować zjawisko paralaksy) oraz dodać do
-układu pomiarowego możliwość mechanicznego zwalniania obciążnika wahadła, eliminując tym
-samym przypadki zarówno wprawienia wahadła w ruch w 2 płaszczyznach 
-jak i nadawania mu prędkości początkowej.
-
+Policzmy czy wyznaczone wartości współczynników są zgodne z wartościami talicowymi. Skorzystajmy w tym celu z testu $2\delta$ (tu dla wersji z ołowiem):
+\begin{align*}
+\frac{|\mu_{Pb tablicowe} - \mu_{Pb otrzymane}|}{S_{Pb}} \leq 2
+\end{align*}
+Jeśli powyższy test zostanie spełniony oznacza to że otrzymaliśmy poprawne współczynniki.
+Mamy więc
+\begin{table}[h!]
+\centering
+\begin{tabular}{ | l | l | l | }
+\hline
+materiał & wynik & czy zgodne \\ \hline
+Al & 1.00 & TAK \\ \hline  
+Cu & 2.04 & NIE \\ \hline  
+Pb & 2.69 & NIE \\ \hline  
+\end{tabular}
+\caption{Wartości tablicowe współczyników osłabienia promieniowania}
+\label{pomiary_sruba}
+\end{table}
+Z powyższego ćwiczenia możemy wyciągnąć następujące wnioski
+\begin{itemize}
+\item Ołów jest najlepszy absorbentem promieniowania gamma
+\item Różnice pomiędzy wartościami tablicowymi a zmierzoną wartością można wytłumaczyć poprzez krótkie czasy pomiarów oraz rozkładem statsytcznym wyników które w rzadkich przypadkach mogą dawać duże rozbierzności pomiędzy wartością zbadaną a wartością tablicową
+\item Mogło też dojść do błędu grubego w czasie wyznaczania wartości talicowych współczynników przy pomocy komputera
+\end{itemize}
 
 \end{document}
