@@ -144,7 +144,7 @@ z czego po scałkowaniu otrzymujemy:
 I ( x)=I_0 e^{−B x}
 \end{align*}
 co daje nam wzór na osłabienie wiązki z współczynnikiem $B = \mu$.
-W naszym doświadczeniu chcemy właśnie wyznaczyć współczynnik osłabienia $\mu$ lecz nie jesteśmy tego w stanie zrobić metodą bezpośrednią (mierząc natęrzęnie początkowe $I_0$). By wyznaczyć wspomniany współczynnik posłużymy się metodą najmniejszych kwadratów w następujący sposób:\\
+W naszym doświadczeniu chcemy właśnie wyznaczyć współczynnik osłabienia $\mu$ lecz nie jesteśmy tego w stanie zrobić metodą bezpośrednią (mierząc natężenie początkowe $I_0$) ponieważ do pomiarów włączają się cząstki powstałe w wyniku przemiany $\beta$. By wyznaczyć wspomniany współczynnik posłużymy się metodą najmniejszych kwadratów w następujący sposób:\\
 Logarytmujemy obie strony wyznaczonego wzoru na osłabienie promieniowania otrzymując:
 \begin{align*}
 ln( I )=ln( I_0 )−\mu x
@@ -160,7 +160,7 @@ Z czego po przeprowadzeniu serii pomiarów możemy wyznaczyć wspomniany wczesni
 
 \subsection{Układ pomiarowy} %TODO MOŻE WIĘCJE NAPISAĆ W OPISIE UKŁADU POMIAROWEGO
 Do przeprowadzenia ćwiczenia posłużono się układem pomiarowym,
-przedstawionym na rysunku \ref{uklad_pomiarowy}. Próbka umieszczona w domku osłonowym wysyła promieniowanie które jest formowane przy przejściu przez kolimator, daje trafia ono na absorbent o zadanej grubości. Po przejściu przez absorbent zostaje zliczony przez detektor który wysyła informację do komputera.
+przedstawionym na rysunku \ref{uklad_pomiarowy}. Próbka umieszczona w domku osłonowym wysyła promieniowanie które jest formowane przy przejściu przez kolimator, daje trafia ono na absorbent o zadanej grubości. Po przejściu przez absorbent zostaje zliczony przez detektor który wysyła informację do komputera. Kolimator jest przydatny w celu uformowania wiązki, w przeciwnym razie gdyby kwanty $\gamma$ mogły lecieć w dowolnych kierunkach trafiały one by w takie części absorbenta w których pod wpływem rozpraszania (w którym następuje zmiana kąta) trafiały by do detektora i sztucznie zwiększały ilośc zliczeń, przez co mielibyśmy zaburzony współczynnik $\mu$.
 
 
 \begin{figure}[h!]
@@ -249,13 +249,18 @@ Na początku ćwiczenia dokonaliśmy kilku pomiarów promieniowania tła (bez um
 
 \subsection{Badanie liczby zliczeń kwantów gamma}
 Każde zliczanie kwantów gamma trafiających w detektor trwało 1 min. Dla ołowiu oraz miedzi przeprowadziliśmy 8 pomiarów (każdy z inną grubością absorbenta) oraz 4 pomiary dla aluminium.
-Liczba wypromieniowanych kwantów $\gamma$ podlega rozkładowi Poissona dzięki czemu $u_N=\sqrt{N}$.
+Liczba wypromieniowanych kwantów $\gamma$ podlega rozkładowi Poissona dzięki czemu $u_N=\sqrt{N}$.\\
+Niepewność $u_{\ln{N}}$ została policzona wzorem:
+\begin{align*}
+u_{\ln{N}} = \sqrt{(\frac{\delta \ln{N}}{\delta N})^2 u^2_N} = \sqrt{(\frac{1}{N})^2(\sqrt{N})^2} = \frac{\sqrt{N}}{N}
+\end{align*}
+
 Otrzymaliśmy następujące pomiary zliczeń w zależności od rodzaju absorbenta oraz jego grubości:\\
 \begin{table}[h!]
 \centering
 \begin{tabular}{ | l | l | l | l | l | }
 \hline
-Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
+Nr & $\bar{x(u_{\bar{x}})}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
 1 & 5.0430(0.007) & 1514(39) & 7.323(0.026)  \\ \hline
 2 & 10.0056(0.007) & 1380(37) & 7.230(0.027)  \\ \hline
 3 & 14.7730(0.007) & 1285(36) & 7.159(0.028) \\ \hline
@@ -271,7 +276,7 @@ Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
 \centering
 \begin{tabular}{ | l | l | l | l | l | }
 \hline
-Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
+Nr & $\bar{x(u_{\bar{x}})}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
 1 & 1.887(0.007) & 1452(38) & 7.281(0.026)  \\ \hline
 2 & 5.010(0.007) & 1214(35) & 7.102(0.029)  \\ \hline
 3 & 6.981(0.007) & 1048(32) & 6.955(0.031) \\ \hline
@@ -290,7 +295,7 @@ Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
 \centering
 \begin{tabular}{ | l | l | l | l | l | }
 \hline
-Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
+Nr & $\bar{x(u_{\bar{x}})}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
 1 & 1.948(0.007) & 1469(38) & 7.292(0.026)  \\ \hline
 2 & 4.885(0.007) & 1346(37) & 7.205(0.027)  \\ \hline
 3 & 7.083(0.007) & 1156(34) & 7.053(0.029) \\ \hline
@@ -307,14 +312,14 @@ Nr & $\bar{x(u_{\bar{x})}}$ [mm] & $N(u_N)$ & $\ln{N}(u_{\ln{N}})$ \\ \hline
 Otrzymujemy odpowiednio wykresy liniowo-liniowy oraz logarytmiczno-liniowy.
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.55]{liniowo_liniowy.png}
+\includegraphics[scale=0.51]{liniowo_liniowy.png}
 \caption{Wykres liniowo liniowy liczby zliczeń w zależności od grubości absorbentów}
 \label{uklad_pomiarowy}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=0.55]{ln_x_wykres.png}
+\includegraphics[scale=0.51]{ln_x_wykres.png}
 \caption{Wykres logarytmiczno liniowy liczby zliczeń w zależności od grubości absorbentów}
 \label{uklad_pomiarowy}
 \end{figure}
@@ -324,20 +329,20 @@ Otrzymujemy odpowiednio wykresy liniowo-liniowy oraz logarytmiczno-liniowy.
 By wyznaczyć poszczególne współczynniki użyliśmy metody najmniejszych kwaratów w sposób w jaki zostało to opisane we wstępie teoretycznym. Odpowiednio otrzymujemy: \\
 Aluminium:\\
 $\mu_{Al} = 0.014$\\
-$u_{\mu} = 0.02$\\
+$u_{\mu} = 0.002$\\
 $b = 7.381$\\
 $S_{b} = 0.022$\\
-Odpowiedź: $\mu_{Al} = 0.014(0.002) \frac{1}{mm}$
+Odpowiedź: $\mu_{Al} = 0.014(0.002) \frac{1}{mm}$\\
 Ołów:\\
 $\mu_{Pb} = 0.056$\\
-$u_{\mu} = 0.02$\\
+$u_{\mu} = 0.002$\\
 $b = 7.374$\\
 $S_{b} = 0.030$\\
 
 Odpowiedź: $\mu_{Pb} = 0.056(0.002) \frac{1}{mm}$\\
 Miedź:\\
 $\mu_{Cu} = 0.041$\\
-$u_{\mu} = 0.02$\\
+$u_{\mu} = 0.002$\\
 $b = 7.381$\\
 $S_{b} = 0.023$\\
 Odpowiedź: $\mu_{Cu} = 0.041(0.002) \frac{1}{mm}$ \\
@@ -354,7 +359,7 @@ Pb & 1.33 & 0.062 \\ \hline
 \caption{Wartości tablicowe współczyników osłabienia promieniowania}
 \label{pomiary_sruba}
 \end{table}
-
+\newpage
 \subsection{Wnioski}
 Policzmy czy wyznaczone wartości współczynników są zgodne z wartościami talicowymi. Skorzystajmy w tym celu z testu $2\delta$ (tu dla wersji z ołowiem):
 \begin{align*}
@@ -368,8 +373,8 @@ Mamy więc
 \hline
 materiał & wynik & czy zgodne \\ \hline
 Al & 1.00 & TAK \\ \hline  
-Cu & 2.04 & NIE \\ \hline  
-Pb & 2.69 & NIE \\ \hline  
+Cu & 1.00 & TAK \\ \hline  
+Pb & 3.50 & NIE \\ \hline  
 \end{tabular}
 \caption{Wartości tablicowe współczyników osłabienia promieniowania}
 \label{pomiary_sruba}
@@ -378,7 +383,7 @@ Z powyższego ćwiczenia możemy wyciągnąć następujące wnioski
 \begin{itemize}
 \item Ołów jest najlepszy absorbentem promieniowania gamma
 \item Różnice pomiędzy wartościami tablicowymi a zmierzoną wartością można wytłumaczyć poprzez krótkie czasy pomiarów oraz rozkładem statsytcznym wyników które w rzadkich przypadkach mogą dawać duże rozbierzności pomiędzy wartością zbadaną a wartością tablicową
-\item Mogło też dojść do błędu grubego w czasie wyznaczania wartości talicowych współczynników przy pomocy komputera
+\item Wyznaczanie współczynnika osłabienia dla ołowiu charakteryzowało się największą różnicą pomiędzy wartością tablicową, a wartością zmierzoną
 \end{itemize}
 
 \end{document}
