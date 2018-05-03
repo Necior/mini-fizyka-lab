@@ -102,6 +102,33 @@
 
 \section{Pomiary i wstępne obliczenia}
 
+Dokonaliśmy dwóch serii pomiarów, kolejno $A$ oraz $B$.
+W obu seriach napięcie (ozn. $U$) ustalane było między ok. $3.50$ kV a ok. $11.10$ kV, z różnicą ok. $0.40$ kV pomiędzy pomiarami.
+Podczas serii $A$ napięcie rosło wraz z każdym pomiarem, podczas serii $B$ -- malało.
+
+Ponieważ stan podczas odczytu napięcia nie był stabilny (największy zauważony przez nas skok wartości wyniósł $0.09$ kV), za niepewność całkowitą pomiaru $U$ przyjęliśmy:
+
+$$u(U) = \frac{0.09 \, \text{kV}}{\sqrt 3}$$
+
+Dla ustalonego napięcia interesowała nas średnica najbardziej wewnętrznego pierścienia, ozn.~$d$.
+W celu wyznaczenia tej wartości, mierzona była średnica wewnętrzna oraz zewnętrzna pierścienia, oznaczane kolejno $d_w$ oraz~$d_z$.
+Za średnicę właściwą przyjęliśmy średnią arytmetyczną z powyższych wartości, tj.~$d = \frac {d_w + d_z}{2}$.
+
+Użyty przyrząd pomiarowy miał podziałkę wynoszącą $\Delta d_w = 1$ mm.
+Ze względu na rozmycie pierścieni, za niepewność eksperymentatora przyjeśliśmy dwukrotność podziałki: $\Delta d_{w_E} = 2 \cdot \Delta d_w = 2$ mm.
+Zatem niepewność całkowita pomiaru średnicy wewnętrznej (a także zewnętrznej, którą oznaczymy przez $u(d_z)$) wynosi:
+
+$$u(d_w) = \sqrt{\frac{\Delta d_w^2}{3} + \frac{\Delta d_{w_E}^2}{3}} = \sqrt \frac{5}{3} \Delta d_w = \sqrt \frac{5}{3} \, \text{mm}$$
+
+Nas jednak interesuje niepewność średnicy właściwej.
+Skoro $d = \frac {d_w + d_z}{2}$, to -- korzystając z prawa propagacji niepewności -- niepewność całkowita pomiaru średnicy wynosi:
+
+$$u(d) = \sqrt{\left(\frac{\partial d}{\partial d_w}\right)^2 \cdot u^2(d_w) + \left(\frac{\partial d}{\partial d_w}\right)^2 \cdot u^2(d_z)} = \sqrt{\frac{1}{4} u^2(d_w) + \frac{1}{4} u^2(d_z)} = \frac{u(d_w)}{\sqrt{2}}$$
+
+Po podstawieniu wyliczonej wcześniej niepewności otrzymujemy:
+
+$$u(d) = \sqrt \frac{5}{6} \, \text{mm} \approx 0.912870929175 \, \text{mm} \approx 1 \, \text{mm}$$
+
 \section{Opracowanie wyników}
 
 \subsection{Zgodność wyników z teorią}
