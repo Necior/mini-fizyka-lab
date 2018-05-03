@@ -1,0 +1,117 @@
+\documentclass[a4paper]{article}
+
+%% Language and font encodings
+\usepackage{polski}
+\usepackage[polish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{isotope}
+
+\usepackage{csvsimple}
+\setlength{\tabcolsep}{2pt}
+
+% Adjust penalties
+\brokenpenalty=1000
+\clubpenalty=1000
+\widowpenalty=1000
+
+%% Sets page size and margins
+\usepackage[a4paper]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{tikz}
+
+\usepackage{float}
+
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}.}
+\renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+% The following commands are not supported in PSTricks at present
+% We define them conditionally, so when they are implemented,
+% this pgf file will use them.
+\ifx\du\undefined
+  \newlength{\du}
+\fi
+\setlength{\du}{15\unitlength}
+
+\newcommand{\Vsp}[1]{\vtop to #1 {}}
+\newcommand{\Hsp}[1]{\hbox to #1 {}}
+\newcommand{\Small}{\scriptsize}
+
+\title{Sprawozdanie nr 7}
+\date{}
+
+
+\begin{document}
+
+\begin{center}
+\begin{tabular}{|p{5.5cm}|l|l|c|}
+    \hline
+	% Row 1.1  
+	    Wydział \Vsp{4mm} &
+	    \multicolumn{1}{|l}{Dzień} &
+	    poniedziałek $17^{15} - 19^{30}$ &
+	    Nr zespołu \\
+	% Row 1.2
+	    \mbox{\small{Matematyki i Nauk Informatycznych}} &
+	    \multicolumn{1}{|l}{Data}  &
+	    &
+	    \multicolumn{1}{c|}{\Large{18}} \\
+    
+    \hline
+	% Row 2.1 
+	    Nazwisko i Imię: &
+	    \Small Ocena z przygotowania &
+	    \Small Ocena ze sprawozdania &
+	    \Small Ocena Końcowa \\
+	% Rows 2.2-2.4
+	    1. Jasiński Bartosz & & &\\
+	    2. Sadłocha Adrian & & & \\
+	    3. Wódkiewicz Andrzej & & & \\
+
+    \hline
+    % Row 3.1
+	    \multicolumn{2}{|l|}{Prowadzący \Vsp{4mm}} &
+	    \multicolumn{2}{|l|}{Podpis prowadzącego} \\  
+    % Row 3.2
+    	\multicolumn{2}{|l|}{dr hab. Katarzyna Grebieszkow} &
+    	\multicolumn{2}{|l|}{} \\    	
+    \hline
+\end{tabular}
+\label{pieczatka}
+\end{center}
+
+{\let\newpage\relax\maketitle}
+\setcounter{secnumdepth}{2}
+
+
+\section{Opis ćwiczenia}
+
+\subsection{Wstęp teoretyczny}
+
+\subsection{Układ pomiarowy}
+
+\section{Pomiary i wstępne obliczenia}
+
+\section{Opracowanie wyników}
+
+\subsection{Zgodność wyników z teorią}
+
+\subsection{Odległości między płaszczyznami atomowymi}
+
+\subsection{Wyliczenie odległości dla pozostałych pierścieni}
+
+\section{Wnioski}
+
+\subsection{Prawdziwość hipotezy de Broglie'a}
+
+\end{document}
