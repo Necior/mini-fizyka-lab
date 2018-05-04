@@ -114,6 +114,11 @@ Ponieważ stan podczas odczytu napięcia nie był stabilny (największy zauważo
 
 $$u(U) = \frac{0.09 \, \text{kV}}{\sqrt 3}$$
 
+W dalszej części będziemy sprawdzać zależność liniową pomiędzy średnicą pierścieni a odwrotnością pierwiastka napięcia.
+Wprowadźmy oznaczenie $X = \frac{1}{\sqrt U}$ oraz wyliczmy -- korzystając z prawa propagacji niepewności -- niepewność całkowitą:
+
+$$u(X) = \sqrt{\left(\frac{\partial X}{\partial U}\right)^2 \cdot u^2(U)} = \left| -\frac{1}{2 \sqrt{U^3}} \cdot u(U)\right| = \frac{0.09 \, \text{kV}}{2 \sqrt{3} \sqrt{U^3}}$$
+
 Dla ustalonego napięcia interesowała nas średnica najbardziej wewnętrznego pierścienia, ozn.~$d$.
 W celu wyznaczenia tej wartości, mierzona była średnica wewnętrzna oraz zewnętrzna pierścienia, oznaczane kolejno $d_w$ oraz~$d_z$.
 Za średnicę właściwą przyjęliśmy średnią arytmetyczną z powyższych wartości, tj.~$d = \frac {d_w + d_z}{2}$.
@@ -133,7 +138,109 @@ Po podstawieniu wyliczonej wcześniej niepewności otrzymujemy:
 
 $$u(d) = \sqrt \frac{5}{6} \, \text{mm} \approx 0.912870929175 \, \text{mm} \approx 1 \, \text{mm}$$
 
+Wyniki pomiarów oraz wstępnych obliczeń zostały przedstawione w Tablicy \ref{seria_A} oraz w Tablicy \ref{seria_B}.
+Dla $X$ prezentujemy odpowiednio zaokrąglone wartości z dokładnością do pięciu miejsc po przecinku, zaś obliczenia przeprowadzamy z pełną dostępną precyzją.
+
+\begin{table}
+\centering
+
+\begin{tabular}{lrrrrr}
+\toprule
+L.p. &  $D_w$ (mm) &  $D_z$ (mm) &  $U$ (kV) &  $D$ (mm) &  $X$ ($\frac{1}{\sqrt{kV}}$) \\
+\midrule
+1  &          22 &          28 &      3.51 &      25.0 &                     0.53376 \\
+2  &          20 &          28 &      3.90 &      24.0 &                     0.50637 \\
+3  &          17 &          27 &      4.30 &      22.0 &                     0.48224 \\
+4  &          19 &          25 &      4.71 &      22.0 &                     0.46078 \\
+5  &          17 &          20 &      5.09 &      18.5 &                     0.44324 \\
+6  &          17 &          23 &      5.50 &      20.0 &                     0.42640 \\
+7  &          16 &          22 &      5.94 &      19.0 &                     0.41031 \\
+8  &          16 &          21 &      6.30 &      18.5 &                     0.39841 \\
+9  &          14 &          20 &      6.70 &      17.0 &                     0.38633 \\
+10 &          13 &          19 &      7.11 &      16.0 &                     0.37503 \\
+11 &          14 &          18 &      7.50 &      16.0 &                     0.36515 \\
+12 &          13 &          18 &      7.92 &      15.5 &                     0.35534 \\
+13 &          14 &          18 &      8.29 &      16.0 &                     0.34731 \\
+14 &          13 &          18 &      8.69 &      15.5 &                     0.33923 \\
+15 &          14 &          18 &      9.10 &      16.0 &                     0.33150 \\
+16 &          13 &          18 &      9.50 &      15.5 &                     0.32444 \\
+17 &          13 &          17 &      9.90 &      15.0 &                     0.31782 \\
+18 &          12 &          17 &     10.30 &      14.5 &                     0.31159 \\
+19 &          12 &          17 &     10.69 &      14.5 &                     0.30585 \\
+20 &          12 &          17 &     11.10 &      14.5 &                     0.30015 \\
+\bottomrule
+\end{tabular}
+
+\caption{Wyniki pomiarów serii $A$ wraz z wyliczonymi wartościami $D$ oraz $X$.}
+\label{seria_A}
+\end{table}
+
+\begin{table}
+\centering
+
+\begin{tabular}{lrrrrr}
+\toprule
+L.p. &  $D_w$ (mm) &  $D_z$ (mm) &  $U$ (kV) &  $D$ (mm) &  $X$ ($\frac{1}{\sqrt{kV}}$) \\
+\midrule
+1  &          14 &          16 &     11.10 &      15.0 &                     0.30015 \\
+2  &          14 &          17 &     10.69 &      15.5 &                     0.30585 \\
+3  &          14 &          16 &     10.30 &      15.0 &                     0.31159 \\
+4  &          14 &          18 &      9.89 &      16.0 &                     0.31798 \\
+5  &          14 &          18 &      9.50 &      16.0 &                     0.32444 \\
+6  &          15 &          18 &      9.10 &      16.5 &                     0.33150 \\
+7  &          14 &          18 &      8.70 &      16.0 &                     0.33903 \\
+8  &          15 &          18 &      8.30 &      16.5 &                     0.34711 \\
+9  &          15 &          19 &      7.89 &      17.0 &                     0.35601 \\
+10 &          15 &          19 &      7.50 &      17.0 &                     0.36515 \\
+11 &          16 &          19 &      7.10 &      17.5 &                     0.37529 \\
+12 &          16 &          19 &      6.71 &      17.5 &                     0.38605 \\
+13 &          17 &          20 &      6.33 &      18.5 &                     0.39746 \\
+14 &          18 &          23 &      5.90 &      20.5 &                     0.41169 \\
+15 &          20 &          24 &      5.50 &      22.0 &                     0.42640 \\
+16 &          19 &          25 &      5.12 &      22.0 &                     0.44194 \\
+17 &          19 &          25 &      4.71 &      22.0 &                     0.46078 \\
+18 &          21 &          27 &      4.31 &      24.0 &                     0.48168 \\
+19 &          20 &          27 &      3.89 &      23.5 &                     0.50702 \\
+20 &          22 &          29 &      3.49 &      25.5 &                     0.53529 \\
+\bottomrule
+\end{tabular}
+
+\caption{Wyniki pomiarów serii $B$ wraz z wyliczonymi wartościami $D$ oraz $X$.}
+\label{seria_B}
+\end{table}
 \section{Opracowanie wyników}
+
+Korzystając z pythonowej biblioteki SciPy\footnote{\url{https://www.scipy.org/}} wyliczyliśmy prostą regresji liniowej postaci $D = aX + b$.
+Dla serii $A$ otrzymaliśmy następujące współczynniki (przez $\sigma$ oznaczamy błąd standardowy):
+
+\begin{align*}
+	a &= 45.5 \quad \sigma_a = 2.5 \\
+	b &= 0.17 \quad \sigma_b = 0.98
+\end{align*}
+
+Dla serii $B$:
+
+\begin{align*}
+	a &= 45.5 \quad \sigma_a = 2.3 \\
+	b &= 0.18 \quad \sigma_b = 0.90
+\end{align*}
+
+Pomiary wraz z wyżej pokazanymi współczynnikami prostej regresji liniowej przedstawione zostały na Rysunku \ref{wykres_A} oraz na Rysunku \ref{wykres_B}.
+Ponadto zauważmy, że wyliczone współczynniki dla obu serii mieszczą się w granicach niepewności.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{wykres_A.pdf}
+\caption{Wyliczona prosta regresji liniowej zestawiona wraz ze zmierzonymi wartościami dla serii $A$.}
+\label{wykres_A}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.7]{wykres_B.pdf}
+\caption{Wyliczona prosta regresji liniowej zestawiona wraz ze zmierzonymi wartościami dla serii $B$.}
+\label{wykres_B}
+\end{figure}
 
 \subsection{Zgodność wyników z teorią}
 
