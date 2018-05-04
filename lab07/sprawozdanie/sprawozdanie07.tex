@@ -130,7 +130,7 @@ Zatem niepewność całkowita pomiaru średnicy wewnętrznej (a także zewnętrz
 $$u(D_w) = \sqrt{\frac{\Delta D_w^2}{3} + \frac{\Delta D_{w_E}^2}{3}} = \sqrt \frac{5}{3} \Delta D_w = \sqrt \frac{5}{3} \, \text{mm}$$
 
 Nas jednak interesuje niepewność średnicy właściwej.
-Skoro $D = \frac {D_w + D_z}{2}$, to -- korzystając z prawa propagacji niepewności -- niepewność całkowita pomiaru średnicy wynosi:
+Skoro $D = \frac {D_w + D_z}{2}$, to -- ponownie korzystając z prawa propagacji niepewności -- niepewność całkowita pomiaru średnicy wynosi:
 
 $$u(D) = \sqrt{\left(\frac{\partial D}{\partial D_w}\right)^2 \cdot u^2(D_w) + \left(\frac{\partial D}{\partial D_w}\right)^2 \cdot u^2(D_z)} = \sqrt{\frac{1}{4} u^2(D_w) + \frac{1}{4} u^2(D_z)} = \frac{u(D_w)}{\sqrt{2}}$$
 
@@ -214,15 +214,15 @@ Korzystając z pythonowej biblioteki SciPy\footnote{\url{https://www.scipy.org/}
 Dla serii $A$ otrzymaliśmy następujące współczynniki (przez $\sigma$ oznaczamy błąd standardowy):
 
 \begin{align*}
-	a &= 45.5 \quad \sigma_a = 2.5 \\
-	b &= 0.17 \quad \sigma_b = 0.98
+	a^{(A)} &= 45.5 \quad \sigma_a^{(A)} = 2.5 \\
+	b^{(A)} &= 0.17 \quad \sigma_b^{(A)} = 0.98
 \end{align*}
 
 Dla serii $B$:
 
 \begin{align*}
-	a &= 45.5 \quad \sigma_a = 2.3 \\
-	b &= 0.18 \quad \sigma_b = 0.90
+	a^{(B)} &= 45.5 \quad \sigma_a^{(B)} = 2.3 \\
+	b^{(B)} &= 0.18 \quad \sigma_b^{(B)} = 0.90
 \end{align*}
 
 Pomiary wraz z wyżej pokazanymi współczynnikami prostej regresji liniowej przedstawione zostały na Rysunku \ref{wykres_A} oraz na Rysunku \ref{wykres_B}.
@@ -241,8 +241,6 @@ Ponadto zauważmy, że wyliczone współczynniki dla obu serii mieszczą się w 
 \caption{Wyliczona prosta regresji liniowej zestawiona wraz ze zmierzonymi wartościami dla serii $B$.}
 \label{wykres_B}
 \end{figure}
-
-\subsection{Zgodność wyników z teorią}
 
 \subsection{Odległości między płaszczyznami atomowymi}
 
@@ -286,18 +284,26 @@ Ponownie skorzystamy z prawa propagacji niepewności, oznaczając przez $u(r), \
 		\frac{h^2r^2}{2m a^2 e^3} \cdot u^2(e)
 	} \\
 	% jednostka: 0.04472 metra
-	&\approx 0.1683817617664 \cdot 10^{-10} \, \text{m} \\
-	&\approx 0.17 \text{Å} \\
+	&\approx 1.68381761876581 \cdot 10^{-11} \, \text{m} \\
+	&\approx 0.17 \text{Å}
 \end{align*}
 
 Ostatecznie odległość między płaszczyznami atomowymi wynosi:
 
-$$d = 30.62 \, (0.17) \, \text{Å} $$
+$$d = 3.06 \, (0.17) \, \text{Å}$$
 
-% TODO: porównanie z tablicowymi wartościami.
+Porównując ten wynik z dostępnymi w internecie\footnote{\url{https://hypertextbook.com/facts/2001/AliceWarrenGregory.shtml}; dostęp 2018-05-04}
+($3.35$ Å)
+i w publikacjach\footnote{de Boer, J. H. (1940), Atomic distances in small graphite crystals and the nature of the bond. Recl. Trav. Chim. Pays-Bas, 59: 826-830. doi:10.1002/recl.19400590903}
+($3.345$ Å)
+-- oraz biorąc pod uwagę, że dokładna wartość zależy od użytego grafitu --
+możemy przyjąć, że wyliczona wartość jest możliwa dla grafitu użytego w laboratorium.
 
 \section{Wnioski}
 
 \subsection{Prawdziwość hipotezy de Broglie'a}
+
+Rysunek \ref{wykres_A} oraz na Rysunek \ref{wykres_B} wskazują na liniową zależność między odwrotnością pierwiastka napięcia a średnicą widocznych promieni.
+Dodatkowo, biorąc pod uwagę wyliczone niepewności prostej regresji liniowej, nie mamy podstaw do odrzucenia hipotezy de Broglie'a.
 
 \end{document}
