@@ -246,6 +246,54 @@ Ponadto zauważmy, że wyliczone współczynniki dla obu serii mieszczą się w 
 
 \subsection{Odległości między płaszczyznami atomowymi}
 
+Ustalmy $a = 45.5$ (mm $\sqrt{\text{kV}}$) oraz $u(a) = 2.5$ (mm $\sqrt{\text{kV}}$).
+Przekształcając wzór $a = \frac{rh}{d} \sqrt{\frac{2}{me}}$ w celu wyliczenia $d$, uzyskujemy:
+
+$$d = \frac{rh}{a} \sqrt{\frac{2}{me}}$$
+
+W celu wyliczenia tej wartości, posłużymy się następującymi wartościami i stałymi wraz z niepewnościami\footnote{wartości -- o ile nie zaznaczono inaczej -- pochodzą z National Institute of Standards and Technology (\url{https://physics.nist.gov/cuu/Constants/index.html}); dostęp 2018-05-04}:
+
+\begin{itemize}
+	\item odległość folia--ekran\footnote{wartość z instrukcji do laboratorium}: $r = 127.0$ $(0.3)$ mm;
+	\item stała Plancka: $h = 6.626 070 040$ $(0.000 000 081)$ $10^{-34}$ Js;
+	\item masa elektronu: $m = 9.109 383 56$ $(0.000 000 11)$ $10^{-31}$ kg;
+	\item ładunek elementarny: $e = 1.602 176 6208$ $(0.000 000 0098)$ $10^{-19}$ C.
+\end{itemize}
+
+Ponownie skorzystamy z prawa propagacji niepewności, oznaczając przez $u(r), \dots, u(e)$ podane wyżej niepewności:
+
+\begin{align*}
+	u(d) &= \sqrt{
+		\left( \frac{\partial d}{\partial r} \right)^2 \cdot u^2(r) +
+		\left( \frac{\partial d}{\partial h} \right)^2 \cdot u^2(h) +
+                \left( \frac{\partial d}{\partial a} \right)^2 \cdot u^2(a) +
+                \left( \frac{\partial d}{\partial m} \right)^2 \cdot u^2(m) +
+                \left( \frac{\partial d}{\partial e} \right)^2 \cdot u^2(e)
+	} \\
+	% obliczenia po drodze; zakomentowane, bo się nie mieszczą na szerokość na A4
+	%&= \sqrt{
+		%\left( \frac{h}{a}\sqrt{\frac{2}{me}} \right)^2 \cdot u^2(r) +
+		%\left( \frac{r}{a}\sqrt{\frac{2}{me}} \right)^2 \cdot u^2(h) +
+		%\left( \frac{hr\sqrt{\frac{2}{me}}}{a^2} \right)^2 \cdot u^2(a) +
+		%\left( \frac{hr}{\sqrt{2e}am^{\frac{3}{2}}}  \right)^2 \cdot u^2(m) +
+		%\left( \frac{hr}{\sqrt{2m} a e^{\frac{3}{2}}} \right)^2 \cdot u^2(e)
+	%} \\
+	&= \sqrt{
+		\frac{2h^2}{mea^2} \cdot u^2(r) +
+		\frac{2r^2}{mea^2} \cdot u^2(h) +
+		\frac{2h^2r^2}{mea^4} \cdot u^2(a) +
+		\frac{h^2r^2}{2e a^2 m^3} \cdot u^2(m) +
+		\frac{h^2r^2}{2m a^2 e^3} \cdot u^2(e)
+	} \\
+	% jednostka: 0.04472 metra
+	&\approx 0.1683817617664 \cdot 10^{-10} \, \text{m} \\
+	&\approx 0.17 \text{Å} \\
+\end{align*}
+
+Ostatecznie odległość między płaszczyznami atomowymi wynosi:
+
+$$d = 30.62 \, (0.17) \, \text{Å} $$
+
 \subsection{Wyliczenie odległości dla pozostałych pierścieni}
 
 \section{Wnioski}
