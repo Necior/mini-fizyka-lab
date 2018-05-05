@@ -237,20 +237,27 @@ Dla serii $A$ otrzymaliśmy następujące współczynniki (przez $\sigma$ oznacz
 
 \begin{align*}
 	a^{(A)} &= 45.5 \quad \sigma_a^{(A)} = 2.5 \\
-	b^{(A)} &= 0.17 \quad \sigma_b^{(A)} = 0.98
+	b^{(A)} &= 0.18 \quad \sigma_b^{(A)} = 0.98
 \end{align*}
 
 Dla serii $B$:
 
 \begin{align*}
-	a^{(B)} &= 45.5 \quad \sigma_a^{(B)} = 2.3 \\
-	b^{(B)} &= 0.18 \quad \sigma_b^{(B)} = 0.90
+	a^{(B)} &= 46.7 \quad \sigma_a^{(B)} = 2.3 \\
+	b^{(B)} &= 0.66 \quad \sigma_b^{(B)} = 0.90
 \end{align*}
 
 Pomiary wraz z wyżej pokazanymi współczynnikami prostej regresji liniowej przedstawione zostały na Rysunku \ref{wykres_A} oraz na Rysunku \ref{wykres_B}.
-Ponadto zauważmy, że wyliczone współczynniki dla obu serii mieszczą się w granicach niepewności.
-% ???
-% Które wsp. i na jakiej podstawie "mieszczą się w granicach niepewności"?? Na podstawie rysunku? Na podstawie przeprowadzonego testu chi^2?
+
+Ponieważ:
+
+$$\frac{\left| a^{(A)} - a^{(B)} \right|}{\sqrt{\left(\sigma_a^{(A)}\right)^2 + \left(\sigma_a^{(B)}\right)^2}} \approx 0.34 < 3$$
+
+oraz 
+
+$$\frac{\left| b^{(A)} - b^{(B)} \right|}{\sqrt{\left(\sigma_b^{(A)}\right)^2 + \left(\sigma_b^{(B)}\right)^2}} \approx 0.37 < 3$$
+
+to nie mamy podstaw do odrzucenia hipotezy, że w obu seriach mierzona była ta sama wielkość.
 
 \begin{figure}[h]
 \centering
