@@ -275,7 +275,10 @@ to nie mamy podstaw do odrzucenia hipotezy, że w obu seriach mierzona była ta 
 
 \subsection{Odległości między płaszczyznami atomowymi}
 
-Ustalmy $a = 45.5$ mm$\sqrt{\text{kV}}$ oraz $u(a) = 2.5$ mm$\sqrt{\text{kV}}$.
+Ustalmy $a = \frac{a^{(A)} + a^{(B)}}{2}= 46.1$ mm$\sqrt{\text{kV}}$ oraz:
+
+$$u(a) = \sqrt{\left( \frac{\partial a}{\partial a^{(A)}} \right)^2 \cdot \left(\sigma_a^{(A)}\right)^2 + \left( \frac{\partial a}{\partial a^{(B)}} \right)^2 \cdot \left(\sigma_a^{(B)}\right)^2 } \approx 1.7 \, \text{mm}\sqrt{\text{kV}}$$
+
 Przekształcając wzór $a = \frac{rh}{d} \sqrt{\frac{2}{me}}$ w celu wyliczenia $d$, uzyskujemy:
 
 $$d = \frac{rh}{a} \sqrt{\frac{2}{me}}$$
@@ -315,13 +318,13 @@ Ponownie skorzystamy z prawa propagacji niepewności, oznaczając przez $u(r), \
 		\frac{h^2r^2}{2m a^2 e^3} \cdot u^2(e)
 	} \\
 	% jednostka: 0.04472 metra
-	&\approx 1.8311440172431663 \cdot 10^{-11} \, \text{m} \\
-	&\approx 0.19 \text{Å}
+	&\approx 1.3233817 \cdot 10^{-11} \, \text{m} \\
+	&\approx 0.14 \text{Å}
 \end{align*}
 
 Ostatecznie odległość między płaszczyznami atomowymi wynosi:
 
-$$d = 3.06 \, (0.19) \, \text{Å}$$
+$$d = 3.02 \, (0.14) \, \text{Å}$$
 
 Porównując ten wynik z dostępnymi w internecie\footnote{\url{https://hypertextbook.com/facts/2001/AliceWarrenGregory.shtml}; dostęp 2018-05-04}
 ($3.35$ Å)
