@@ -105,15 +105,90 @@ Hipoteza ta głosi, że wszelka materia ma dwojaką naturę: cząsteczkową oraz
 
 \subsection{Wstęp teoretyczny}
 
-Według przedstawionej hipotezy, każdej cząstce można przypisać falę o pewnej długości.
+\subsubsection{Fale de Broglie'a} 
+Zgodnie z hipotezą przedstawioną przez de Brogile'a, każdej cząstce można przypisać falę o pewnej długości.
 Jeśli przez $h$ oznaczmy stałą Plancka, zaś przez $p$ pęd cząstki, to długość fali de Broglie'a (ozn. $\lambda$) jest definiowana jako:
 
 $$\lambda = \frac h p$$
 
-% TODO: lepsze wyjaśnienie hipotezy de Broglie'a
-% TODO: wyprowadzenie potrzebnych wzorów/wzoru
-% TODO: wyjaśnienie skąd jest „dwójka” we wzorze
-% TODO: doświadczenie Thomsona
+Aby potwierdzić eksperymentalnie naturę falową materii, dążyliśmy w ćwiczeniu do zaobserwowania zjawiska interferencji dla cząstek materii.
+Ponieważ wytworzenie siatki dyfrakcyjnej o odpowiednio małej odległości między szczelinami (rzędu długości szukanej fali) jest praktycznie niemożliwe, dlatego do dyfrakcji hipotetycznej fali wykorzystana została struktura krystaliczna grafitu.
+
+\subsubsection{Dyfrakcja na sieci krystalicznej, prawo Bragga i doświadczenie Thomsona}
+Fala padająca na sieć krystaliczną zderza się z atomami tworzącymi tę sieć. 
+Pobudzone atomy są (zgodnie z zasadą Huygensa) nowymi źródłami fali kulistej, a w szczególności wiele takich źródeł tworzy czoło nowej fali płaskiej.
+W rezultacie uzyskujemy efekt odbicia fali od sieci krystalicznej.
+Ponieważ sieć składa się z atomów ułożonych warstwami, promienie fali mogą pokonywać różne odległości, jeśli zostaną odbite od dwu różnych warstw.
+W zależności od tej odległości jesteśmy w stanie uzyskać interferencję konstruktywną oraz destruktywną.
+Zgodnie ze wzorem na siatkę dyfrakcyjną, największe wzmocnienia fali występują dla:
+\[
+	d \sin(\theta) = n \lambda
+\]
+gdzie $\theta$ to kąt padania fali o długości $\lambda$, $n$ to rząd widma, a $d$ to stała siatki dyfrakcyjnej.
+
+Dla naszego układu stałą siatki dyfrakcyjnej jest odległość między warstwami w sieci krystalicznej, natomiast $\theta$ jest kątem poślizgu (lub \textit{odbłysku}), definiowanym jako kąt między wiązką padającą a płaszczyzną kryształu.
+
+Dalej, należy zauważyć, że $d\sin\left(\theta\right)$ (w ujęciu ogólnym dla siatki dyfrakcyjnej ze szczelinami) to różnica pokonywanych odległości przez promienie przechodzące przez kolejne szczeliny siatki dyfrakcyjnej.
+Dla układu w naszym ćwiczeniu różnica ta jest \textbf{$2$ razy większa}, ponieważ fala pokonuję tę powiększoną odległość dwukrotnie -- raz przed ugięciem i drugi raz po ugięciu.
+Odcinki te zostały przedstawione na rysunku \ref{bragg} pogrubioną linią.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{bragg.png}
+\caption{Prawo Bragga}
+\label{bragg}
+\end{figure}
+
+
+Po przeprowadzeniu rozważań, otrzymujemy wzór Bragga na maksymalne wzmocnienie fali ugiętej przez przepuszczenie jej przez kryształ:
+\[
+	2d\sin(\theta) = n\lambda
+\]
+
+gdzie $d$ to odległość między płaszczyznami atomów, $\theta$ to kąt poślizgu, a $n$ i $\lambda$ to odpowiednio rząd ugięcia i długość fali (jak w przypadku wzoru na siatkę dyfrakcyjną).
+
+Ponieważ kąt między wiązką ugiętą a wiązką przepuszczoną przez sieć krystaliczną wynosi $2\theta$, dlatego podczas obrotu kryształu względem osi utworzonej przez wiązkę padającą (i tym samym przepuszczoną), zakreślane będą stożki o kącie rozwarcia $4\pi$.
+
+Przechodząc do wykonania ćwiczenia, wzorowanego na doświadczeniu Thomsona, przed lampą oscyloskopową, na drodze wiązki elektronowej umieszczono cienką folię z materiału o budowie polikrystalicznej.
+W pewnej odległości $r$ od folii umieszczony został ekran, na którym dokonywane zostały pomiary średnicy $D$ utworzonych prążków.
+Zakładając, że kąt $\theta$ jest bardzo mały (gdyż średnice okręgów interferencyjnych są o wiele mniejsze niż odległość od ekranu), otrzymujemy przybliżenie:
+
+\begin{align*}
+	\sin (4\theta) &\approx 4\theta \approx \frac{D}{r} \ \ \ \text{i dalej} \\
+	\sin (\theta) &\approx \theta \approx \frac{D}{4r}	
+\end{align*}
+
+Podstawiając to przybliżenie do wzoru Bragga, otrzymujemy:
+
+\[
+	\frac{dD}{2r} = n\lambda
+\]
+
+Korzystając z hipotezy de Broglie'a:
+\[
+	\frac{dD}{2r} =n\frac{h}{p}
+\]
+
+Korzystając ze związku między energią elektronu a jego pędem (i zaniedbując efekty relatywistyczne):
+\[
+	\frac{dD}{2r} =n\frac{h}{\sqrt{2meU}}
+\]
+
+Ostatecznie, rozpatrując tylko prążki rzędu 1. $(n=1)$ otrzymujemy wzór na średnicę okręgu interferencyjnego:
+\[
+	D = \frac{2rh}{d\sqrt{2meU}}
+\]
+
+gdzie:
+\begin{itemize}
+	\item $r$ -- odległość między folią a ekranem
+	\item $h$ -- stała Plancka
+	\item $d$ -- odległość między płaszczyznami atomowymi wewnątrz folii
+	\item $m$ -- masa elektronu
+	\item $e$ -- ładunek elementarny
+	\item $U$ -- napięcie przyspieszające elektrony
+\end{itemize}
+Przy wykonywaniu doświadczenia szukano zależności liniowej między $D$ a $\frac{1}{\sqrt{U}}$
 
 \subsection{Układ pomiarowy}
 
@@ -237,18 +312,27 @@ Dla serii $A$ otrzymaliśmy następujące współczynniki (przez $\sigma$ oznacz
 
 \begin{align*}
 	a^{(A)} &= 45.5 \quad \sigma_a^{(A)} = 2.5 \\
-	b^{(A)} &= 0.17 \quad \sigma_b^{(A)} = 0.98
+	b^{(A)} &= 0.18 \quad \sigma_b^{(A)} = 0.98
 \end{align*}
 
 Dla serii $B$:
 
 \begin{align*}
-	a^{(B)} &= 45.5 \quad \sigma_a^{(B)} = 2.3 \\
-	b^{(B)} &= 0.18 \quad \sigma_b^{(B)} = 0.90
+	a^{(B)} &= 46.7 \quad \sigma_a^{(B)} = 2.3 \\
+	b^{(B)} &= 0.66 \quad \sigma_b^{(B)} = 0.90
 \end{align*}
 
 Pomiary wraz z wyżej pokazanymi współczynnikami prostej regresji liniowej przedstawione zostały na Rysunku \ref{wykres_A} oraz na Rysunku \ref{wykres_B}.
-Ponadto zauważmy, że wyliczone współczynniki dla obu serii mieszczą się w granicach niepewności.
+
+Ponieważ:
+
+$$\frac{\left| a^{(A)} - a^{(B)} \right|}{\sqrt{\left(\sigma_a^{(A)}\right)^2 + \left(\sigma_a^{(B)}\right)^2}} \approx 0.34 < 3$$
+
+oraz 
+
+$$\frac{\left| b^{(A)} - b^{(B)} \right|}{\sqrt{\left(\sigma_b^{(A)}\right)^2 + \left(\sigma_b^{(B)}\right)^2}} \approx 0.37 < 3$$
+
+to nie mamy podstaw do odrzucenia hipotezy, że w obu seriach mierzona była ta sama wielkość.
 
 \begin{figure}[h]
 \centering
@@ -266,7 +350,10 @@ Ponadto zauważmy, że wyliczone współczynniki dla obu serii mieszczą się w 
 
 \subsection{Odległości między płaszczyznami atomowymi}
 
-Ustalmy $a = 45.5$ (mm $\sqrt{\text{kV}}$) oraz $u(a) = 2.5$ (mm $\sqrt{\text{kV}}$).
+Ustalmy $a = \frac{a^{(A)} + a^{(B)}}{2}= 46.1$ mm$\sqrt{\text{kV}}$ oraz:
+
+$$u(a) = \sqrt{\left( \frac{\partial a}{\partial a^{(A)}} \right)^2 \cdot \left(\sigma_a^{(A)}\right)^2 + \left( \frac{\partial a}{\partial a^{(B)}} \right)^2 \cdot \left(\sigma_a^{(B)}\right)^2 } \approx 1.7 \, \text{mm}\sqrt{\text{kV}}$$
+
 Przekształcając wzór $a = \frac{rh}{d} \sqrt{\frac{2}{me}}$ w celu wyliczenia $d$, uzyskujemy:
 
 $$d = \frac{rh}{a} \sqrt{\frac{2}{me}}$$
@@ -306,13 +393,13 @@ Ponownie skorzystamy z prawa propagacji niepewności, oznaczając przez $u(r), \
 		\frac{h^2r^2}{2m a^2 e^3} \cdot u^2(e)
 	} \\
 	% jednostka: 0.04472 metra
-	&\approx 1.8311440172431663 \cdot 10^{-11} \, \text{m} \\
-	&\approx 0.19 \text{Å}
+	&\approx 1.3233817 \cdot 10^{-11} \, \text{m} \\
+	&\approx 0.14 \text{Å}
 \end{align*}
 
 Ostatecznie odległość między płaszczyznami atomowymi wynosi:
 
-$$d = 3.06 \, (0.19) \, \text{Å}$$
+$$d = 3.02 \, (0.14) \, \text{Å}$$
 
 Porównując ten wynik z dostępnymi w internecie\footnote{\url{https://hypertextbook.com/facts/2001/AliceWarrenGregory.shtml}; dostęp 2018-05-04}
 ($3.35$ Å)
@@ -327,5 +414,6 @@ możemy przyjąć, że wyliczona wartość jest możliwa dla grafitu użytego w 
 
 Rysunek \ref{wykres_A} oraz na Rysunek \ref{wykres_B} wskazują na liniową zależność między odwrotnością pierwiastka napięcia a średnicą widocznych promieni.
 Dodatkowo, biorąc pod uwagę wyliczone niepewności prostej regresji liniowej, nie mamy podstaw do odrzucenia hipotezy de Broglie'a.
+Uzyskane rozbieżności niektórych pomiarów od wartości liniowej wynikają z trudności oceny średnicy okręgu, miał on niewyraźne granice i niezbyt duży kontrast z tłem. Pomimo tych trudności otrzymaliśmy w obu pomiarach podobne wyniki.
 
 \end{document}
