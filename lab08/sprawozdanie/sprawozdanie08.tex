@@ -109,10 +109,13 @@ którego schemat przedstawiono na rysunku \ref{schemat}.
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{schemat.png}
-\caption{Schemat układu pomiarowego}
+\includegraphics[scale=1]{schemat.eps}
+\caption{Schemat układu pomiarowego dołączony do instrukcji ćwiczenia}
 \label{schemat}
 \end{figure}
+
+Działanie lampy elektronowej wykorzystuje zjawisko jakim jest \textbf{termoemisja}.
+Wraz ze zwiększaniem temperatury materiału, z jego powierzchni emitowanych jest coraz więcej elektronów.
 
 Układ został przygotowany w taki sposób, aby napięcie przyłożone do lampy elektronowej hamowało
 ruch elektronów opuszczających katodę (biegun dodatni baterii połączony został z katodą, a ujemny z anodą).
@@ -120,10 +123,24 @@ Budowa układu pozwalała jedynie na regulowanie wartości napięcia \textit{w j
 Z powodu braku możliwości zamiany polaryzacji przykładanego napięcia, nie można było wyznaczyć 
 w ćwiczeniu wartości napięcia kontaktowego między okładkami.
 
-Korzystaliśmy z przybliżenia, że elektrony wewnątrz lampy można opisać jako gaz elektronów, oraz dalej, 
-z powodu znajdowania się ich w próżni nie występują oddziaływania między nimi -- jako gaz doskonały.
+Korzystaliśmy z przybliżenia, że elektrony wewnątrz lampy można opisać jako gaz elektronów.
+W naszym doświadczeniu wyemitowane elektrony znajdują się w próżni oraz emitowane są one
+z gęstością o 10-15 rzędów mniejszą niż w metalu. Zakładamy więc, że z powodu pomijalnych oddziaływań
+między elektronami, są one \textit{gazem doskonałym}.
 Były to podstawy do założenia, że prędkości elektronów przemieszczających się w kierunku anody 
 mają rozkład Maxwella.
+
+\textbf{Rozkład Maxwella} opisuje rozkład prędkości cząstek gazu doskonałego.
+Określa on liczbę cząstek, które w jednostce objętości mają prędkości z przedziału $<v, v + dv>$.
+kk
+dzięki temu nie oddziałują ze sobą. 
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{rozlad_maxwella.jpg}
+\caption{Rozkład Maxwella\newlineŹródło: \url{zasoby1.open.agh.edu.pl/dydaktyka/2\_stany\_skupienia/02\_02\_46.jpg}}
+\end{figure}
 
 Wzór, który uwzględnia ten rozkład i posłużył w ćwiczeniu za podstawę opracowywania wyników pomiarów,
 opisuje zależność między natężeniem prądu anodowego a napięciem przyłożonym do lampy.
@@ -137,11 +154,11 @@ gdzie $I_a$ to natężenie prądu anodowego, $U_a$ to zmienna niezależna będą
 $T$ to parametr równania, będący temperaturą katody, zaś pozostałe czynniki to następujące stałe:
 \begin{itemize}
 \item $I_a$ -- prąd \textit{początkowy}
-\item $e$ -- ładunek elementrarny z minusem
+\item $e$ -- ładunek elementarny z minusem
 \item $k$ -- stała Boltzmanna
 \end{itemize}
 
-Analizując równanie, mozna stwierdzić, że $I_{a_0}$ to \textit{zerowe} natężenie prądu anodowego przy
+Analizując równanie, można stwierdzić, że $I_{a_0}$ to \textit{zerowe} natężenie prądu anodowego przy
 braku przyłożonego dodatkowego napięcia ($U_a = 0 \text{V}$). Ponieważ napięcie $U_a$ jest hamujące,
 dlatego przyjmuje w naszych rozważaniach wyłącznie wartości ujemne, stąd (pamiętając o ujemnej wartości
 ładunku $e$) argument funkcji wykładniczej ma wartość ujemną. Zatem mierzona wartość $I_a$ powinna 
@@ -166,6 +183,203 @@ Poszukiwana była zależność liniowa, gdzie:
 \end{itemize}
 
 
-\section{Pomiary i wstępne obliczenia}
-\section{Opracowanie wyników}
+\section{Pomiary i opracowanie wyników}
+W naszym doświadczeniu dostaliśmy gotową diodę próżniową oraz mierniki natężenia oraz napięcia,
+na początku ćwiczenia zmonotowaliśmy obwód w sposób widoczny na rysunku \ref{schemat}.
+Ustawiliśmy prąd żarzenia na $0.375 A$ przy pierwszym pomiarze oraz $0.385 A$ przy drugim.
+Połączyliśmy katodę z anodą przez mikroamperomierz.
+Zanim włączyliśmy żarnik prąd wskazywany na mikroamperomierzu wynosił $0A$.
+Po ogrzaniu katody po pewnym czasie prąd ustabilizował się na $0.383 \mu A$.
+Zauważyliśmy następującą prawidłowość: wraz ze wzrostem temperatury żarnika prąd w obwodzie żarnika malał.
+Spowodowane było to wzrostem oporu w obwodzie wraz ze wzrostem temperatur).
+W tym samym czasie prąd anodowy rósł wraz z rozgrzewaniem lampy elektronowej.
+
+Po zwarciu oporu na baterii dołączyliśmy woltomierz do obwodu mierzący napięcie na anodzie.
+Podawaliśmy ujemne napięcie na anodę za pomocą dzielnika napięcia, wtedy prąd anodowy zaczął maleć.
+
+\subsection{Pierwszy pomiar}
+Wyniki pomiarów wykonanych i niepewności dla pierwszego prądu żarzenia są zawarte w tabeli \ref{pomiary-1}. Niepewność pomiarowa natężenia prądu wyraża się wzorem: 
+\begin{align*}
+u_{I_{a}} = \sqrt{(\frac{\Delta I}{\sqrt{3}})^2 + (\frac{\Delta I_{E}}{\sqrt{3}})^2}
+\end{align*}
+gdzie:
+\begin{itemize}
+\item $u_{I_{a}}$ - niepewność pomiaru wartości natężenia \\
+\item $\Delta I$ - niepewność amperomierza \\
+\item $\Delta I_{E}$ - niepewność eksperymentatora\\
+\end{itemize}
+
+W naszym przypadku amperomierz był analogowy i posiadał pierwszą klasę czyli by wyznaczyć $\Delta I$ posłużyliśmy się wzorem:
+\begin{align*}
+\Delta I = klasa\ urządzenia * \frac{zakres}{100} = 0.0015
+\end{align*}
+podanym na wykładzie wstępnym.
+Przyjęliśmy że niepewność eksperymentatora jest równa $\frac{1}{2}$ najmniejszej podziałki.\\
+
+Wyniki znajdujące się w kolumnie $u_{U}$ są niepewnościami pomiarowymi napięcia prądu. Wartość niepewności zależy zarówno od jakości urządzenia pomiarowego jak i samego odczytu, w naszym przypadku wyraża się wzorem:
+\begin{align*}
+u_{U} = \frac{0,3 \% \cdot rdg + 1 \cdot dgt}{\sqrt{3}}
+\end{align*}
+gdzie:
+ \begin{itemize}
+\item $rdg$ - zmierzona wartość 
+\item $dgt$ - dokładność pomiaru 
+\end{itemize}
+
+Wyniki dla niepewności wyznaczenia logarytmu stosunku prądu zmierzonego do prądu początkowego obliczyliśmy z następującego wzoru:
+\begin{align*}
+u_{ln} = \sqrt{(\frac{1}{I_{a}})^2 \cdot U_{I_{a}}^2 + (- \frac{1}{I_{a0}})^2 \cdot U_{I_{a0}}^2 }
+\end{align*}
+gdzie:
+\begin{itemize}
+\item $u_{ln}$ - niepewność logarytmu stosunku wartości natężenia zmierzonego do prądu początkowego
+\item $I_{a}$ - wartość zmierzonego prądu
+\item $I_{a0}$ - wartość prądu początkowego
+\item $u_{I_{a}}$ - niepewność pomiaru wartości natężenia
+\item $u_{I_{a0}}$ - niepewność pomiaru wartości natężenia początkowego 
+\end{itemize}
+
+W większości punktów na wykresie nie jest widoczna niepewność, ponieważ są one mniejsze od punktów którymi są zaznaczone pomiary.
+
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+ \hline
+L.p & U[V] & $I_{a}$ [µA] & $U_{I_{a}}$ [µA] & $U_{U}$ [V] & $ln(l_{a}/l_{a0})$ & $U_{ln}$ & $\sqrt(U)$ \\ \hline
+1 & 0.000 & 0.135 & 0.0017 & 0.00058 & 0.0000 & 0.0178 & 0.0000 \\ \hline
+2 & -0.012 & 0.110 & 0.0017 & 0.0006 & -0.2048 & 0.0199 & 0.1095 \\ \hline
+3 & -0.018 & 0.105 & 0.0017 & 0.00061 & -0.2513 & 0.0205 & 0.1342 \\ \hline
+4 & -0.021 & 0.100 & 0.0017 & 0.00061 & -0.3001 & 0.0212 & 0.1449 \\ \hline
+5 & -0.030 & 0.090 & 0.0017 & 0.00063 & -0.4055 & 0.0227 & 0.1732 \\ \hline
+6 & -0.038 & 0.080 & 0.0017 & 0.00064 & -0.5232 & 0.0247 & 0.1949 \\ \hline
+7 & -0.045 & 0.070 & 0.0017 & 0.00066 & -0.6568 & 0.0274 & 0.2121 \\ \hline
+8 & -0.055 & 0.065 & 0.0017 & 0.00067 & -0.7309 & 0.0290 & 0.2345 \\ \hline
+9 & -0.065 & 0.055 & 0.0017 & 0.00069 & -0.8979 & 0.0334 & 0.2550 \\ \hline
+10 & -0.075 & 0.050 & 0.0017 & 0.00071 & -0.9933 & 0.0363 & 0.2739 \\ \hline
+11 & -0.089 & 0.040 & 0.0017 & 0.00073 & -1.2164 & 0.0443 & 0.2983 \\ \hline
+12 & -0.097 & 0.035 & 0.0017 & 0.00075 & -1.3499 & 0.0502 & 0.3114 \\ \hline
+13 & -0.107 & 0.030 & 0.0017 & 0.00076 & -1.5041 & 0.0580 & 0.3271 \\ \hline
+ \end{tabular}
+\caption{Wyniki wielokrotnych pomiarów i niepwności dla pomiaru pierwszego}
+\label{pomiary-1}
+\end{table}
+
+
+\begin{figure}[h!]
+	\includegraphics[scale=1]{T1_ln_U}
+	\centering
+	\caption{Wykres zależności logarytmu stosunku zmierzonego natężenia do natężenia początkowego od napięcia. Pomiar pierwszy}
+	\label{fig-1}
+\end{figure}
+
+Używając metody najmniejszych kwadratów policzyliśmy temperaturę katody wysyłającej elektrony. Współczynnik kierunkowy prostej wynosi:
+\begin{align*}
+a \approx 13.81 (0.11)
+\end{align*}
+
+Z tego otrzymujemy temperaturę katody oraz niepewność:
+\begin{align*}
+T = \frac{e}{k \cdot a} \approx 840.36 K \\
+u_{T} = \sqrt{(\frac{e}{k \cdot a^2}) \cdot u_{a}^2} \approx 6.57 K
+\end{align*}
+
+
+
+
+%\begin{figure}[h!]
+	%\includegraphics[scale=1]{T1_Ia_sqrtU}
+	%\centering
+	%\caption{Wykres zależności natężenia od pierwiastka napięcia. Pomiar pierwszy}
+%\end{figure}
+
+%\newpage
+\subsection{Drugi pomiar}
+W drugim pomiarze w przeciwieństwie do pierwszego zmienialiśmy zakres pomiarów na amperomierzu
+(z tego wynikają większe niepewności pomiarowe dla 3 pierwszych pomiarów).
+Wartości pomiarów znajdują się w tablicy \ref{pomiary-2} a odpowiedni wykres na rysunku \ref{fig-2}.
+Analogicznie do poprzedniego pomiaru wyznaczyliśmy tempraturę metodą najmniejszych kwadratów.
+Współczynnik kierunkowy prostej wynosi:
+\begin{align*}
+a \approx 12.80 (0.06)
+\end{align*}
+
+Z tego otrzymujemy temperaturę katody oraz niepewność:
+\begin{align*}
+T \approx 906.31 K \\
+u_{T} = 3.96 K
+\end{align*}
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+ \hline
+L.p & U[V] & $I_{a}$ [µA] & $U_{I_{a}}$ [µA] & $U_{U}$ [V] & $ln(l_{a}/l_{a0})$ & $U_{ln}$ & $\sqrt(U)$ \\ \hline
+1 & 0.000 & 0.250 & 0.0168 & 0.00058 & 0.00000 & 0.09522 & 0.00000 \\ \hline
+2 & -0.016 & 0.200 & 0.0168 & 0.00061 & -0.22314 & 0.10778 & 0.12649 \\ \hline
+3 & -0.038 & 0.150 & 0.0168 & 0.00064 & -0.51083 & 0.13087 & 0.19494 \\ \hline
+4 & -0.041 & 0.150 & 0.0017 & 0.00065 & -0.51083 & 0.06826 & 0.20248 \\ \hline
+5 & -0.047 & 0.140 & 0.0017 & 0.00066 & -0.57982 & 0.0684 & 0.21679 \\ \hline
+6 & -0.055 & 0.125 & 0.0017 & 0.00067 & -0.69315 & 0.06866 & 0.23452 \\ \hline
+7 & -0.058 & 0.120 & 0.0017 & 0.00068 & -0.73397 & 0.06878 & 0.24083 \\ \hline
+8 & -0.069 & 0.105 & 0.0017 & 0.00070 & -0.8675 & 0.06921 & 0.26268 \\ \hline
+9 & -0.085 & 0.085 & 0.0017 & 0.00072 & -1.07881 & 0.07018 & 0.29155 \\ \hline
+10 & -0.100 & 0.070 & 0.0017 & 0.00075 & -1.27297 & 0.0715 & 0.31623 \\ \hline
+11 & -0.112 & 0.060 & 0.0017 & 0.00077 & -1.42712 & 0.07294 & 0.33466 \\ \hline
+12 & -0.125 & 0.050 & 0.0017 & 0.00079 & -1.60944 & 0.07528 & 0.35355 \\ \hline
+13 & -0.141 & 0.040 & 0.0017 & 0.00082 & -1.83258 & 0.07940 & 0.37550 \\ \hline
+ \end{tabular}
+	\caption{Wyniki wielokrotnych pomiarów i niepewności dla pomiaru drugiego}
+	\label{pomiary-2}
+\end{table}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.8]{T2_ln_U}
+	\caption{Wykres zależności logarytmu stosunku zmierzonego natężenia do natężenia początkowego od napięcia. Pomiar drugi}
+	\label{fig-2}
+\end{figure}
+
+%
+%\begin{figure}[h!]
+	%\includegraphics[scale=1]{T2_Ia_sqrtU}
+	%\centering
+	%\caption{Wykres zależności natężenia od pierwiastka napięcia. Pomiar drugi}
+%\end{figure}
+
+\section{Wnioski}
+
+Obserwacje oraz opracowanie wyników przeprowadzonego ćwiczenia potwierdziły istnienie zależności
+wykładniczej między napięciem hamującym, przyłożonym do lampy, a prądem anodowym,
+przepływającym przez lampę. Zależność ta jest opisana wzorem (\ref{eq2}).
+Dodatkowo na rysunkach \ref{exp1}, \ref{exp2} zostały przedstawione odczyty natężenia względem
+przyłożonego napięcia wraz z dopasowaniem pewnej funkcji wykładniczej, uzyskanej za pomocą oprogramowania 
+z pakietu \textit{Libre Office}. Analizując wykresy nie znajdujemy podstaw do odrzucenia hipotezy
+o zależności (\ref{eq2}).
+
+Z tej zależności wyznaczone zostały temperatury katody przy pierwszym i drugim pomiarze,
+wynoszące odpowiednio:
+
+\begin{align*}
+	T_1 = 840.36(6.57) K \ \ \ \text{dla} \ I_{zarnik} = 0.375 \ \text{A} \\
+	T_2 = 906.31(3.96) K \ \ \ \text{dla} \ I_{zarnik} = 0.385 \ \text{A} \\
+\end{align*}
+
+co (porównując z tablicami odczytów jak i wykresami) zgadza się z naszym wcześniejszym przypuszczeniem,
+że dla większej temperatury katody prąd będzie wzrastał (przy tym samym napięciu).
+\vspace{1em}
+
+\begin{figure}[h]
+	\includegraphics[scale=0.75]{T1_Ia_U}
+	\centering
+	\caption{Wykres zależności natężenia od napięcia. Pomiar pierwszy}
+	\label{exp1}
+\end{figure}
+\begin{figure}[h]
+	\includegraphics[scale=0.75]{T2_Ia_U}
+        \centering
+        \caption{Wykres zależności natężenia od napięcia. Pomiar drugi}
+	\label{exp2}
+\end{figure}
+
 \end{document}
